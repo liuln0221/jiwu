@@ -1,0 +1,23 @@
+.el-container {
+  .el-header,
+  .el-main,
+  .el-footer {
+    display: flex;
+    justify-content: center;
+
+    & > div {
+      width: 1200px;
+      min-width: 1200px;
+    }
+  }
+
+  .el-header {
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .el-footer {
+    height: 100% !important;
+    background: #3b4144;
+  }
+}
