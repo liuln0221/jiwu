@@ -1,0 +1,17 @@
+.submenu-item {
+  .el-row {
+    line-height: 33px;
+
+    .submenu-item__link__title {
+      font-weight: bold;
+    }
+
+    .el-button {
+      font-size: 14px;
+    }
+
+    .el-button+.el-button {
+      margin-left: 25px;
+    }
+  }
+}

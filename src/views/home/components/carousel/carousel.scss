@@ -1,0 +1,33 @@
+.carousel {
+  position: absolute;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+
+  /deep/.el-carousel {
+    .el-carousel__container {
+      .el-carousel__arrow--left {
+        left: calc(((100% - 1200px) / 2) + 250px);
+      }
+
+      .el-carousel__arrow--right {
+        right: calc((100% - 1200px) / 2);
+      }
+    }
+
+    .el-carousel__indicators {
+      .el-carousel__indicator {
+        .el-carousel__button {
+          width: 6px;
+          height: 6px;
+          border-radius: 3px;
+        }
+
+        &.is-active {
+          .el-carousel__button {
+            width: 26px;
+          }
+        }
+      }
+    }
+  }
+}

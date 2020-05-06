@@ -1,7 +1,6 @@
 .footer {
   .footer__aboutcopy {
     padding: 20px 0;
-    font-size: 14px;
     color: #fff;
     border-bottom: 1px solid rgba(134, 144, 153, 0.3);
 
@@ -15,6 +14,7 @@
   }
 
   .footer__links {
+    font-size: 12px;
     padding: 10px 0 15px;
     color: #869099;
     border-bottom: 1px solid rgba(134, 144, 153, 0.3);
@@ -26,6 +26,7 @@
   }
 
   .footer__conyfiv {
+    font-size: 12px;
     padding: 10px 0;
     color: #869099;
     line-height: 22px;

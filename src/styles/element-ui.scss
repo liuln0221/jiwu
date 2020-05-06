@@ -4,3 +4,44 @@
     color: #47b3e3;
   }
 }
+
+// 右侧菜单弹出框样式
+.aside__popper {
+    margin-right: 0 !important;
+    padding: 0 10px;
+    top: 1px;
+    width: auto !important;
+    min-width: 107px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    background-color: #47b3e3;
+    border: none;
+    border-radius: 0;
+
+    .popper__arrow {
+      border-left-color: #47b3e3 !important;
+
+      &::after {
+        border-left-color: #47b3e3 !important;
+      }
+    }
+}
+
+// 首页左侧菜单弹出框样式
+.navbar__popper {
+  top: 80px !important;
+  .el-menu--popup {
+    width: 840px;
+    height: 300px;
+    padding: 30px 40px;
+    margin: 0;
+    border-left: none;
+    border-radius: 0;
+    background: rgba(255,255,255,.97);
+    box-shadow: none;
+    color: #555;
+  }
+}

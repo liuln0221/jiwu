@@ -1,0 +1,50 @@
+.checkPrice {
+  margin-bottom: 20px;
+  padding: 20px 0;
+  background-color: #fff5ea;
+
+  .checkPrice__location {
+    font-size: 22px;
+    text-align: center;
+  }
+  
+  .checkPrice__time {
+    color: #869099;
+    text-align: center;
+  }
+
+  .checkPrice__price {
+    margin: 0 !important;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+
+    .checkPrice__price__title {
+      font-size: 12px;
+      color: #869099;
+      margin-bottom: 3px;
+    }
+
+    .checkPrice__price__number {
+      font-size: 22px;
+      color: #555;
+    }
+
+    .checkPrice__price__trend {
+      font-size: 12px;
+      margin-left: 25px;
+
+      .upper {
+        color: #ea3c54;
+      }
+
+      .lower {
+        color: #11a43c;
+      }
+    }
+  }
+
+  .checkPrice__detail {
+    height: 48px;
+    margin-left: 20px;
+  }
+}

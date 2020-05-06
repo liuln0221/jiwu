@@ -5,18 +5,16 @@ Vue.use(Router)
 
 import Layout from '@/layout/layout.vue';
 
+import homeRouters from './home/router';
+
+
 const routes = [
   {
     path: '/',
     component: Layout,
-    // redirect: '/dashboard',
+    redirect: '/home',
     children: [
-      // {
-      //   path: 'dashboard',
-      //   component: () => import('@/views/dashboard/index'),
-      //   name: 'Dashboard',
-      //   meta: { title: 'dashboard', icon: 'dashboard', affix: true }
-      // }
+      ...homeRouters
     ]
   }
 ];

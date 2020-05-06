@@ -1,10 +1,15 @@
 <template>
   <div class="layout">
+    <el-aside width="auto">
+      <e-aside></e-aside>
+    </el-aside>
     <el-container>
       <el-header>
         <e-header></e-header>
       </el-header>
-      <el-main>main</el-main>
+      <el-main>
+        <router-view />
+      </el-main>
       <el-footer>
         <e-footer></e-footer>
       </el-footer>

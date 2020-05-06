@@ -1,0 +1,77 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 50px);
+
+  .aside__menu {
+    margin: auto
+  }
+
+  .aside__top {
+    /deep/.el-backtop {
+      box-shadow: none;
+      border-radius: 0;
+    }
+  }
+
+  .el-popover__reference {
+    width: 40px;
+    padding: 3px 0;
+    margin: 10px 0;
+
+    &:hover {
+      background-color: #4b4948;
+      cursor: pointer;
+
+      i.aside__menu__icon__phone {
+        background-position: -50px -643px;
+      }
+      i.aside__menu__icon__consulte {
+        background-image: url('http://images.jiwu.com/images/v6.0/icons_v5.png');
+        background-position: -35px -89px;
+      }
+      i.aside__menu__icon__house {
+        background-position: -46px -565px;
+      }
+      i.aside__menu__icon__util {
+        background-position: -35px -167px;
+      }
+      i.aside__menu__icon__provident-fund {
+        background-position: -35px -397px;
+      }
+      i.aside__top__icon {
+        background-position: -35px -320px;
+      }
+    }
+
+    i.aside__menu__icon__phone {
+      background-position: -50px -604px;
+    }
+    i.aside__menu__icon__consulte {
+      background: url('http://images.jiwu.com/images/v6.0/zxgj_ico.gif') center center no-repeat;
+    }
+    i.aside__menu__icon__house {
+      background-position: -46px -525px;
+      width: 29px;
+    }
+    i.aside__menu__icon__util {
+      background-position: -35px -128px;
+    }
+    i.aside__menu__icon__provident-fund {
+      background-position: -36px -358px;
+      width: 29px;
+    }
+    i.aside__top__icon {
+      background-position: -36px -282px;
+    }
+  }
+
+  i {
+    display: block;
+    width: 23px;
+    height: 34px;
+    margin: auto;
+    background-image: url('http://images.jiwu.com/images/v6.0/icons_v5.png');
+    background-repeat: no-repeat;
+  }
+}

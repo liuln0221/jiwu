@@ -1,0 +1,42 @@
+.newhouse {
+  margin-top: 20px;
+  /deep/.el-card {
+    .el-card__header {
+      .newhouse__tab {
+        display: inline-block;
+        margin-left: 30px;
+        .el-link {
+          padding: 1px 10px 3px;
+          display: inline-block;
+          border-radius: 3px;
+          font-size: 16px;
+    
+          &.active {
+            background: #47b3e3;
+            color: #fff;
+    
+            i {
+              width: 0;
+              height: 0;
+              border-width: 4px 6px;
+              border-style: solid;
+              border-color: #47b3e3 transparent transparent transparent;
+              position: absolute;
+              left: 50%;
+              top: 100%;
+              margin-left: -6px;
+            }
+          }
+        }
+    
+        .el-link+.el-link {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .el-row+.el-row {
+      margin-top: 20px;
+    }
+  }
+}

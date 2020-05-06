@@ -1,0 +1,27 @@
+.price {
+  padding: 15px 0;
+  margin-top: 20px;
+  background-color: #f7f7f7;
+
+  & > .el-row {
+    margin: 0 !important;
+
+    .price__title {
+      font-size: 16px;
+      font-weight: bold;
+      color: inherit;
+      margin-bottom: 10px;
+    }
+
+    .price__trend {
+      height: 120px;
+    }
+
+    .price__content {
+      line-height: 36px;
+      .price__content__label {
+        color: #869099;
+      }
+    }
+  }
+}
