@@ -24,7 +24,9 @@
     }
 
     .el-card__body {
-      padding: 0;
+      border: 1px solid #d8d8d8;
+      border-radius: 5px;
+      padding: 20px;
 
       img {
         width: 100%;
