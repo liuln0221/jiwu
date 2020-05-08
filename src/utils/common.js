@@ -16,5 +16,24 @@ export const Common = {
       }
       return a;
     }
+  },
+  /**
+   * @function arrTwoDimensional 将数组分割为二维数组
+   */
+  arrTwoDimensional: (store = [], num) => {
+    let arr = [];
+      const result = [];
+      store.forEach((item, index) => {
+        const i = index + 1;
+        if ((i % num !== 0 || i === 1) && i !== store.length) {
+          arr.push(item);
+        } else {
+          arr.push(item);
+          result.push(arr);
+          arr = [];
+        }
+      });
+      console.log(result);
+      return result;
   }
 };

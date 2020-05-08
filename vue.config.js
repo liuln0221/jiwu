@@ -6,7 +6,7 @@ const hosthttp = 'http://192.168.20.98';
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/jiwu',
   devServer: {
-    port: 5003,
+    port: 5004,
     proxy: {
       '/(auth|message|statistic|product|search|rack|monitor|order|workOrder|globalSummary|workflow|infraAsset|resource)': {
         target: hosthttp

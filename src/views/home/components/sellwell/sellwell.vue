@@ -1,6 +1,6 @@
 <template>
   <div class="sellwell">
-    <el-card class="box-card" shadow="never">
+    <el-card shadow="never">
       <div slot="header">
         <span>热销新盘</span>
         <el-button type="text">更多推荐<i class="el-icon-arrow-right"></i></el-button>

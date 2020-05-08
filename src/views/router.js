@@ -6,6 +6,7 @@ Vue.use(Router)
 import Layout from '@/layout/layout.vue';
 
 import homeRouters from './home/router';
+import newHouseRouters from './newhouse/router';
 
 
 const routes = [
@@ -14,7 +15,8 @@ const routes = [
     component: Layout,
     redirect: '/home',
     children: [
-      ...homeRouters
+      ...homeRouters,
+      ...newHouseRouters
     ]
   }
 ];

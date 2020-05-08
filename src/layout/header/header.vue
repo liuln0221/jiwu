@@ -20,11 +20,14 @@
             :index="menu.name"
             :style="menu.children && menu.children.length > 0 ? 'padding: 0' : ''"
           >
-            <el-submenu v-if="menu.children && menu.children.length > 0" :index="menu.name">
-              <template slot="title">{{ menu.label }}</template>
-              <el-menu-item v-for="submenu in menu.children" :key="submenu.name" :index="submenu.name">{{ submenu.label }}</el-menu-item>
+            <el-submenu v-if="menu.children && menu.children.length > 0" :index="menu.name" popper-class="header__popper">
+              <template slot="title"><router-link :to="menu.name">{{ menu.label }}</router-link></template>
+              <el-menu-item v-for="submenu in menu.children" :key="submenu.name" :index="submenu.name">
+                <router-link :to="submenu.name">{{ submenu.label }}</router-link>
+              </el-menu-item>
             </el-submenu>
-            <span v-else>{{ menu.label }}</span>
+            <!-- <span v-else>{{ menu.label }}</span> -->
+            <router-link :to="menu.name" v-else>{{ menu.label }}</router-link>
           </el-menu-item>
         </el-menu>
       </el-col>

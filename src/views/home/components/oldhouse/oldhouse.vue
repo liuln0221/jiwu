@@ -1,0 +1,24 @@
+<template>
+  <div class="oldhouse">
+    <el-card shadow="never">
+      <div slot="header">
+        <span>精选二手房</span>
+        <el-button type="text">更多<i class="el-icon-arrow-right"></i></el-button>
+      </div>
+      <el-carousel height="260px" indicator-position="outside">
+        <el-carousel-item v-for="house in houses" :key="house.name">
+          <el-row :gutter="20">
+            <el-col :span="6" v-for="item in house" :key="item.name">
+              <el-image :src="item.src"></el-image>
+              <div class="oldhouse__detail">{{ item.title }}-{{item.door}}-{{item.area}}㎡</div>
+            </el-col>
+          </el-row>
+        </el-carousel-item>
+      </el-carousel>
+    </el-card>
+  </div>
+</template>
+
+<script src="./oldhouse"></script>
+
+<style lang="scss" scoped src="./oldhouse.scss"></style>

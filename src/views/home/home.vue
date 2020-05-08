@@ -12,10 +12,12 @@
     <new-house></new-house>
     <!-- 置业顾问 -->
     <adviser></adviser>
-    <!-- 知识库 -->
-    <div>知识库</div>
     <!-- 精选二手房 -->
-    <div>精选二手房</div>
+    <old-house></old-house>
+    <!-- 房产咨询 -->
+    <consultation></consultation>
+    <!-- 知识库 -->
+    <knowledge-base></knowledge-base>
   </div>
 </template>
 

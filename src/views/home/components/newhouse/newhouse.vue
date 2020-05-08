@@ -1,6 +1,6 @@
 <template>
   <div class="newhouse">
-    <el-card class="box-card" shadow="never">
+    <el-card shadow="never">
       <div slot="header">
         <div class="newhouse__header">
         <span>新房</span>

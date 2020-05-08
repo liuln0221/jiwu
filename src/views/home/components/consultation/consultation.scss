@@ -1,0 +1,61 @@
+.consultation {
+  margin-top: 20px;
+
+  .el-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    line-height: 24px;
+    padding: 0 12px;
+    background-color: rgba(0,0,0,.6);
+    border-color: rgba(0,0,0,.6);
+    border-radius: 2px;
+    color: #fff;
+  }
+
+  .consultation__headline {
+    .el-carousel {
+      .el-carousel__item {
+        height: 340px;
+        padding-bottom: 60px;
+
+        .el-image {
+          width: 100%;
+          height: 100%;
+        }
+
+        .consultation__headline__name {
+          font-size: 24px;
+          padding-bottom: 8px;
+        }
+
+        .consultation__headline__detail {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+
+  .consultation__info {
+    .el-link {
+      display: block;
+    
+      .consultation__info__text {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e4e4e4;
+        height: 79px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .el-image {
+        height: 160px;
+      }
+    }
+  }
+}

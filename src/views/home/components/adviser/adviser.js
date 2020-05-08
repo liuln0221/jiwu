@@ -9,7 +9,7 @@ export default {
           resSpeed: 5,
           resRate: 0.97,
           ServicePersonNum: 126,
-          img: 'http://img5-build.jiwu.com/album/manual/2020/04/10/114221026394.jpg/pc590x400'
+          img: 'http://img-other.jiwu.com/apic/2020/03/24/12450504448.jpg/pc1920x360'
         },
         {
           id: 100002,
@@ -17,7 +17,7 @@ export default {
           resSpeed: 5,
           resRate: 0.97,
           ServicePersonNum: 126,
-          img: 'http://img5-build.jiwu.com/album/manual/2020/04/10/114221026394.jpg/pc590x400'
+          img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
         }
       ]
     };

@@ -1,0 +1,43 @@
+.oldhouse {
+  margin-top: 20px;
+
+  /deep/.el-carousel {
+    .el-carousel__item {
+      .el-col {
+        height: 260px;
+        padding-bottom: 40px;
+
+        .el-image {
+          height: 100%;
+          width: 100%;
+        }
+
+        .oldhouse__detail {
+          font-size: 16px;
+          padding: 10px 0 0;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .el-carousel__indicators {
+      .el-carousel__indicator {
+        .el-carousel__button {
+          width: 6px;
+          height: 6px;
+          border-radius: 3px;
+        }
+
+        &.is-active {
+          .el-carousel__button {
+            width: 26px;
+            background: #47b3e3;
+          }
+        }
+      }
+    }
+  }
+}
