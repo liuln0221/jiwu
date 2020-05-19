@@ -22,22 +22,5 @@
         }
       }
     }
-
-    .el-carousel__indicators {
-      .el-carousel__indicator {
-        .el-carousel__button {
-          width: 6px;
-          height: 6px;
-          border-radius: 3px;
-        }
-
-        &.is-active {
-          .el-carousel__button {
-            width: 26px;
-            background: #47b3e3;
-          }
-        }
-      }
-    }
   }
 }

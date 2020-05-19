@@ -1,7 +1,90 @@
 .el-button {
   color: inherit;
+  border-radius: 0;
   &:hover {
     color: #47b3e3;
+    background: #fff;
+  }
+}
+
+.el-link.el-link--default {
+  color: inherit;
+  &:hover {
+    color: #47b3e3;
+  }
+}
+
+.el-tag {
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  color: #869099;
+  background: none;
+}
+
+.el-tag+.el-tag {
+  margin-left: 5px;
+}
+
+.el-tabs {
+  .el-tabs__header {
+    .el-tabs__item {
+      &.is-active {
+        color: #47b3e3;
+        border-top-color: 1px solid #47b3e3;
+      }
+
+      &:not(.is-disabled):hover {
+        color: #47b3e3;
+      }
+    }
+  }
+}
+
+.el-checkbox {
+  .el-checkbox__inner {
+    &:hover {
+      border-color: #47b3e3;
+    }
+  }
+
+  .el-checkbox__input.is-checked {
+    .el-checkbox__inner {
+      background-color: #47b3e3;
+    }
+  }
+}
+
+.el-carousel {
+  .el-carousel__indicators {
+    .el-carousel__indicator {
+      .el-carousel__button {
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+      }
+
+      &.is-active {
+        .el-carousel__button {
+          width: 26px;
+          background: #47b3e3;
+        }
+      }
+    }
+  }
+}
+
+.el-radio-group {
+  .el-radio {
+    .el-radio__input {
+      display: none;
+    }
+
+    &.is-checked {
+      .el-radio__label {
+        font-weight: bold;
+        color: #47b3e3;
+      }
+    }
   }
 }
 
@@ -59,5 +142,12 @@
     background: rgba(255,255,255,.97);
     box-shadow: none;
     color: #555;
+  }
+}
+
+// 新房下拉框弹出框样式
+.building__popper {
+  .el-select-dropdown__item {
+    font-size: 12px;
   }
 }

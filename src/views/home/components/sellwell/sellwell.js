@@ -13,6 +13,7 @@ export default {
         {
           name: 'tianrui',
           title: '天瑞宸章',
+          detail: '大兴区荣华南路荣华鑫泰大厦4号楼南侧1-2层',
           price: 51000,
           src: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
         },

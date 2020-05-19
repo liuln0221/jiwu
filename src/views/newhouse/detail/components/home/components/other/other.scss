@@ -1,0 +1,45 @@
+.other {
+  margin-top: 20px;
+
+  /deep/.el-card {
+    .el-card__header {
+      .el-button {
+        padding: 10px 0 0 0;
+        color: #869099;
+        &:hover {
+          color: #606266;
+        }
+      }
+    }
+
+    .el-card__body {
+      display: flex;
+
+      .body {
+        width: calc(20% - 16px);
+
+        .el-image {
+          height: 160px;
+          margin-bottom: 10px;
+        }
+
+        .el-link {
+          line-height: 24px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        .price {
+          height: 18px;
+          margin: 8px 0 12px;
+          color: #ff6263;
+          line-height: 18px;
+        }
+      }
+
+      .body+.body {
+        margin-left: 20px;
+      }
+    }
+  }
+}

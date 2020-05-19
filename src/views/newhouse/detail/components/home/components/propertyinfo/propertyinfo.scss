@@ -1,0 +1,15 @@
+.property-info {
+  margin-top: 20px;
+
+  .el-card {
+    .el-card__header {
+      .el-button {
+        padding: 10px 0 0 0;
+        color: #869099;
+        &:hover {
+          color: #606266;
+        }
+      }
+    }
+  }
+}

@@ -20,7 +20,7 @@ export const Common = {
   /**
    * @function arrTwoDimensional 将数组分割为二维数组
    */
-  arrTwoDimensional: (store = [], num) => {
+  arrTwoDimensional: (store = [], num = 1) => {
     let arr = [];
       const result = [];
       store.forEach((item, index) => {

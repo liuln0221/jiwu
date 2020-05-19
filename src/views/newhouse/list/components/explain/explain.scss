@@ -1,0 +1,27 @@
+.explain {
+  width: 240px;
+  padding: 20px 30px;
+  background-color: #f8f8f8;
+
+  .explain__title {
+    color: #3b4144;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .explain__info {
+    display: flex;
+    padding: 15px 0;
+
+    i {
+      font-size: 35px;
+      margin-right: 20px;
+      color: #47b3e3;
+    }
+
+    .explain__info__desc {
+      color: #869099;
+      font-size: 12px;
+    }
+  }
+}

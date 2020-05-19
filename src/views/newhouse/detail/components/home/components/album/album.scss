@@ -1,0 +1,50 @@
+.album {
+  margin-top: 20px;
+
+  /deep/.el-card {
+    .el-card__header {
+      .header {
+        .title {
+          margin-right: 20px;
+        }
+        .fliter {
+          font-size: 14px !important;
+          font-weight: normal !important;
+        }
+
+        .fliter+.fliter {
+          margin: 0 !important;
+          &::before {
+            content: '|';
+            color: #ddd;
+            margin: 0 15px;
+          }
+        }
+      }
+
+      .el-button {
+        padding: 10px 0 0 0;
+        color: #869099;
+        &:hover {
+          color: #606266;
+        }
+      }
+    }
+
+    .el-card__body {
+      .el-carousel {
+        .el-carousel__item {
+          .el-image {
+            display: inline-block;
+            width: calc(20% - 16px);
+            height: 100%;
+          }
+
+          .el-image+.el-image {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}

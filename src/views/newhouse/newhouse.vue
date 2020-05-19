@@ -1,3 +1,7 @@
 <template>
-  <div>新房</div>
+  <div class="newHouse">
+    <router-view />
+  </div>
 </template>
+
+<script src="./newhouse"></script>

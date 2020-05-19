@@ -1,0 +1,115 @@
+.list {
+  & > div {
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    clear: both;
+    padding: 30px 0;
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+
+    .list__content {
+      display: flex;
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .list__image {
+      margin-right: 30px;
+
+      .el-image {
+        width: 216px;
+        height: 162px;
+      }
+    }
+
+    .list__info {
+      width: 100%;
+      margin-right: 5px;
+
+      .list__info__name-price {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .list__info__name {
+        color: #3b4144;
+        margin-right: 10px;
+        height: 30px;
+        max-width: 320px;
+        overflow: hidden;
+        font-weight: bold;
+        white-space: nowrap;
+        font-size: 24px;
+      }
+
+      .list__info__preferential {
+        i {
+          display: inline-block;
+          line-height: 20px;
+          font-style: normal;
+          padding: 0 5px;
+          background: #FF6263;
+          color: #fff;
+          border-radius: 3px 0 0 3px;
+        }
+
+        span {
+          display: inline-block;
+          border: 1px solid #FF6263;
+          border-radius: 0 3px 3px 0;
+          border-left: 0;
+          line-height: 18px;
+          padding: 0 5px;
+          font-size: 12px;
+          color: #FF6263;
+        }
+      }
+
+      .list__info__price {
+        color: #FF6263;
+        font-size: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: right;
+      }
+
+      .list__info__local {
+        display: flex;
+        justify-content: space-between;
+        line-height: 50px;
+        font-size: 14px;
+        overflow: hidden;
+
+        span {
+          color: #869099;
+        }
+
+        .el-button {
+          color: #47b3e3;
+        }
+      }
+
+      .list__info__tel {
+        font-size: 16px;
+        color: #869099;
+
+        i {
+          margin-right: 10px;
+        }
+
+        .list__info__tel__relay {
+          font-size: 14px;
+          padding: 0 5px;
+        }
+      }
+
+      .list__info__tag {
+        margin-top: 20px;
+      }
+    }
+  }
+}

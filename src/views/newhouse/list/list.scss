@@ -1,0 +1,116 @@
+.list {
+  margin-top: 20px;
+
+  /deep/.el-button {
+    font-size: inherit;
+  }
+
+  /deep/.el-tabs {
+    font-size: 12px !important;
+    .el-tabs__header {
+      margin: 0;
+      // padding-bottom: 15px;
+      .el-tabs__nav-wrap::after {
+        height: 1px;
+      }
+      .el-tabs__nav {
+        border: none;
+        border-bottom-color: #fff;
+
+        .el-tabs__active-bar {
+          width: 150px !important;
+          height: 2px;
+          background-color: #fff;
+          display: none;
+        }
+      
+        .el-tabs__item {
+          text-align: center;
+          width: 150px;
+          padding: 0;
+          &.is-active {
+            position: relative;
+            border: 1px solid #eee;
+            border-top-color: #47b3e3;
+            border-bottom: none;
+
+            &::after {
+              content: '';
+              display: block;
+              width: 100%;
+              height: 1px;
+              background: #fff;
+              margin-top: -1px;
+            }
+          }
+        }
+      }
+    }
+
+    .el-tabs__content {
+      padding: 15px 30px;
+      border: 1px solid #eee;
+    }
+  }
+
+  .list__selected {
+    font-size: 12px !important;
+    .el-button {
+      &.is-plain {
+        padding: 4px 10px;
+        color: #47b3e3;
+        border-color: #47b3e3;
+
+        &:hover {
+          color: #fff;
+          background-color: #47b3e3;
+        }
+
+        i {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .list__sort {
+    font-size: 12px !important;
+    .el-button+.el-button {
+      margin-left: 35px;
+    }
+  }
+
+  .list__selected,
+  .list__sort {
+    height: 49px;
+    line-height: 49px;
+    margin: 0 !important;
+    padding: 0 25px;
+    border: 1px solid #eee;
+    border-top: 0;
+    background: #f8f8f8;
+  }
+
+  .list__total {
+    float: right;
+  }
+
+  /deep/.list__label {
+    display: inline-block;
+    width: 80px;
+    span {
+      display: inline-block;
+      text-align-last: justify;
+      text-justify: distribute;
+      width: 50px;
+    }
+
+    &::after {
+      content: '：';
+    }
+  }
+
+  .list__content {
+    margin-top: 10px;
+  }
+}

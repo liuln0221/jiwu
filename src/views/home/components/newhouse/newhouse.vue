@@ -3,17 +3,17 @@
     <el-card shadow="never">
       <div slot="header">
         <div class="newhouse__header">
-        <span>新房</span>
-        <!-- 区域 -->
-        <div class="newhouse__tab">
-          <el-link
-            :underline="false"
-            v-for="region in regions"
-            :key="region.id"
-            :class="region.active ? 'active' : ''"
-            @mouseover.native="mouseover(region)"
-          >{{ region.name }}<i></i></el-link>
-        </div>
+          <span>新房</span>
+          <!-- 区域 -->
+          <div class="newhouse__tab">
+            <el-link
+              :underline="false"
+              v-for="region in regions"
+              :key="region.id"
+              :class="region.active ? 'active' : ''"
+              @mouseover.native="mouseover(region)"
+            >{{ region.name }}<i></i></el-link>
+          </div>
         </div>
         <el-button type="text">更多推荐<i class="el-icon-arrow-right"></i></el-button>
       </div>

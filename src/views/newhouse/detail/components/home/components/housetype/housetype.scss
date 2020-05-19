@@ -1,0 +1,52 @@
+.house-type {
+  margin-top: 20px;
+
+  .el-card {
+    .el-card__header {
+      .header {
+        span {
+          color: #869099;
+          font-size: 12px;
+          font-weight: normal;
+          margin-left: 10px;
+        }
+      }
+
+      .el-button {
+        padding: 10px 0 0 0;
+        color: #869099;
+        &:hover {
+          color: #606266;
+        }
+      }
+    }
+
+    /deep/.el-card__body {
+      .el-carousel {
+        .el-carousel__item {
+          display: flex;
+
+          /deep/.el-row {
+            width: 50%;
+
+            .el-col {
+              height: 100%;
+              .el-image {
+                height: 100%;
+              }
+
+              .el-link {
+                font-size: 16px;
+                font-weight: bold;
+              }
+
+              p {
+                margin: 10px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

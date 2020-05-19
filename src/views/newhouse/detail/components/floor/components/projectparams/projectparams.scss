@@ -1,0 +1,14 @@
+.project-params {
+  margin-top: 40px;
+  /deep/.el-card {
+    .el-card__header {
+      .el-button {
+        color: #47b3e3;
+
+        span {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

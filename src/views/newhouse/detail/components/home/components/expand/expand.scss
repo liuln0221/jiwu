@@ -1,0 +1,17 @@
+.expand {
+  /deep/.el-tabs {
+    .el-tabs__header {
+      .el-tabs__item {
+        color: #4c4948;
+
+        &:hover {
+          color: #4c4948;
+        }
+
+        &.is-active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

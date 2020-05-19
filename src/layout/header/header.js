@@ -18,5 +18,8 @@ export default {
     ...mapState({
       location: state => state.app.location // 当前城市
     })
+  },
+  mounted() {
+    this.activeIndex = this.$route.matched[1].name;
   }
 }

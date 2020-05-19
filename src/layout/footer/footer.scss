@@ -23,6 +23,10 @@
     .footer__links__title {
       width: 78px;
     }
+
+    .el-button {
+      font-size: 12px;
+    }
   }
 
   .footer__conyfiv {
@@ -31,7 +35,7 @@
     color: #869099;
     line-height: 22px;
 
-    .el-link {
+    /deep/.el-link {
       font-size: inherit;
       color: inherit;
       top: -2px;
@@ -40,8 +44,13 @@
         color: #47b3e3;
       }
 
+      .el-link--inner {
+        display: inline-flex;
+      }
+
       img {
         margin: 1px 0;
+        margin-left: 5px;
       }
     }
 

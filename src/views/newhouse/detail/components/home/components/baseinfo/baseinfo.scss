@@ -1,0 +1,263 @@
+.base-info {
+  margin-top: 20px;
+  .el-image {
+    height: 360px;
+  }
+
+  .base-info__image {
+    display: flex;
+    justify-content: space-between;
+
+    .el-button {
+      width: 29px;
+      background: #3b4144;
+      color: #fff;
+      padding: 0;
+
+      i {
+        font-size: 18px;
+      }
+    }
+
+    ul {
+      display: flex;
+      height: 75px;
+      width: 415px;
+      margin: 0 5px 0 0;
+      padding: 0;
+      overflow: hidden;
+
+      li {
+        list-style-type: none;
+        .el-image {
+          height: 100%;
+          width: 100px;
+        }
+      }
+
+      li+li {
+        margin-left: 5px;
+      }
+    }
+
+    .el-carousel {
+      width: 100%;
+      margin: 0 5px;
+      .el-carousel__item {
+    //     position: relative;
+        opacity: .5;
+        width: 100px;
+
+    //     &.active {
+    //       opacity: 1;
+    //     }
+
+        .el-image {
+          height: 100%;
+        }
+
+    //     .base-info__image__desc {
+    //       position: absolute;
+    //       bottom: 0;
+    //       width: 100%;
+    //       text-align: center;
+    //       color: #fff;
+    //       background: rgba(0,0,0,.5);
+    //     }
+      }
+    }
+  }
+
+  .base-info__price {
+    line-height: 40px;
+    .price {
+      font-size: 24px;
+      color: #ff6263;
+      max-width: 310px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .el-button {
+      position: relative;
+      top: -5px;
+      line-height: 20px;
+      color: #47b3e3;
+      border: #47b3e3 1px solid;
+      padding: 0 5px;
+      border-radius: 2px;
+      margin-left: 20px;
+    }
+  }
+
+  .base-info__price-desc {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .base-info__service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1px;
+    padding: 8px 10px;
+    font-size: 16px;
+    color: #ff6263;
+    background: #feefef;
+
+    & > div {
+      display: flex;
+      align-items: center;
+
+      i {
+        font-size: 32px;
+        margin-right: 10px;
+      }
+    }
+
+    .el-button {
+      height: 30px;
+      padding: 0 10px;
+      background: #ff6263;
+      color: #fff;
+      border: none;
+    }
+  }
+
+  .base-info__sales {
+    line-height: 30px;
+    margin-top: 10px;
+  }
+
+  .base-info__onePrice {
+    line-height: 30px;
+
+    .el-link {
+      top: -1px;
+      color: #47b3e3;
+
+      :hover {
+        color: #47b3e3;
+      }
+    }
+  }
+
+  .base-info__primary {
+    .el-link {
+      top: -1px;
+    }
+
+    .el-button {
+      color: #47b3e3;
+      margin-left: 30px;
+      height: 30px;
+    }
+
+    .el-link+.el-link,
+    .el-button+.el-button {
+      margin-left: 10px;
+    }
+  }
+
+  .base-info__tel {
+    border-radius: 2px;
+    height: 55px;
+    background: #f7f7f7;
+    position: relative;
+    padding: 20px 15px;
+    margin-top: 10px;
+
+    .tel {
+      color: #ff6263;
+      font-size: 28px;
+      margin-top: 1px;
+      font-weight: 600;
+    }
+
+    .relay {
+      font-size: 16px;
+      margin-left: 6px;
+      margin-right: 6px;
+      vertical-align: middle;
+      font-weight: normal;
+    }
+  }
+
+  .base-info__adviser {
+    font-size: 12px;
+    padding: 0 10px;
+    height: 439px;
+    background: #f7f7f7;
+
+    .image {
+      display: flex;
+      padding: 15px 0;
+
+      .el-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+    }
+
+    .name {
+      display: flex;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .el-tag {
+      margin: 5px 5px 5px 0;
+      border-color: #fd8746;
+      color: #fd8746;
+
+      &:first-child {
+        border-color: #e7ac26;
+        color: #e7ac26;
+      }
+
+      &:last-child {
+        border-color: #47b3e3;
+        color: #47b3e3;
+      }
+    }
+
+    p {
+      display: flex;
+      margin-top: 5px;
+      margin-bottom: 0;
+      
+      .label {
+        display: inline-block;
+        width: 65px;
+        span {
+          display: inline-block;
+          text-align-last: justify;
+          text-justify: distribute;
+          width: 50px;
+        }
+    
+        &::after {
+          content: '：';
+        }
+      }
+
+      .content {
+        display: inline-block;
+        width: calc(100% - 65px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .resSpeed {
+        color: #47b3e3;
+      }
+
+      .gray {
+        color: #869099;
+      }
+    }
+  }
+}
