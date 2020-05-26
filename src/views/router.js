@@ -7,6 +7,7 @@ import Layout from '@/layout/layout.vue';
 
 import homeRouters from './home/router';
 import newHouseRouters from './newhouse/router';
+import consultationRouters from './consultation/router';
 
 
 const routes = [
@@ -16,7 +17,8 @@ const routes = [
     redirect: '/home',
     children: [
       ...homeRouters,
-      ...newHouseRouters
+      ...newHouseRouters,
+      ...consultationRouters
     ]
   }
 ];

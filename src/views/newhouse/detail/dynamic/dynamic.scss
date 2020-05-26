@@ -1,0 +1,25 @@
+.dynamic {
+  margin-top: 20px;
+  
+  .el-card {
+    /deep/.el-card__header {
+      .header {
+        .dynamic__disclaimer {
+          margin-right: 10px;
+          color: #869099;
+        }
+
+        .dynamic__notice {
+          line-height: 18px;
+          padding: 0 5px;
+          color: #47b3e3;
+          border-color: #47b3e3;
+  
+          &:hover {
+            color: #47b3e3 !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -83,6 +83,10 @@
       background-color: inherit;
       color: #fff;
       font-size: 16px;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 
@@ -111,6 +115,52 @@
   
       .el-card__body {
         padding: 30px 0;
+
+        .newHouse-detail__dynamic {
+          .title {
+            display: flex;
+            margin-bottom: 10px;
+      
+            .el-link {
+              font-size: 16px;
+              max-width: 770px;
+              display: inline-block;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              font-weight: bold;
+            }
+      
+            div {
+              color: #869099;
+              margin-left: 20px;
+              line-height: 21px;
+            }
+          }
+      
+          .info {
+            border-bottom: 1px #eee solid;
+            padding-bottom: 16px;
+
+            .el-link {
+              color: #869099;
+              line-height: 24px;
+      
+              :hover {
+                color: #869099;
+              }
+            }
+      
+            .el-button {
+              color: #47b3e3;
+              padding: 0;
+            }
+          }
+        }
+
+        .newHouse-detail__dynamic+.newHouse-detail__dynamic {
+          margin-top: 20px;
+        }
       }
     }
   }

@@ -2,6 +2,8 @@ import NewHouse from './newhouse.vue';
 import List from './list/list.vue';
 import Detail from './detail/detail.vue';
 
+import NewHouseDetailRouters from './detail/router';
+
 const routes = [
   {
     name: 'newHouse',
@@ -17,7 +19,9 @@ const routes = [
       {
         name: 'newHouseDetail',
         path: ':id/detail',
-        component: Detail
+        component: Detail,
+        redirect: { name: 'newHouseDetailHome' },
+        children: NewHouseDetailRouters
       }
     ]
   }

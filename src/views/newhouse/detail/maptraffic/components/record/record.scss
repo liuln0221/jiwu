@@ -1,0 +1,32 @@
+.record {
+  p {
+    height: 30px;
+    line-height: 30px;
+    background: #f4f4f4;
+    font-size: 12px;
+    text-indent: 20px;
+    margin-top: 12px;
+  }
+
+  .record__list {
+    display: flex;
+    justify-content: space-between;
+
+    .name {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    .distance {
+      color: #869099;
+      // width: 100px;
+      white-space: nowrap;
+    }
+  }
+}

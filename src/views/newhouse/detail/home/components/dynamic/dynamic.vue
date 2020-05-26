@@ -10,7 +10,7 @@
             </span>
             <el-button type="text">{{ data.name }}动态<i class="el-icon-arrow-right"></i></el-button>
           </div>
-          <div>
+          <div class="newHouse-detail__dynamic">
             <div class="title">
               <el-link :underline="false">梵悦108，国贸CBD精装现房在售，在售均价约10万元/平</el-link>
               <div>{{ data.updateTime | dateStrToFormat('YYYY-MM-DD') }}</div>

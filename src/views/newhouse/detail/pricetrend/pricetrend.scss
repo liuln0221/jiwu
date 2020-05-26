@@ -1,0 +1,81 @@
+.pricetrend {
+  .price-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .price {
+      font-size: 28px;
+      color: #ff6263;
+      margin-right: 20px;
+    }
+
+    .el-button {
+      font-size: 12px;
+    }
+
+    .el-button+.el-button {
+      margin-left: 20px;
+    }
+
+    .phone {
+      line-height: 43px;
+      .tel {
+        color: #ff6263;
+        font-size: 16px;
+        margin-top: 1px;
+      }
+
+      .relay {
+        margin-left: 6px;
+        margin-right: 6px;
+        vertical-align: middle;
+        font-size: 12px;
+        font-weight: normal;
+        color: #333;
+      }
+    }
+  }
+
+  .legend {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    border-bottom: 1px dashed #ddd;
+    background: #f9f9f9;
+    position: relative;
+    line-height: 60px;
+
+    .el-link {
+      margin: 0 20px;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    .el-dropdown {
+      margin-right: 20px;
+    }
+  }
+
+  .chart {
+    height: 300px;
+  }
+
+  .table {
+    margin: 40px 0;
+    
+    /deep/.el-table {
+      .el-table__header {
+        tr {
+          th {
+            color: #869099;
+            background: #f8f8f8;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}

@@ -37,12 +37,13 @@
         v-for="menu in menus"
         :key="menu.name"
         :index="menu.name"
-      >{{ menu.label }}</el-menu-item>
+      >
+        <span v-if="menu.name === 'phone'"></span>
+        <router-link v-else :to="{ name: menu.name }">{{ menu.label }}</router-link>
+      </el-menu-item>
     </el-menu>
     <div class="newHouse-detail__contet">
-      <home v-if="activeIndex === 'home'" :data="data"></home>
-      <floor v-else-if="activeIndex === 'floor'" :data="data"></floor>
-      <house-type v-else-if="activeIndex === 'houseType'" :data="data"></house-type>
+      <router-view />
     </div>
   </div>
 </template>

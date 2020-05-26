@@ -24,9 +24,9 @@
             <el-row :gutter="20">
               <el-col :span="12" class="img__first">
                 <img :src="house[0].src" />
-                <div class="img__first__name">{{ house[0].title }}</div>
+                <div class="img__first__name">{{ house[0].label }}</div>
                 <div class="img__first__detail">
-                  <div class="img__first__detail__text">{{ house[0].detail }}</div>
+                  <div class="img__first__detail__text">{{ house[0].local }}</div>
                   <div class="img__first__detail__price">{{ house[0].price }}元/平米</div>
                 </div>
               </el-col>
@@ -34,7 +34,7 @@
                 <el-col :span="12" v-for="item in house.slice(1, 5)" :key="item.name">
                   <img :src="item.src" />
                   <div class="img__more__detail">
-                    <div class="img__more__detail__name">{{ item.title }}</div>
+                    <div class="img__more__detail__name">{{ item.label }}</div>
                     <div class="img__more__detail__price">{{ item.price }}元/平米</div>
                   </div>
                 </el-col>

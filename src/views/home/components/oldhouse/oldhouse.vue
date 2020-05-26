@@ -10,7 +10,7 @@
           <el-row :gutter="20">
             <el-col :span="6" v-for="item in house" :key="item.name">
               <el-image :src="item.src"></el-image>
-              <div class="oldhouse__detail">{{ item.title }}-{{item.door}}-{{item.area}}㎡</div>
+              <div class="oldhouse__detail">{{ item.label }}-{{item.door}}-{{item.area}}㎡</div>
             </el-col>
           </el-row>
         </el-carousel-item>

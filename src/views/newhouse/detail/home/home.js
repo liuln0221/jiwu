@@ -1,3 +1,5 @@
+import { data } from '../detail.class';
+
 import BaseInfo from './components/baseinfo/baseinfo.vue';
 import Dynamic from './components/dynamic/dynamic.vue';
 import HouseType from './components/housetype/housetype.vue';
@@ -15,5 +17,9 @@ export default {
   components: {
     BaseInfo, Dynamic, HouseType, PropertyInfo, Periphery, Album, Price, Other, SamePrice, District, Expand
   },
-  props: [ 'data' ]
+  data() {
+    return {
+      data
+    };
+  }
 }

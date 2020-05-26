@@ -1,0 +1,33 @@
+.dynamic {
+  margin-top: 50px;
+
+  /deep/.el-card__header {
+    .header {
+      .el-button {
+        line-height: 18px;
+        padding: 0 5px;
+        color: #47b3e3;
+        border-color: #47b3e3;
+
+        &:hover {
+          color: #47b3e3 !important;
+        }
+      }
+    }
+
+    .el-button {
+      padding: 10px 0 0 0;
+      color: #869099;
+      &:hover {
+        color: #606266;
+      }
+    }
+  }
+
+  .home__consultation {
+    i {
+      color: #47b3e3;
+      margin-right: 5px;
+    }
+  }
+}

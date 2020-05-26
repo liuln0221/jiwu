@@ -66,14 +66,14 @@ const data = {
 };
 
 const menus = [
-  { name: 'home', label: '售楼处主页' },
-  { name: 'floor', label: '楼盘信息' },
-  { name: 'houseType', label: '户型图' },
-  { name: 'album', label: '相册' },
-  { name: 'mapTraffic', label: '地图交通' },
-  { name: 'priceTrend', label: '价格走势' },
-  { name: 'floorDynamic', label: '楼盘动态' },
-  { name: 'qa', label: '有问必答' },
+  { name: 'newHouseDetailHome', label: '售楼处主页' },
+  { name: 'newHouseDetailFloor', label: '楼盘信息' },
+  { name: 'newHouseDetailHouseType', label: '户型图' },
+  { name: 'newHouseDetailAlbum', label: '相册' },
+  { name: 'newHouseDetailMapTraffic', label: '地图交通' },
+  { name: 'newHouseDetailPriceTrend', label: '价格走势' },
+  { name: 'newHouseDetailDynamic', label: '楼盘动态' },
+  { name: 'newHouseDetailHomeAa', label: '有问必答' },
   { name: 'phone', label: '手机看盘' }
 ];
 

@@ -1,15 +1,17 @@
 import { mapState } from 'vuex';
 
+import { data } from '../detail.class';
+
 import ImageInfo from '@/components/imageInfo.vue'
-import Disclaimer from '@/views/newhouse/detail/common/disclaimer/disclaimer.vue';
-import Expand from '@/views/newhouse/detail/common/expand/expand.vue';
+import Disclaimer from '@/views/newhouse/detail/components/disclaimer/disclaimer.vue';
+import Expand from '@/views/newhouse/detail/components/expand/expand.vue';
 
 export default {
   name: 'houseType',
-  props: [ 'data' ],
   components: { ImageInfo, Disclaimer, Expand },
   data() {
     return {
+      data,
       filter: '',
       houseType: [
         { name: '', label: '全部', num: 5, active: true },

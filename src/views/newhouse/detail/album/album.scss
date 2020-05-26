@@ -1,0 +1,34 @@
+.album {
+  /deep/.image-info {
+    height: 130px;
+  }
+
+  .el-card {
+    margin-top: 20px;
+
+    .el-card__header {
+      .el-button {
+        padding: 10px 0 0 0;
+        color: #869099;
+        &:hover {
+          color: #606266;
+        }
+      }
+    }
+
+    /deep/.el-card__body {
+      margin: 0 -10px;
+      .el-image {
+        width: calc(20% - 20px);
+        height: 170px;
+        margin: 0 10px 10px;
+      }
+    }
+  }
+
+  .album__desc {
+    color: #869099;
+    line-height: 24px;
+    margin: 0 0 50px 0;
+  }
+}
