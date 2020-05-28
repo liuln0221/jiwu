@@ -14,7 +14,7 @@ const menus = [
     ]
   },
   { name: 'oldHouse', label: '二手房' },
-  { name: 'consultation', label: '咨询' },
+  { name: 'information', label: '资讯' },
   {
     name: 'guide',
     label: '指南',

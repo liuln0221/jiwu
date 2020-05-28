@@ -1,6 +1,6 @@
 <template>
   <div class="house-type">
-    <el-card>
+    <el-card shadow="never">
       <div slot="header" class="clearfix">
         <span class="header">
           <el-link :underline="false">户型图</el-link>

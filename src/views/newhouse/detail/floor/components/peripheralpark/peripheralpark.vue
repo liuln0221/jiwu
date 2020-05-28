@@ -1,6 +1,6 @@
 <template>
   <div class="peripheral-park">
-    <el-card header="周边设施">
+    <el-card header="周边设施"  shadow="never">
       <p>{{ park }}</p>
     </el-card>
   </div>

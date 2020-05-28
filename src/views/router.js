@@ -5,20 +5,20 @@ Vue.use(Router)
 
 import Layout from '@/layout/layout.vue';
 
-import homeRouters from './home/router';
-import newHouseRouters from './newhouse/router';
-import consultationRouters from './consultation/router';
+import homeRoutes from './home/router';
+import newHouseRoutes from './newhouse/router';
+import informationRoutes from './information/router';
 
 
 const routes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/home',
+    redirect: { name: 'home' },
     children: [
-      ...homeRouters,
-      ...newHouseRouters,
-      ...consultationRouters
+      ...homeRoutes,
+      ...newHouseRoutes,
+      ...informationRoutes
     ]
   }
 ];

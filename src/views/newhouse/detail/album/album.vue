@@ -15,7 +15,7 @@
       <el-button icon="el-icon-upload">上传图片</el-button>
     </div>
     <!-- 效果图 -->
-    <el-card>
+    <el-card shadow="never">
       <div slot="header">
         <el-link :underline="false">效果图</el-link>
         <el-button type="text">更多效果图<i class="el-icon-arrow-right"></i></el-button>
@@ -23,7 +23,7 @@
       <el-image v-for="(item, index) in store" :key="index" :src="item"></el-image>
     </el-card>
     <!-- 实景图 -->
-    <el-card>
+    <el-card shadow="never">
       <div slot="header">
         <el-link :underline="false">实景图</el-link>
         <el-button type="text">更多实景图<i class="el-icon-arrow-right"></i></el-button>
@@ -31,7 +31,7 @@
       <el-image v-for="(item, index) in store" :key="index" :src="item"></el-image>
     </el-card>
     <!-- 配套图 -->
-    <el-card>
+    <el-card shadow="never">
       <div slot="header">
         <el-link :underline="false">配套图</el-link>
         <el-button type="text">更多配套图<i class="el-icon-arrow-right"></i></el-button>
@@ -39,7 +39,7 @@
       <el-image v-for="(item, index) in store" :key="index" :src="item"></el-image>
     </el-card>
     <!-- 楼盘证照 -->
-    <el-card>
+    <el-card shadow="never">
       <div slot="header">
         <el-link :underline="false">楼盘证照</el-link>
         <el-button type="text">更多楼盘证照<i class="el-icon-arrow-right"></i></el-button>
@@ -47,7 +47,7 @@
       <el-image v-for="(item, index) in store" :key="index" :src="item"></el-image>
     </el-card>
     <!-- 位置交通图 -->
-    <el-card>
+    <el-card shadow="never">
       <div slot="header">
         <el-link :underline="false">位置交通图</el-link>
         <el-button type="text">更多位置交通图<i class="el-icon-arrow-right"></i></el-button>

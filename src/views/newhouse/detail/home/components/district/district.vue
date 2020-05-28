@@ -1,6 +1,6 @@
 <template>
   <div class="district">
-    <el-card>
+    <el-card shadow="never">
       <div slot="header" class="clearfix">
         <el-link :underline="false">朝阳楼盘</el-link>
         <el-button type="text">{{ location }}朝阳楼盘<i class="el-icon-arrow-right"></i></el-button>

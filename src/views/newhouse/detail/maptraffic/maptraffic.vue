@@ -21,12 +21,12 @@
       </el-col>
     </el-row>
     <!-- 详细地址 -->
-    <el-card header="详细地址">
+    <el-card header="详细地址" shadow="never">
       <div>楼盘地址：北京市朝阳区建国路乙108号</div>
       <div>售楼处地址：朝阳国贸桥东南角建国路乙108号雅诗阁服务公寓东塔一层</div>
     </el-card>
     <!-- 详细地址 -->
-    <el-card header="周边设施">
+    <el-card header="周边设施" shadow="never">
       <div>交通</div>
     </el-card>
     <!-- 免责声明 -->

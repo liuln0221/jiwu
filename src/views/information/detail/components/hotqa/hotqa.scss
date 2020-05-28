@@ -1,0 +1,27 @@
+.hot-qa {
+  /deep/.el-card {
+    padding-top: 0;
+
+    .el-card__body {
+      padding-top: 10px;
+      .hot-qa__content {
+        display: block;
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        line-height: 34px;
+        color: #3b4144;
+    
+        &:hover {
+          color: #47b3e3;
+        }
+
+        i {
+          color: #ccc;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

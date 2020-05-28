@@ -1,6 +1,6 @@
 <template>
   <div class="project-params">
-    <el-card>
+    <el-card shadow="never">
       <div slot="header">
         <span>项目参数</span>
         <el-button type="text" class="el-icon-plus">公积金查询<i class="el-icon-arrow-right"></i></el-button>

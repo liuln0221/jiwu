@@ -1,6 +1,6 @@
 <template>
   <div class="album">
-    <el-card header="楼盘相册">
+    <el-card header="楼盘相册" shadow="never">
       <div slot="header">
         <div class="header">
           <el-link :underline="false" class="title">楼盘相册</el-link>

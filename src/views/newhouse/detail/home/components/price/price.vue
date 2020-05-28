@@ -1,6 +1,6 @@
 <template>
   <div class="price">
-    <el-card>
+    <el-card shadow="never">
       <div slot="header">
         <el-link :underline="false">{{ data.name }}房价</el-link>
       </div>

@@ -2,7 +2,7 @@
   <div class="dynamic">
     <el-row :gutter="20" class="home__dynamic">
       <el-col :span="18">
-        <el-card>
+        <el-card shadow="never">
           <div slot="header" class="clearfix">
             <span class="header">
               <el-link :underline="false">最新动态</el-link>
@@ -22,9 +22,9 @@
         </el-card>
       </el-col>
       <el-col :span="6">
-        <el-card class="home__consultation" header="咨询">
-          <div v-for="(consultation, index) in consultations" :key="index">
-            <el-link :underline="false"><i class="el-icon-caret-right"></i>{{ consultation.label }}</el-link>
+        <el-card class="home__information" header="咨询"  shadow="never">
+          <div v-for="(information, index) in informations" :key="index">
+            <el-link :underline="false"><i class="el-icon-caret-right"></i>{{ information.label }}</el-link>
           </div>
         </el-card>
       </el-col>

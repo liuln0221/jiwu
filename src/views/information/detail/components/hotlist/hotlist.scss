@@ -1,0 +1,11 @@
+.hot-list {
+  .hot-list__content {
+    line-height: 24px;
+    margin-bottom: 16px;
+    color: #3b4144;
+
+    &:hover {
+      color: #47b3e3;
+    }
+  }
+}

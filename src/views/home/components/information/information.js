@@ -1,5 +1,5 @@
 export default {
-  name: 'consultation',
+  name: 'information',
   data() {
     return {
       headlines: [
@@ -10,7 +10,7 @@ export default {
           src: 'http://img-other.jiwu.com/other/2020/05/06/152203302592.jpg'
         }
       ],
-      consultations: [
+      informations: [
         {
           id: 100001,
           title: '大兴林肯时代商住值得投资吗？',
@@ -43,9 +43,9 @@ export default {
     };
   },
   methods: {
-    mouseover(consultation) {
-      this.consultations.forEach((item, index) => {
-        this.consultations[index].active = consultation.id === item.id;
+    mouseover(information) {
+      this.informations.forEach((item, index) => {
+        this.informations[index].active = information.id === item.id;
       });
     },
   }

@@ -1,4 +1,4 @@
-.consultation {
+.information {
   margin-top: 20px;
 
   .el-button {
@@ -13,7 +13,7 @@
     color: #fff;
   }
 
-  .consultation__headline {
+  .information__headline {
     .el-carousel {
       .el-carousel__item {
         height: 340px;
@@ -24,12 +24,12 @@
           height: 100%;
         }
 
-        .consultation__headline__name {
+        .information__headline__name {
           font-size: 24px;
           padding-bottom: 8px;
         }
 
-        .consultation__headline__detail {
+        .information__headline__detail {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -38,11 +38,11 @@
     }
   }
 
-  .consultation__info {
+  .information__info {
     .el-link {
       display: block;
     
-      .consultation__info__text {
+      .information__info__text {
         display: flex;
         align-items: center;
         border-bottom: 1px solid #e4e4e4;

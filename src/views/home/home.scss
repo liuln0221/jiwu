@@ -2,9 +2,6 @@
   position: relative;
 
   /deep/.el-card {
-    border: none;
-    background: none;
-
     .el-card__header {
       color: #3b4144;
       font-size: 30px;
@@ -14,9 +11,6 @@
       border: none;
 
       & > div {
-        display: flex;
-        justify-content: space-between;
-
         .el-button {
           padding: 20px 0 0 0;
         }
@@ -27,6 +21,7 @@
       border: 1px solid #d8d8d8;
       border-radius: 5px;
       padding: 20px;
+      margin-top: 10px;
 
       img {
         width: 100%;

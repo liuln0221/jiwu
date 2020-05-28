@@ -15,7 +15,7 @@
     <!-- 精选二手房 -->
     <old-house></old-house>
     <!-- 房产咨询 -->
-    <consultation></consultation>
+    <information></information>
     <!-- 知识库 -->
     <knowledge-base></knowledge-base>
   </div>

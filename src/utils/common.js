@@ -35,5 +35,21 @@ export const Common = {
       });
       console.log(result);
       return result;
+  },
+  /**
+   * @function randomArray 随机取出一组不重复的数据
+   */
+  randomArray: (arr, num) => {
+    const result = [];
+    const hash = {};
+    while(num > 0) {
+      const ran = arr[Math.floor(Math.random() * arr.length)];
+      if (!hash[ran.id]) {
+        hash[ran.id] = 1;
+        result.push(ran);
+        num--;
+      }
+    }
+    return result;
   }
-};
+}

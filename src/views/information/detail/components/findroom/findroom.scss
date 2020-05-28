@@ -1,0 +1,56 @@
+.find-room {
+  background: #f6fcff;
+  padding: 20px 40px;
+
+  .title {
+    color: #000;
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    .prom {
+      color: #ed603d;
+    }
+  }
+
+  .el-form-item {
+    margin-bottom: 10px;
+
+    .el-select {
+      width: 100%;
+    }
+    
+    &.city {
+      /deep/.el-select {
+        width: 50%;
+
+        &:first-child {
+          .el-input {
+            .el-input__inner {
+              border-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .submit {
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .el-button {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      line-height: 28px;
+      font-size: 24px;
+      font-weight: bold;
+      white-space: normal;
+      color: #fff;
+      background: #47b3e3;
+      border: none;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.informate {
+  /deep/.el-card {
+    border-bottom: 1px solid #eee;
+
+    .el-card__body {
+      .el-link {
+        .el-image {
+          height: 150px;
+        }
+
+        .desc {
+          position: absolute;
+          bottom: 0;
+          color: #fff;
+          line-height: 21px;
+          padding: 0 20px;
+          margin: 0;
+          background-image: linear-gradient(rgba(102, 100, 100, 0), rgba(102, 100, 100, 1));
+        }
+      }
+    }
+  }
+
+  .el-pagination {
+    margin-top: 30px;
+    text-align: center;
+  }
+}

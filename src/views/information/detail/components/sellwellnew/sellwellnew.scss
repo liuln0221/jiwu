@@ -1,0 +1,60 @@
+.sell-well-new {
+  .el-card {
+    padding-top: 0;
+
+    /deep/.el-card__body {
+      .sell-well-new__item {
+        height: 75px;
+        margin-bottom: 20px;
+
+        &:hover {
+          background: #f6f6f6;
+        }
+
+        .el-link {
+          width: 100%;
+          .el-link--inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+  
+            .el-image {
+              width: 100px;
+              height: 75px;
+              margin-right: 10px;
+            }
+
+            .el-button {
+              height: 36px;
+            }
+          }
+        }
+
+        .adviser {
+          position: relative;
+          top: -36px;
+          display: flex;
+          align-items: center;
+          margin-left: 110px;
+          width: max-content;
+
+          .el-image {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+
+          .el-button {
+            width: 80px;
+            height: 20px;
+            font-size: 12px;
+            padding: 0;
+            color: #fff;
+            background: #47b3e3;
+          }
+        }
+      }
+    }
+  }
+}

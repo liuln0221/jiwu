@@ -1,0 +1,30 @@
+.recommend-old {
+  .el-card {
+    padding-top: 0;
+
+    .el-card__body {
+      .sell-well-old__item {
+        display: flex;
+        .el-image {
+          width: 120px;
+          height: 80px;
+          margin-right: 10px;
+          margin-bottom: 20px;
+        }
+        
+        .info {
+          line-height: 26px;
+
+          .info__name {
+            font-weight: bold;
+            text-decoration: none;
+          }
+
+          .info__price {
+            color: #db4c3f;
+          }
+        }
+      }
+    }
+  }
+}

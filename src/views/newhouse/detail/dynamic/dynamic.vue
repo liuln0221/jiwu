@@ -2,7 +2,7 @@
   <div class="dynamic">
     <el-row :gutter="20">
       <el-col :span="18">
-        <el-card>
+        <el-card shadow="never">
           <div slot="header">
             <div class="header">
               <span>{{ data.name }}动态</span>

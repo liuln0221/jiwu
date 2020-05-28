@@ -42,7 +42,7 @@
       </el-table>
     </div>
     <!-- 动态 -->
-    <el-card header="最新动态">
+    <el-card header="最新动态" shadow="never">
       <div class="newHouse-detail__dynamic">
         <div class="title">
           <el-link :underline="false">梵悦108，国贸CBD精装现房在售，在售均价约10万元/平</el-link>

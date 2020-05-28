@@ -1,6 +1,6 @@
 <template>
   <div class="qa">
-    <el-card>
+    <el-card shadow="never">
       <div slot="header">
         <div class="header">
           <span>有问必答</span>

@@ -88,6 +88,55 @@
   }
 }
 
+.el-select {
+  .el-input {
+    .el-input__inner {
+      border-radius: 0;
+    }
+  }
+}
+
+.el-input {
+  .el-input__inner {
+    border-radius: 0;
+  }
+}
+
+.el-card {
+  padding: 30px 0;
+  border: none;
+
+  .el-card__header {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0;
+    border-bottom: 0;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+
+      .el-button {
+        height: 28px;
+        padding: 6px 10px;
+        color: #869099;
+
+        &:hover {
+          color: #47b3e3;
+        }
+
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .el-card__body {
+    padding: 30px 0 0;
+  }
+}
+
 // 头部菜单弹出框样式
 .header__popper {
   .el-menu-item {

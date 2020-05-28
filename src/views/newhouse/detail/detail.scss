@@ -92,19 +92,8 @@
 
   .newHouse-detail__contet {
     /deep/.el-card {
-      box-shadow: none;
-      border: none;
-  
       .el-card__header {
         font-size: 24px;
-        font-weight: bold;
-        padding: 0;
-        border-bottom: 0;
-  
-        & > div {
-          display: flex;
-          justify-content: space-between;
-        }
   
         .el-link {
           font-size: 24px;
@@ -114,8 +103,6 @@
       }
   
       .el-card__body {
-        padding: 30px 0;
-
         .newHouse-detail__dynamic {
           .title {
             display: flex;
