@@ -1,0 +1,32 @@
+.selected {
+  .selected__item {
+    display: flex;
+    margin-bottom: 15px;
+
+    .el-image {
+      width: 120px;
+      height: 80px;
+      margin-right: 15px;
+    }
+
+    .selected__item__info {
+      .local {
+        font-weight: bold;
+        line-height: 26px;
+      }
+
+      .size {
+        line-height: 26px;
+
+        span {
+          margin-right: 5px;
+        }
+      }
+
+      .price {
+        line-height: 26px;
+        color: #db4c3f;
+      }
+    }
+  }
+}

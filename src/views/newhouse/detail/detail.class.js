@@ -9,13 +9,14 @@ const data = {
   id: 10001,
   name: '梵悦108',
   alias: '翰林阁',
-  local: '北京市朝阳区建国路乙108号',
+  site: '北京市朝阳区建国路乙108号',
   tel: {
     number: '400-6690-048',
     relay: '734'
   },
+  sellPhone: '133123456789',
   price: 100000,
-  tags: [
+  label: [
     { name: 'weipan', label: '尾盘' },
     { name: 'specialCar', label: '专车看房' },
     { name: 'shop', label: '大型商超' },

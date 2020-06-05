@@ -1,4 +1,5 @@
-import { newHouse } from './price.class';
+import { newHouse, oldHouse } from './price.class';
+import { SysDict } from '@/api/index';
 
 import LineChart from '@/components/echarts/line.vue';
 
@@ -9,7 +10,7 @@ export default {
     return {
       prices: [
         { name: 'newHouse', title: '新房', links: newHouse },
-        { name: 'oldHouse', title: '二手房', links: newHouse }
+        { name: 'oldHouse', title: '二手房', links: oldHouse }
       ],
       optionData: [
         { name: '新房', value: [ 49612, 49758, 49270, 49343, 49010, 48882 ], color: '#f7624e' },
@@ -102,5 +103,17 @@ export default {
         series: this.seriesData
       }
     }
+  },
+  methods: {
+    getCityPriceLevels() {
+      this.optionData.forEach((item, index) => {
+        SysDict.getCityPriceLevels(item.name).then(res => {
+          this.optionData[index].value = res.data;
+        });
+      });
+    }
+  },
+  mounted() {
+    this.getCityPriceLevels();
   }
 };

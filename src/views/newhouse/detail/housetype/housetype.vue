@@ -21,7 +21,7 @@
       </el-col>
     </el-row>
     <!-- 热门户型 -->
-    <el-card :header="`${location}热门户型`" shadow="never">
+    <el-card :header="`${location.name}热门户型`" shadow="never">
       <el-row :gutter="20">
         <el-col :span="8" v-for="(item, index) in store" :key="index">
           <image-info :data="item"></image-info>

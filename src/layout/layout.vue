@@ -7,7 +7,7 @@
       <el-header>
         <e-header></e-header>
       </el-header>
-      <el-main>
+      <el-main v-if="location.name">
         <router-view />
       </el-main>
       <el-footer>

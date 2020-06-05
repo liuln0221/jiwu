@@ -1,0 +1,153 @@
+.list {
+  .list__local {
+    margin: 10px 0;
+    color: #869099;
+    height: 19px;
+
+    a+a {
+      &::before {
+        content: '>';
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .list__filter {
+    border: #ddd 1px solid;
+    font-size: 12px;
+
+    .list__filter__onselect {
+      padding: 20px 20px 10px 20px;
+
+      .list__filter__item {
+        display: flex;
+  
+        .label {
+          color: #999;
+          width: 50px;
+          line-height: 34px;
+          vertical-align: middle;
+  
+          &::after {
+            content: '：';
+          }
+        }
+  
+        .el-button {
+          font-size: inherit;
+          margin-right: 20px;
+  
+          &.active {
+            color: #47b3e3;
+            font-weight: bold;
+          }
+        }
+      }
+  
+      .list__filter__expand {
+        text-align: center;
+  
+        .el-button {
+          font-size: inherit;
+          color: #999;
+        }
+      }
+    }
+
+    .list__filter__selected {
+      display: flex;
+      font-size: 12px;
+      height: 48px;
+      line-height: 48px;
+      margin: 0 !important;
+      padding: 0 20px;
+      border-top: 1px solid #eee;
+      background: #f8f8f8;
+  
+      .label {
+        color: #999;
+        width: 50px;
+        vertical-align: middle;
+  
+        &::after {
+          content: '：';
+        }
+      }
+  
+      .el-button {
+        font-size: inherit;
+        &.is-plain {
+          padding: 4px 10px;
+          color: #47b3e3;
+          border-color: #47b3e3;
+  
+          &:hover {
+            color: #fff;
+            background-color: #47b3e3;
+          }
+  
+          i {
+            margin-left: 10px;
+          }
+        }
+      }
+  
+      .clear {
+        color: #6d6d6d;
+  
+        &:hover {
+          color: #47b3e3;
+  
+          i {
+            color: #47b3e3;
+          }
+        }
+      }
+    }
+  }
+
+  .list__all {
+    margin-top: 30px;
+    border-bottom: #47b3e3 2px solid;
+     .el-button {
+      background: #47b3e3;
+      border-radius: 4px 4px 0 0;
+      color: #fff;
+      font-size: 18px;
+      line-height: 24px;
+      border: none;
+     }
+  }
+
+  .list__sort {
+    display: flex;
+    justify-content: space-between;
+    border: #ddd 1px solid;
+    border-top: none;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 12px;
+
+    .list__sort__total {
+      span {
+        font-weight: bold;
+        padding: 0 3px;
+      }
+    }
+
+    .list__sort__operate {
+      color: #869099;
+
+      .el-button {
+        font-size: inherit;
+        width: 100px;
+      }
+    }
+  }
+
+  .el-pagination {
+    margin-top: 30px;
+    text-align: center;
+  }
+}

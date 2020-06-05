@@ -25,10 +25,11 @@ export default {
   },
   methods: {
     selectBtn(val, store, type, key = 'name') {
-      val.active = true;
       this.data[type] = val.name ? val : undefined;
       store.forEach((item, index) => {
-        if (item[key] !== val[key]) {
+        if (item[key] === val[key]) {
+          store[index].active = true;
+        } else {
           store[index].active = false;
         }
       });
@@ -45,6 +46,7 @@ export default {
           store.find(item => item.name === val.value.name).active = false;
         }
       }
+      this.$route.push({ name: 'newHouse' });
       this.getSelected();
     },
     clearBtn() {
@@ -54,6 +56,8 @@ export default {
       // 均价
       this.avgPrices[0].active = true;
       this.avgPrices.find((item, index) => index !== 0).active = false;
+
+      this.$router.push({ name: 'newHouse' });
     },
     clear() {
       for(const key in this.data) {
@@ -78,6 +82,16 @@ export default {
         }
       }
       this.$emit('getSelected', result);
+    }
+  },
+  mounted() {
+    console.log(this.$route);
+    if (this.$route.query.region) {
+      const val = this.regions.find(item => item.name === this.$route.query.region);
+      this.selectBtn(val, this.regions, 'region');
+    } else if (this.$route.query.avgPrice) {
+      const val = this.avgPrices.find(item => item.name === this.$route.query.avgPrice);
+      this.selectBtn(val, this.avgPrices, 'avgPrice');
     }
   }
 };

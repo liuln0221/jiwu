@@ -18,7 +18,7 @@ const routes = [
       },
       {
         name: 'newHouseDetail',
-        path: ':id/detail',
+        path: ':id',
         component: Detail,
         redirect: { name: 'newHouseDetailHome' },
         children: NewHouseDetailRoutes

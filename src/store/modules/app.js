@@ -1,5 +1,8 @@
 const state = {
-  location: '北京'
+  location: {
+    name: '北京',
+    domain: 'beijing'
+  }
 };
 
 const mutations = {
@@ -9,8 +12,8 @@ const mutations = {
 };
 
 const actions = {
-  setLocation({ commit }) {
-    commit('SET_LOCATION');
+  setLocation({ commit }, location) {
+    commit('SET_LOCATION', location);
   }
 };
 

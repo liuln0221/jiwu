@@ -2,7 +2,7 @@
   <div class="checkPrice">
     <el-row>
       <el-col :span="3">
-        <div class="checkPrice__location">{{ location }}</div>
+        <div class="checkPrice__location">{{ location.name }}</div>
         <div class="checkPrice__time">2020-03月</div>
       </el-col>
       <el-col :span="16">

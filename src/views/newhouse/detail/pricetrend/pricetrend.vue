@@ -20,13 +20,13 @@
         </el-link>
       </div>
       <el-dropdown>
-      <span class="el-dropdown-link">
-        下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
-      </span>
-      <el-dropdown-menu slot="dropdown">
-        <div class="dropdown-menu__content">1</div>
-      </el-dropdown-menu>
-    </el-dropdown>
+        <span class="el-dropdown-link">
+          下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <div class="dropdown-menu__content">1</div>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
     <div class="chart">
       <line-chart :option="option"></line-chart>

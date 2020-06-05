@@ -3,15 +3,27 @@
     <el-row>
       <el-col :span="4" class="header__logo">
         <!-- logo -->
-        <!-- <img src="@/assets/logo.png" /> -->
-        <img src="http://images.jiwu.com/images/v5.0/logo.png" />
+        <el-image src="http://images.jiwu.com/images/v5.0/logo.png"></el-image>
         <!-- 当前地址 -->
-        <el-button type="text">
-          {{ location }}
-          <i class="el-icon-caret-right"></i>
-        </el-button>
+        <el-dropdown trigger="click" placement="bottom-start">
+          <span class="el-dropdown-link">
+            {{ location.name }}<i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown" class="header__location">
+            <div v-for="region in regions" :key="region.label">
+              <div class="label">{{ region.label }}</div>
+              <el-radio-group v-model="location">
+                <el-radio
+                  v-for="city in region.values"
+                  :key="city.domain"
+                  :label="city"
+                >{{ city.name }}</el-radio>
+              </el-radio-group>
+            </div>
+          </el-dropdown-menu>
+        </el-dropdown>
       </el-col>
-      <el-col :span="14">
+      <el-col :span="14" v-if="location.name">
         <!-- 导航 -->
         <el-menu ref="menu" :default-active="activeIndex" mode="horizontal">
           <el-menu-item
@@ -31,7 +43,7 @@
           </el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :span="6">
+      <el-col :span="6" v-if="location.name">
         <!-- 搜索 -->
         <el-input
           suffix-icon="el-icon-search"

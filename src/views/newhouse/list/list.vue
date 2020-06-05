@@ -2,7 +2,7 @@
   <div class="list">
     <router-view />
     <el-tabs v-model="activeName">
-      <el-tab-pane name="building" :label="`${this.$store.state.app.location}新盘`">
+      <el-tab-pane name="building" :label="`${this.$store.state.app.location.name}新盘`">
         <building ref="filter" v-if="activeName === 'building'" @getSelected="getSelected"></building>
       </el-tab-pane>
       <el-tab-pane name="metro" label="地铁沿线">

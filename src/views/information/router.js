@@ -13,14 +13,14 @@ const routes = [
     children: [
       {
         name: 'informationList',
-        path: 'list',
+        path: '',
         component: List,
         redirect: { name: 'informationLocal' },
         children: ListRoutes
       },
       {
         name: 'informationDetail',
-        path: ':id/detail',
+        path: ':id',
         component: Detail
       }
     ]

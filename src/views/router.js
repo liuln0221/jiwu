@@ -7,8 +7,8 @@ import Layout from '@/layout/layout.vue';
 
 import homeRoutes from './home/router';
 import newHouseRoutes from './newhouse/router';
+import oldHouseRoutes from './oldhouse/router';
 import informationRoutes from './information/router';
-
 
 const routes = [
   {
@@ -18,6 +18,7 @@ const routes = [
     children: [
       ...homeRoutes,
       ...newHouseRoutes,
+      ...oldHouseRoutes,
       ...informationRoutes
     ]
   }

@@ -1,14 +1,14 @@
 // const hosthttp = 'http://192.168.13.28';
 // const hosthttp = 'http://192.168.253.16:8104';
 // const hosthttp = 'http://192.168.55.9';
-const hosthttp = 'http://192.168.20.98';
+const hosthttp = 'http://59.110.157.146:8081';
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/jiwu',
   devServer: {
     port: 5004,
     proxy: {
-      '/(auth|message|statistic|product|search|rack|monitor|order|workOrder|globalSummary|workflow|infraAsset|resource)': {
+      '/(services|message|statistic|product|search|rack|monitor|order|workOrder|globalSummary|workflow|infraAsset|resource)': {
         target: hosthttp
       },
       '/api/v2/(summary|trend|distribute)': {

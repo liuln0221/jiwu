@@ -8,11 +8,20 @@
         </div>
       </el-col>
       <el-col :span="8" v-for="price in prices" :key="price.name">
-        <el-link class="price__title" :underline="false">找{{ price.title }}</el-link>
+        <router-link class="price__title" target="_blank" :to="{ name: price.name }">找{{ price.title }}</router-link>
         <el-row class="price__content" :gutter="10" v-for="link in price.links" :key="link.name">
           <el-col :span="4" class="price__content__label">{{ link.label }}</el-col>
           <el-col :span="20">
-            <el-button type="text" v-for="option in link.options" :key="option.name">{{ option.label }}</el-button>
+            <router-link
+              v-for="option in link.options"
+              :key="option.name"
+              target="_blank"
+              :to="{ name: price.name, query: { region: link.name === 'region'? option.name : undefined,
+                avgPrice: link.name === 'avgPrice' ? option.name : undefined,
+                price: link.name === 'price' ? option.name : undefined } }"
+            >
+              <el-button type="text">{{ option.label }}</el-button>
+            </router-link>
           </el-col>
         </el-row>
       </el-col>

@@ -1,0 +1,93 @@
+.list {
+  & > div {
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    clear: both;
+    padding: 30px 0;
+
+    .list__content {
+      display: flex;
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .list__image {
+      margin-right: 20px;
+      height: 140px;
+
+      .el-image {
+        width: 210px;
+        height: 140px;
+      }
+    }
+
+    .list__info {
+      width: 100%;
+
+      .list__info__name-price {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .list__info__name {
+        margin-right: 10px;
+        height: 30px;
+        max-width: 320px;
+        overflow: hidden;
+        font-weight: bold;
+        white-space: nowrap;
+        font-size: 22px;
+
+        &:hover {
+          color: #47b3e3;
+        }
+      }
+
+      .list__info__price {
+        color: #db4c3f;
+        font-size: 26px;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: right;
+      }
+
+      .list__info__local {
+        display: flex;
+        justify-content: space-between;
+        line-height: 35px;
+        font-size: 14px;
+        overflow: hidden;
+
+        span {
+          margin-right: 5px;
+        }
+
+        .el-button {
+          color: #47b3e3;
+        }
+      }
+
+      .list__info__address {
+        line-height: 35px;
+        span {
+          margin-right: 5px;
+        }
+      }
+
+      .list__info__tag-time {
+        margin-top: 10px;
+
+        .tag {
+          margin-right: 20px;
+        }
+
+        .time {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

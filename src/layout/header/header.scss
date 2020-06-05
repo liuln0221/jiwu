@@ -8,7 +8,7 @@
   .header__logo {
     height: 65px;
 
-    img {
+    .el-image {
       width: 150px;
       height: 55px;
 
@@ -17,7 +17,17 @@
       }
     }
 
-    .el-button {
+    // .el-button {
+    //   color: #869099;
+
+    //   &:hover {
+    //     color: #47b3e3;
+    //   }
+    // }
+
+    .el-dropdown {
+      line-height: 65px;
+      cursor: pointer;
       color: #869099;
 
       &:hover {

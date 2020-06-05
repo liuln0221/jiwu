@@ -35,9 +35,11 @@ export default {
     },
     priceSort() {
       this.sort.price = this.sort.price === 'desc' ? 'asc' : 'desc';
+      this.sort.attention = '';
     },
     attentionSort() {
       this.sort.attention = this.sort.attention === 'desc' ? 'asc' : 'desc';
+      this.sort.price = '';
     }
   }
 };

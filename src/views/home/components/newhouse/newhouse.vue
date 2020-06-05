@@ -15,7 +15,9 @@
             >{{ region.name }}<i></i></el-link>
           </div>
         </div>
-        <el-button type="text">更多推荐<i class="el-icon-arrow-right"></i></el-button>
+        <router-link :to="{ name: 'newHouse' }">
+          <el-button type="text">更多楼盘<i class="el-icon-arrow-right"></i></el-button>
+        </router-link>
       </div>
       <!-- body -->
       <el-carousel :height="carouselHeight" @change="getCarouselHeight">
@@ -23,7 +25,9 @@
           <div ref="newhouse__content">
             <el-row :gutter="20">
               <el-col :span="12" class="img__first">
-                <img :src="house[0].src" />
+                <router-link target="_blank" :to="{ name: 'newHouseDetail', params: { id: house[0].id } }">
+                  <el-image :src="house[0].src"></el-image>
+                </router-link>
                 <div class="img__first__name">{{ house[0].label }}</div>
                 <div class="img__first__detail">
                   <div class="img__first__detail__text">{{ house[0].local }}</div>
@@ -32,7 +36,9 @@
               </el-col>
               <el-col :span="12" class="img__more">
                 <el-col :span="12" v-for="item in house.slice(1, 5)" :key="item.name">
-                  <img :src="item.src" />
+                  <router-link target="_blank" :to="{ name: 'newHouseDetail', params: { id: item.id } }">
+                    <el-image :src="item.src"></el-image>
+                  </router-link>
                   <div class="img__more__detail">
                     <div class="img__more__detail__name">{{ item.label }}</div>
                     <div class="img__more__detail__price">{{ item.price }}元/平米</div>
@@ -42,7 +48,9 @@
             </el-row>
             <el-row :gutter="20" class="img__more">
               <el-col :span="6" v-for="item in house.slice(5)" :key="item.name">
-                <img :src="item.src" />
+                <router-link target="_blank" :to="{ name: 'newHouseDetail', params: { id: item.id } }">
+                  <el-image :src="item.src"></el-image>
+                </router-link>
                 <div class="img__more__detail">
                   <div class="img__more__detail__name">{{ item.title }}</div>
                   <div class="img__more__detail__price">{{ item.price }}元/平米</div>

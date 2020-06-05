@@ -11,6 +11,20 @@ const newHouse = [
   }
 ];
 
+const oldHouse = [
+  {
+    name: 'region',
+    label: '区域',
+    options: [ { name: 'daxing', label: '大兴' } ]
+  },
+  {
+    name: 'price',
+    label: '总价',
+    options: [ { name: '<100', label: '100万以下' } ]
+  }
+];
+
 export {
-  newHouse
+  newHouse,
+  oldHouse
 };

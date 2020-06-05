@@ -8,7 +8,7 @@
           :key="adviser.id"
         >
           <div class="adviser__item">
-            <img :src="adviser.img" />
+            <el-image :src="adviser.img"></el-image>
             <div class="adviser__content">
               <el-link class="adviser__name" :underline="false">{{ adviser.name }}</el-link>
               <div class="adviser__consulte"><i class="el-icon-plus"></i>向TA咨询</div>

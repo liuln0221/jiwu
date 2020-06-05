@@ -4,6 +4,11 @@
   .el-container {
     border: 1px solid #e4e4e4;
     height: 212px;
+
+    &:hover {
+      box-shadow: 0 0 5px #ccc;
+    }
+
     .el-header {
       height: 50px !important;
       line-height: 50px;

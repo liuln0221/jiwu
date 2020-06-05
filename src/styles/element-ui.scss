@@ -194,6 +194,42 @@
   }
 }
 
+// 首页当前城市弹出框样式
+.header__location {
+  padding: 10px;
+  margin: 0 !important;
+  width: 400px;
+  min-height: 200px;
+
+  .popper__arrow {
+    display: none;
+  }
+
+  & > div {
+    display: flex;
+    
+    .label {
+      line-height: 34px;
+      font-weight: bold;
+
+      &::after {
+        content: '：'
+      }
+    }
+    .el-radio-group {
+      .el-radio {
+        line-height: 34px;
+
+        &.is-checked {
+          .el-radio__label {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
+
 // 新房下拉框弹出框样式
 .building__popper {
   .el-select-dropdown__item {

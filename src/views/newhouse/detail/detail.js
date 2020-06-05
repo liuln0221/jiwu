@@ -1,4 +1,5 @@
 import { locals, data, menus } from './detail.class';
+import { Project } from '@/api';
 
 export default {
   name: 'newHouseDetail',
@@ -13,6 +14,14 @@ export default {
   methods: {
     handleSelect(val) {
       this.activeIndex = val;
+    },
+    getProjectDetail() {
+      Project.getProjectDetail(this.$route.params.id).then(res => {
+        this.data = res.data;
+      });
     }
+  },
+  mounted() {
+    // this.getProjectDetail();
   }
 };
