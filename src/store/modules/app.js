@@ -1,8 +1,5 @@
 const state = {
-  location: {
-    name: '北京',
-    domain: 'beijing'
-  }
+  location: {}
 };
 
 const mutations = {

@@ -9,20 +9,20 @@
       >
         <el-submenu v-if="menu.links && menu.links.length > 0" :index="menu.name" popper-class="navbar__popper">
           <template slot="title">
-            <i class="el-icon-location navbar__icon"></i>
+            <i class="navbar__icon" :class="menu.icon"></i>
             <div class="navbar__title">{{ menu.label }}</div>
           </template>
           <navbar-item :links="menu.links">
             <template slot="title">
               <!-- 新房 -->
               <div v-if="menu.name === 'newHouse'" class="navbar__submenu__item__title">
-                <el-button icon="el-icon-plus">地图找房</el-button>
+                <el-button icon="icon-house-map">地图找房</el-button>
                 <span>或</span>
-                <el-button icon="el-icon-plus">找新房置业管家咨询</el-button>
+                <el-button icon="icon-message">找新房置业管家咨询</el-button>
               </div>
               <!-- 二手房 -->
               <div v-else-if="menu.name === 'oldHouse'" class="navbar__submenu__item__title">
-                <el-button icon="el-icon-plus">找二手房经纪人咨询</el-button>
+                <el-button icon="icon-message">找二手房经纪人咨询</el-button>
               </div>
               <!-- 查房价 -->
               <check-price v-else></check-price>
@@ -30,7 +30,7 @@
           </navbar-item>
         </el-submenu>
         <div v-else class="navbar__menu__item">
-          <i class="el-icon-location navbar__icon"></i>
+          <i class="navbar__icon" :class="menu.icon"></i>
           <div class="navbar__title">{{ menu.label }}</div>
         </div>
       </el-menu-item>

@@ -13,8 +13,8 @@ export default {
         { name: 'oldHouse', title: '二手房', links: oldHouse }
       ],
       optionData: [
-        { name: '新房', value: [ 49612, 49758, 49270, 49343, 49010, 48882 ], color: '#f7624e' },
-        { name: '二手房', value: [ 64237 , 63376, 62964, 65059, 69257, 68340 ], color: '#47b3e3' }
+        { key: 1, name: '新房', value: [ 49612, 49758, 49270, 49343, 49010, 48882 ], color: '#f7624e' },
+        { key: 2, name: '二手房', value: [ 64237 , 63376, 62964, 65059, 69257, 68340 ], color: '#47b3e3' }
       ]
     }
   },
@@ -107,13 +107,19 @@ export default {
   methods: {
     getCityPriceLevels() {
       this.optionData.forEach((item, index) => {
-        SysDict.getCityPriceLevels(item.name).then(res => {
-          this.optionData[index].value = res.data;
+        SysDict.getCityPriceLevels(item.key).then(res => {
+          this.optionData[index].value = res.data ? res.data : [];
         });
+      });
+    },
+    getCityAllRegion() {
+      SysDict.getCityAllRegion().then(res => {
+        this.prices[0].links = res.data ? res.data : [];
       });
     }
   },
   mounted() {
     this.getCityPriceLevels();
+    this.getCityAllRegion();
   }
 };

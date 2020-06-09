@@ -1,0 +1,61 @@
+.comment {
+  /deep/.el-card {
+    .el-card__body {
+      padding-top: 15px;
+      font-size: 12px;
+
+      .comment__item {
+        background: #f4f4f4;
+        padding: 20px;
+        margin-bottom: 20px;
+
+        .comment__item__info {
+          display: flex;
+
+          .el-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+
+          .info {
+            line-height: 20px;
+            padding-top: 5px;
+            
+            .name {
+              font-size: 14px;
+              font-weight: bold;
+            }
+
+            .label {
+              &::after {
+                content: '：';
+              }
+            }
+          }
+        }
+
+        .comment__item__article {
+          margin-top: 20px;
+          padding: 6px 10px;
+          background: #fff;
+          
+
+          span {
+            line-height: 20px;
+          }
+
+          .el-button {
+            display: contents;
+            font-size: 12px;
+
+            & > span {
+              float: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}

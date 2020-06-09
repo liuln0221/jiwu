@@ -9,6 +9,7 @@ import homeRoutes from './home/router';
 import newHouseRoutes from './newhouse/router';
 import oldHouseRoutes from './oldhouse/router';
 import informationRoutes from './information/router';
+import adviserRoutes from './adviser/router';
 
 const routes = [
   {
@@ -19,7 +20,8 @@ const routes = [
       ...homeRoutes,
       ...newHouseRoutes,
       ...oldHouseRoutes,
-      ...informationRoutes
+      ...informationRoutes,
+      ...adviserRoutes
     ]
   }
 ];

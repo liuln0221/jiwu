@@ -12,6 +12,13 @@
       .el-carousel__arrow--right {
         right: calc((100% - 1200px) / 2);
       }
+      
+      .el-carousel__item {
+        .el-image {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
   }
 }

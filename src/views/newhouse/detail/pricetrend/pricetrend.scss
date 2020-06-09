@@ -2,6 +2,7 @@
   .price-info {
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
     margin-bottom: 20px;
 
     .price {
@@ -10,8 +11,13 @@
       margin-right: 20px;
     }
 
-    .el-button {
+    /deep/.el-button {
       font-size: 12px;
+
+      i {
+        top: 0;
+        margin-right: 10px;
+      }
     }
 
     .el-button+.el-button {
@@ -50,7 +56,10 @@
       margin: 0 20px;
 
       i {
-        margin-right: 5px;
+        position: relative;
+        top: 4px;
+        margin-right: 10px;
+        font-size: 20px;
       }
     }
 

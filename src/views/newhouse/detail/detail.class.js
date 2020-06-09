@@ -74,7 +74,7 @@ const menus = [
   { name: 'newHouseDetailMapTraffic', label: '地图交通' },
   { name: 'newHouseDetailPriceTrend', label: '价格走势' },
   { name: 'newHouseDetailDynamic', label: '楼盘动态' },
-  { name: 'newHouseDetailHomeAa', label: '有问必答' },
+  { name: 'newHouseDetailQA', label: '有问必答' },
   { name: 'phone', label: '手机看盘' }
 ];
 

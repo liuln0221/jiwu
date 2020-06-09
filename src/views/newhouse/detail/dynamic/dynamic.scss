@@ -9,14 +9,24 @@
           color: #869099;
         }
 
-        .dynamic__notice {
+        /deep/.dynamic__notice {
           line-height: 18px;
+          height: 22px;
           padding: 0 5px;
           color: #47b3e3;
           border-color: #47b3e3;
   
           &:hover {
             color: #47b3e3 !important;
+          }
+
+          span {
+            margin-left: 5px;
+          }
+
+          &::before {
+            position: relative;
+            top: 1px;
           }
         }
       }

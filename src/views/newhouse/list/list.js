@@ -3,7 +3,7 @@ import { store } from './list.class';
 import Building from './components/building/building.vue'; // 新盘
 import Metro from './components/metro/metro.vue'; // 地铁
 import List from './components/list/list.vue'; // 列表
-import Explain from './components/explain/explain.vue'; // 说明
+import Explain from '@/views/components/explain/explain.vue'; // 说明
 
 export default {
   name: 'newHouse',

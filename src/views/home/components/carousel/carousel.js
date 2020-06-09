@@ -1,3 +1,5 @@
+import { SysDict } from '@/api/index';
+
 export default {
   name: 'carousel',
   data() {
@@ -20,5 +22,15 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    getIndexBannerList() {
+      SysDict.getIndexBannerList().then(res => {
+        this.data = res.data;
+      });
+    }
+  },
+  mounted() {
+    this.getIndexBannerList();
   }
 };

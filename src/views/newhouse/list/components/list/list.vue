@@ -27,7 +27,7 @@
           </div>
           <div class="list__info__local">
             <span>{{ item.local }}</span>
-            <el-button type="text" icon="el-icon-plus">关注楼盘</el-button>
+            <el-button type="text" icon="icon-heart">关注楼盘</el-button>
           </div>
           <div class="list__info__tel">
             <span><i class="el-icon-phone"></i>{{ item.tel.number }}<span class="list__info__tel__relay">转</span>{{ item.tel.relay }}</span>

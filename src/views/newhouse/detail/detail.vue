@@ -23,10 +23,10 @@
         </div>
       </div>
       <div class="newHouse-detail__title__tel">
-        <i class="el-icon-plus"></i>
+        <i class="icon-tel"></i>
         <div>
-          <div class="newHouse-detail__title__tel__info">致电了解现场详情</div>
-          <div>{{ data.sellPhone }}
+          <div class="newHouse-detail__title__tel__info">致电了解现场详情：</div>
+          <div class="newHouse-detail__title__tel__number">{{ data.sellPhone }}
             <!-- <span class="newHouse-detail__title__tel__number">{{ data.tel.number }}</span> -->
             <!-- <span class="newHouse-detail__title__tel__relay">转</span>{{ data.tel.relay }} -->
           </div>

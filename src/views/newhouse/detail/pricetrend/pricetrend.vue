@@ -16,7 +16,7 @@
     <div class="legend">
       <div>
         <el-link :underline="false" v-for="(option, index) in optionData" :key="index">
-          <i class="el-icon-plus" :style="`color: ${option.color}`"></i>{{ option.name }}
+          <i class="icon-line" :style="`color: ${option.color}`"></i>{{ option.name }}
         </el-link>
       </div>
       <el-dropdown>

@@ -11,10 +11,10 @@ export default {
     return {
       data,
       buttons: [
-        { icon: 'el-icon-plus', text: '新消息通知', color: '#47b3e3' },
-        { icon: 'el-icon-plus', text: '降价通知我', color: '#47b3e3' },
-        { icon: 'el-icon-plus', text: '房贷计算器', color: '#869099' },
-        { icon: 'el-icon-plus', text: '公积金查询', color: '#869099' }
+        { icon: 'icon-customer', text: '新消息通知', color: '#47b3e3' },
+        { icon: 'icon-line-chart', text: '降价通知我', color: '#47b3e3' }
+        // { icon: 'el-icon-plus', text: '房贷计算器', color: '#869099' },
+        // { icon: 'el-icon-plus', text: '公积金查询', color: '#869099' }
       ],
       optionData: [
         {

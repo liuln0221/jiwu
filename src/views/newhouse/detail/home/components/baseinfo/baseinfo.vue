@@ -32,17 +32,17 @@
         <div class="base-info__price">
           <span>参考价格：</span>
           <span class="price">{{ data.price }}元/平米</span>
-          <el-button size="mini" class="el-icon-plus">降价通知我</el-button>
+          <el-button size="mini" class="icon-line-chart">降价通知我</el-button>
         </div>
         <div class="base-info__price-desc">
           价格说明：价格有效期：{{ data.priceValidity.startTime | dateStrToFormat('YYYY.MM.DD') }}-{{ data.priceValidity.endTime | dateStrToFormat('YYYY.MM.DD') }}
         </div>
         <div class="base-info__service">
-          <div><i class="el-icon-plus"></i>无需预约，滴滴一键看房</div>
+          <div><i class="icon-car2"></i>无需预约，滴滴一键看房</div>
           <el-button>专车看房</el-button>
         </div>
         <div class="base-info__service">
-          <div><i class="el-icon-plus"></i>24小时线上咨询 立享优惠</div>
+          <div><i class="icon-tag"></i>24小时线上咨询 立享优惠</div>
           <el-button>获取优惠</el-button>
         </div>
         <div class="base-info__sales">在售楼栋：{{ data.sales }}</div>
@@ -77,6 +77,7 @@
             <el-image :src="data.adviser.img"></el-image>
           </el-link>
           <el-link :underline="false" class="name">{{ data.adviser.name }}</el-link>
+          <el-button class="consult" icon="icon-message2">向TA咨询</el-button>
           <div>
             <el-tag
               v-for="(tag, index) in data.adviser.tags"

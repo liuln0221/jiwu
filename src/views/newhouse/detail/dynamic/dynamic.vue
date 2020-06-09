@@ -8,7 +8,7 @@
               <span>{{ data.name }}动态</span>
               <el-button type="text" class="dynamic__disclaimer">《免责声明》</el-button
               >
-              <el-button size="mini" class="el-icon-plus dynamic__notice">新动态通知我</el-button>
+              <el-button size="mini" class="icon-notice dynamic__notice">新动态通知我</el-button>
             </div>
           </div>
           <div class="newHouse-detail__dynamic">

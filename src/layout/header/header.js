@@ -23,25 +23,20 @@ export default {
     })
   },
   methods: {
-    init() {
-      this.getIndexBannerList();
-    },
     routerChange() {
       this.activeIndex = this.$route.matched[1].name;
-    },
-    getIndexBannerList() {
-      SysDict.getIndexBannerList();
     },
     getOpenedCity() {
       SysDict.getOpenedCity().then(res => {
         this.regions = res.data.allCities;
         this.$store.dispatch('app/setLocation', this.regions[0].values[0]);
-        this.init();
       });
     }
   },
-  mounted() {
+  created() {
     this.getOpenedCity();
+  },
+  mounted() {
     this.routerChange();
   },
   watch: {

@@ -6,7 +6,7 @@
           <div slot="header" class="clearfix">
             <span class="header">
               <el-link :underline="false">最新动态</el-link>
-              <el-button size="mini" class="el-icon-plus">新动态通知我</el-button>
+              <el-button size="mini" class="icon-notice">新动态通知我</el-button>
             </span>
             <el-button type="text">{{ data.name }}动态<i class="el-icon-arrow-right"></i></el-button>
           </div>

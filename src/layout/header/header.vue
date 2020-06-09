@@ -23,7 +23,7 @@
           </el-dropdown-menu>
         </el-dropdown>
       </el-col>
-      <el-col :span="14" v-if="location.name">
+      <el-col :span="14">
         <!-- 导航 -->
         <el-menu ref="menu" :default-active="activeIndex" mode="horizontal">
           <el-menu-item
@@ -38,12 +38,11 @@
                 <router-link :to="{ name: submenu.name }">{{ submenu.label }}</router-link>
               </el-menu-item>
             </el-submenu>
-            <!-- <span v-else>{{ menu.label }}</span> -->
             <router-link :to="{ name: menu.name }" v-else>{{ menu.label }}</router-link>
           </el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :span="6" v-if="location.name">
+      <el-col :span="6">
         <!-- 搜索 -->
         <el-input
           suffix-icon="el-icon-search"
