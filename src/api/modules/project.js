@@ -15,6 +15,17 @@ const Project = {
     return request.get(`${BASE_URL}hotProject`);
   },
   /**
+   * @description 楼盘列表分页查询
+   * @param params 查询参数
+   * @return {}
+   * @author liulina
+   */
+  getListQuery4Page: (params) => {
+    return request.get(`${BASE_URL}listQuery4Page`, {
+      params
+    });
+  },
+  /**
    * @description 楼盘详情
    * @param id 楼盘id
    * @return {}

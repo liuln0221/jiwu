@@ -35,6 +35,11 @@ const SysDict = {
       }
     });
   },
+  /**
+   * @description 查询当前城市的所有区域列表
+   * @return {}
+   * @author liulina
+   */
   getCityAllRegion: () => {
     return request.get(`${BASE_URL}cityAllRegion`);
   }

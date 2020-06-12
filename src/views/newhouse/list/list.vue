@@ -34,15 +34,15 @@
       <el-col>
         <el-button type="text" @click="defaultSort">默认排序</el-button>
         <el-button type="text" @click="priceSort">单价
-          <i class="el-icon-sort-up" v-if="sort.price === 'desc'"></i>
-          <i class="el-icon-sort-down" v-else-if="sort.price === 'asc'"></i>
+          <i class="el-icon-sort-up" v-if="sort.price === 'asc'"></i>
+          <i class="el-icon-sort-down" v-else-if="sort.price === 'desc'"></i>
           <i class="el-icon-sort" v-else></i>
         </el-button>
-        <el-button type="text" @click="attentionSort">关注度
+        <!-- <el-button type="text" @click="attentionSort">关注度
           <i class="el-icon-sort-up" v-if="sort.attention === 'desc'"></i>
           <i class="el-icon-sort-down" v-else-if="sort.attention === 'asc'"></i>
           <i class="el-icon-sort" v-else></i>
-        </el-button>
+        </el-button> -->
         <div class="list__total">共<strong>{{ store.length }}</strong>个新盘</div>
       </el-col>
     </el-row>

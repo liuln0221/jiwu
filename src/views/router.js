@@ -10,6 +10,8 @@ import newHouseRoutes from './newhouse/router';
 import oldHouseRoutes from './oldhouse/router';
 import informationRoutes from './information/router';
 import adviserRoutes from './adviser/router';
+import guideRoutes from './guide/router';
+import aboutRoutes from './about/router';
 
 const routes = [
   {
@@ -21,9 +23,11 @@ const routes = [
       ...newHouseRoutes,
       ...oldHouseRoutes,
       ...informationRoutes,
+      ...guideRoutes,
       ...adviserRoutes
     ]
-  }
+  },
+  ...aboutRoutes
 ];
 
 export default new Router({

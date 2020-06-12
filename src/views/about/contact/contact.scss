@@ -1,0 +1,83 @@
+.contact {
+  /deep/.el-card {
+    .el-card__header {
+      margin: 50px 0 20px;
+      font-size: 36px;
+      line-height: 36px;
+      font-weight: bold;
+    }
+
+    .el-card__body {
+      .contact__info {
+        padding-bottom: 25px;
+        border-bottom: 1px solid #ddd;
+
+        .contact__info__title {
+          color: #47b3e3;
+          font-size: 22px;
+          padding-bottom: 15px;
+        }
+
+        .contact__info__contacts,
+        .contact__info__tel,
+        .contact__info__local {
+          font-size: 16px;
+          line-height: 24px;
+          .label {
+            span {
+              display: inline-block;
+              text-align-last: justify;
+              width: 50px;
+            }
+
+            &::after {
+              content: '：'
+            }
+          }
+        }
+      }
+
+      .el-row {
+        border-bottom: 1px solid #ddd;
+        .el-col {
+          display: flex;
+          padding-top: 40px;
+          padding-bottom: 40px;
+
+          i {
+            color: #a8a8a8;
+            font-size: 50px;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #a8a8a8;
+            border-radius: 50%;
+            margin-right: 30px;
+          }
+
+          .title {
+            font-size: 18px;
+            padding-bottom: 20px;
+          }
+
+          .label {
+            line-height: 24px;
+            &:after {
+              content: '：'
+            }
+
+            span {
+              display: inline-block;
+              text-align-last: justify;
+              width: 44px;
+            }
+          }
+
+          a {
+            color: #47b3e3;
+          }
+        }
+      }
+    }
+  }
+}

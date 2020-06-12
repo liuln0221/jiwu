@@ -1,0 +1,68 @@
+.culture {
+  .culture__item,
+  .custure__item--reverse {
+    display: flex;
+    justify-content: space-between;
+    height: 458px;
+    padding-bottom: 10px;
+
+    .culture__item__info {
+      padding: 60px 10px 60px 0px;
+
+      .name {
+        font-size: 60px;
+        line-height: 82px;
+        color: #e1e1e1;
+        font-weight: bold;
+        height: 82px;
+
+        span {
+          display: inline-block;
+          text-align-last: justify;
+          width: 180px;
+        }
+      }
+
+      .desc {
+        font-size: 36px;
+        line-height: 48px;
+        margin: 20px 0;
+        color: #333;
+      }
+    }
+
+    i {
+      background: url(http://images.jiwu.com/images/v5.0/ico.png) left top no-repeat;
+
+      &.culture__item__i_0 {
+        width: 450px;
+        height: 458px;
+        background-position: 0px -2206px;
+      }
+
+      &.culture__item__i_1 {
+        width: 420px;
+        height: 420px;
+        background-position: 0px -2822px;
+      }
+
+      &.culture__item__i_2 {
+        width: 375px;
+        height: 430px;
+        background-position: 0px -3434px;
+      }
+    }
+  }
+  
+  .custure__item--reverse {
+    flex-direction: row-reverse;
+
+    /deep/.culture__item__info {
+      .name {
+        span {
+          float: right;
+        }
+      }
+    }
+  }
+}

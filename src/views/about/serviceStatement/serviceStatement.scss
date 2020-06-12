@@ -1,0 +1,46 @@
+.serviceStatement {
+  display: flex;
+  margin-top: 10px;
+
+  /deep/.index__menu.el-card {
+    width: 200px;
+    min-width: 200px;
+    .el-card__header {
+      font-size: 22px;
+    }
+
+    .el-card__body {
+      .el-menu {
+        border: none;
+  
+        .el-menu-item {
+          font-size: 16px;
+          line-height: 36px;
+          height: 36px;
+          padding: 0 !important;
+          background: none;
+  
+          &.is-active,
+          &:hover {
+            color: #47b3e3;
+          }
+        }
+      }
+    }
+  }
+
+  .index__main {
+    width: 100%;
+    /deep/.el-card {
+      .el-card__header {
+        font-size: 36px;
+        line-height: 36px;
+      }
+  
+      .el-card__body {
+        padding-top: 50px;
+        width: 100%;
+      }
+    }
+  }
+}

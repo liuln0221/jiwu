@@ -1,11 +1,11 @@
 import { mapState } from 'vuex';
-import { aboutcopys, links } from './footer.class';
+import { aboutcopys } from './footer.class';
 
 export default {
   namee: 'footer',
   data() {
     return {
-      aboutcopys, links
+      aboutcopys
     };
   },
   computed: {

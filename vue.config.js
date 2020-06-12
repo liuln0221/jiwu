@@ -1,7 +1,5 @@
-// const hosthttp = 'http://192.168.13.28';
-// const hosthttp = 'http://192.168.253.16:8104';
-// const hosthttp = 'http://192.168.55.9';
-const hosthttp = 'http://59.110.157.146:8081';
+// const hosthttp = 'http://59.110.157.146:8081';
+const hosthttp = 'http://api.nthpower.net/';
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/jiwu',
