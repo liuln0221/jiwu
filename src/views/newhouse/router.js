@@ -14,7 +14,14 @@ const routes = [
       {
         name: 'newHouseList',
         path: '',
-        component: List
+        component: List,
+        children: [
+          {
+            name: 'newHouseListFilter',
+            path: ':filter',
+            component: List
+          }
+        ]
       },
       {
         name: 'newHouseDetail',

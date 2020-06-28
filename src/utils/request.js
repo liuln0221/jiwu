@@ -9,14 +9,12 @@ import { Message, Notification } from 'element-ui';
 
 const Token = getAuthToken();
 
-const param = {
-  'App-Key': 'app_pc',
-  'App-Version': '1.0',
-  Timestamp: new Date().getTime()
-}
-
-if (Token) {
-  param.Token = Token;
+const getParam = () => {
+  return {
+    'App-Key': 'app_pc',
+    'App-Version': '1.0',
+    Timestamp: new Date().getTime()
+  };
 }
 
 const app_secret = 'VoCT7mJcWGshRY33';
@@ -26,7 +24,7 @@ const service = axios.create({
   headers: Common.merge({
     'Content-Type': 'application/json;charset=UTF-8',
     'Cache-Control': 'no-cache'
-  }, param)
+  }, getParam())
 });
 
 // 配置所有request
@@ -36,12 +34,21 @@ service.interceptors.request.use(
       config.data = true;
     }
 
+    if (Token) {
+      getParam().Token = Token;
+    }
+
+    config.headers = Common.merge({
+      'Content-Type': 'application/json;charset=UTF-8',
+      'Cache-Control': 'no-cache'
+    }, getParam());
+
     config.headers['Driver-Type'] = 'pc';
     if (store.state.app.location.domain) {
       config.headers['City-Domain'] = store.state.app.location.domain;
     }
     
-    const arr = Object.keys(param).sort();
+    const arr = Object.keys(getParam()).sort();
     let str = '';
     arr.forEach(item => {
       str += config.headers[item] ? `${item}${config.headers[item]}` : '';

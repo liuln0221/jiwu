@@ -8,10 +8,14 @@
 
     .el-button {
       font-size: 14px;
+      &::after {
+        content: '';
+        margin-right: 25px;
+      }
     }
 
     .el-button+.el-button {
-      margin-left: 25px;
+      margin-left: 0;
     }
   }
 }

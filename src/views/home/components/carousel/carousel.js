@@ -1,9 +1,10 @@
-import { SysDict } from '@/api/index';
+import { Banner } from '@/api/index';
 
 export default {
   name: 'carousel',
   data() {
     return {
+      data: [],
       images: [
         {
           id: 100001,
@@ -25,7 +26,7 @@ export default {
   },
   methods: {
     getIndexBannerList() {
-      SysDict.getIndexBannerList().then(res => {
+      Banner.getIndex().then(res => {
         this.data = res.data;
       });
     }

@@ -143,6 +143,13 @@
   }
 }
 
+.el-image {
+  .el-image__error {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 // 头部菜单弹出框样式
 .header__popper {
   .el-menu-item {

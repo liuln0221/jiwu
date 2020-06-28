@@ -58,9 +58,11 @@
           </el-select>
         </el-input>
         <!-- 登录 -->
-        <el-button type="text" class="header__login">登录</el-button>
+        <el-button type="text" class="header__login" @click="login">登录</el-button>
       </el-col>
     </el-row>
+    <!-- 登录弹窗 -->
+    <login ref="login"></login>
   </div>
 </template>
 

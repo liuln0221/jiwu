@@ -16,7 +16,7 @@
       </el-col>
       <el-col :span="6">
         <!-- 热销新盘 -->
-        <sell-well-new></sell-well-new>
+        <hot-project></hot-project>
         <!-- 热门二手房 -->
         <sell-well-old></sell-well-old>
         <!-- 二手小区推荐 -->

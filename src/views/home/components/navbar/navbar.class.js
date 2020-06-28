@@ -67,13 +67,13 @@ const checkPrice = [
       { name: 'fengtai', label: '丰台' },
       { name: 'shunyi', label: '顺义' }
     ]
-  },
-  {
-    title: '热门板块',
-    options: [
-      { name: 'daxing', label: '大兴' }
-    ]
   }
+  // {
+  //   title: '热门板块',
+  //   options: [
+  //     { name: 'daxing', label: '大兴' }
+  //   ]
+  // }
 ];
 
 export {

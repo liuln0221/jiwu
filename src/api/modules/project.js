@@ -1,6 +1,6 @@
 import request from '@/utils/request';
 
-const BASE_URL = '/services/project/';
+const BASE_URL = '/api/project';
 
 /**
  * 楼盘服务
@@ -8,11 +8,22 @@ const BASE_URL = '/services/project/';
 const Project = {
   /**
    * @description 热销楼盘
+   * @param params 参数
    * @return {}
    * @author liulina
    */
-  getHotProject: () => {
-    return request.get(`${BASE_URL}hotProject`);
+  getHot: (params) => {
+    return request.get(`${BASE_URL}/hot`, {
+      params
+    });
+  },
+  /**
+   * @description 首页轮播楼盘
+   * @return {}
+   * @author liulina
+   */
+  getIndexCarousel() {
+    return request.get(`${BASE_URL}/indexCarousel`);
   },
   /**
    * @description 楼盘列表分页查询
@@ -21,7 +32,7 @@ const Project = {
    * @author liulina
    */
   getListQuery4Page: (params) => {
-    return request.get(`${BASE_URL}listQuery4Page`, {
+    return request.get(`${BASE_URL}/listQuery4Page`, {
       params
     });
   },
@@ -32,7 +43,7 @@ const Project = {
    * @author liulina
    */
   getProjectDetail: (id) => {
-    return request.get(`${BASE_URL}detail`, {
+    return request.get(`${BASE_URL}/detail`, {
       params: {
         projectId: id
       }

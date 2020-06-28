@@ -1,0 +1,112 @@
+.login {
+  /deep/.el-dialog {
+    .el-dialog__body {
+      padding: 15px 20px;
+
+      .el-form {
+        .title {
+          font-size: 20px;
+          font-weight: bold;
+          line-height: 20px;
+          margin-bottom: 40px;
+        }
+
+        /deep/.el-form-item {
+          margin-bottom: 0;
+
+          .el-input {
+            font-size: 16px;
+
+            .el-input__inner,
+            .el-input__suffix {
+              line-height: 50px;
+              height: 50px;
+            }
+
+            .el-input__inner {
+              &:focus {
+                border-color: #dcdfe6;
+              }
+            }
+
+            .el-input__suffix {
+              right: 0;
+              color: #47b3e3;
+
+              .el-input__suffix-inner {
+                .el-image {
+                  position: absolute;
+                  width: 105px;
+                  height: 48px;
+                  bottom: 1px;
+                  right: 1px;
+
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
+                .el-button {
+                  padding: 0 16px;
+                  border-left: 1px solid #dbdbdb;
+                }
+              }
+            }
+          }
+
+          .el-form-item__error {
+            display: none;
+          }
+
+          &.is-error {
+            .el-input__inner {
+              border-color: #dcdfe6;
+            }
+          }
+        }
+
+        /deep/.el-checkbox {
+          margin-top: 10px;
+
+          .el-checkbox__input.is-checked+.el-checkbox__label {
+            color: initial;
+          }
+        }
+
+        /deep/div:nth-child(2),
+        div:nth-child(3) {
+          .el-input__inner {
+            border-bottom: none;
+          }
+        }
+      }
+
+      .login__error {
+        color: #F56C6C;
+        font-size: 12px;
+        line-height: 1;
+        padding-top: 10px;
+        top: 100%;
+        left: 0;
+      }
+    }
+
+    .el-dialog__footer {
+      .el-button {
+        width: 100%;
+        height: 48px;
+        border: none;
+        color: #fff;
+        background: #47b3e3;
+        font-size: 16px;
+
+        &:hover {
+          background: #2eabe0;
+        }
+
+        &.is-disabled {
+          background: #a1d1e6;
+        }
+      }
+    }
+  }
+}

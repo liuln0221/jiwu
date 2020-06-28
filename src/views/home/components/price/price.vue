@@ -2,16 +2,16 @@
   <div class="price">
     <el-row :gutter="40">
       <el-col :span="6">
-        <el-link class="price__title" :underline="false">北京房价</el-link>
+        <el-link class="price__title" :underline="false">{{ location.name }}房价</el-link>
         <div class="price__trend">
           <line-chart :option="option"></line-chart>
         </div>
       </el-col>
-      <el-col :span="8" v-for="price in prices" :key="price.name">
+      <el-col :span="16 / prices.length" v-for="price in prices" :key="price.name">
         <router-link class="price__title" target="_blank" :to="{ name: price.name }">找{{ price.title }}</router-link>
         <el-row class="price__content" :gutter="10" v-for="link in price.links" :key="link.name">
-          <el-col :span="4" class="price__content__label">{{ link.label }}</el-col>
-          <el-col :span="20">
+          <el-col :span="2" class="price__content__label">{{ link.label }}</el-col>
+          <el-col :span="22">
             <router-link
               v-for="option in link.options"
               :key="option.name"

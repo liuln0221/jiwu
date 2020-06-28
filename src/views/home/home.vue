@@ -13,7 +13,7 @@
     <!-- 置业顾问 -->
     <adviser></adviser>
     <!-- 精选二手房 -->
-    <old-house></old-house>
+    <!-- <old-house></old-house> -->
     <!-- 房产咨询 -->
     <information></information>
     <!-- 知识库 -->

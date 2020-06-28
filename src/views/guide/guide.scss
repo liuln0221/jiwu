@@ -1,1 +1,21 @@
-.guide {}
+.guide {
+  margin-top: 20px;
+
+  /deep/.el-card {
+    padding-top: 0;
+
+    .el-card__header {
+      font-weight: normal;
+      font-size: 30px;
+      color: #666;
+    }
+
+    .el-card__body {
+      padding-top: 0;
+    }
+  }
+
+  .hot-project {
+    margin-top: 20px;
+  }
+}

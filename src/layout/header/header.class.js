@@ -7,7 +7,7 @@ const menus = [
     name: 'newHouse',
     label: '新房',
     children: [
-      { name: 'newBuilding', label: '新盘' },
+      { name: 'newHouse', label: '新盘' },
       { name: 'hotSaleBuilding', label: '热销楼盘' },
       { name: 'mapHouse', label: '地图找房' },
       { name: 'findHouse', label: '帮我找房' }
@@ -19,7 +19,7 @@ const menus = [
     name: 'guide',
     label: '指南',
     children: [
-      { name: 'questions', label: '问答' },
+      { name: 'qa', label: '问答' },
       { name: 'encyclopedias', label: '百科' },
       { name: 'priceTrend', label: '房价走势' }
     ]

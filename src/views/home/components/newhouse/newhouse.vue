@@ -9,7 +9,7 @@
             <el-link
               :underline="false"
               v-for="region in regions"
-              :key="region.id"
+              :key="region.code"
               :class="region.active ? 'active' : ''"
               @mouseover.native="mouseover(region)"
             >{{ region.name }}<i></i></el-link>
@@ -24,7 +24,7 @@
         <el-carousel-item v-for="house in houses" :key="house.name">
           <div ref="newhouse__content">
             <el-row :gutter="20">
-              <el-col :span="12" class="img__first">
+              <el-col :span="12" class="img__first" v-if="house[0]">
                 <router-link target="_blank" :to="{ name: 'newHouseDetail', params: { id: house[0].id } }">
                   <el-image :src="house[0].src"></el-image>
                 </router-link>

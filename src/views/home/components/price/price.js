@@ -1,5 +1,7 @@
-import { newHouse, oldHouse } from './price.class';
-import { SysDict } from '@/api/index';
+import { mapState } from 'vuex';
+
+// import { newHouse, oldHouse } from './price.class';
+import { Region, Price } from '@/api/index';
 
 import LineChart from '@/components/echarts/line.vue';
 
@@ -8,17 +10,42 @@ export default {
   components: { LineChart },
   data() {
     return {
-      prices: [
-        { name: 'newHouse', title: '新房', links: newHouse },
-        { name: 'oldHouse', title: '二手房', links: oldHouse }
-      ],
-      optionData: [
-        { key: 1, name: '新房', value: [ 49612, 49758, 49270, 49343, 49010, 48882 ], color: '#f7624e' },
-        { key: 2, name: '二手房', value: [ 64237 , 63376, 62964, 65059, 69257, 68340 ], color: '#47b3e3' }
-      ]
+      childRegion: [],
+      newHousePriceLevels: [],
+      newHousePrice: [],
+      xData: [] // X轴数据
     }
   },
   computed: {
+    ...mapState({
+      location: state => state.app.location // 当前城市
+    }),
+    prices() {
+      return [
+        { name: 'newHouse', title: '新房', links: this.newHouse },
+        // { name: 'oldHouse', title: '二手房', links: oldHouse }
+      ];
+    },
+    newHouse() {
+      return [
+        {
+          name: 'region',
+          label: '区域',
+          options: this.childRegion
+        },
+        {
+          name: 'avgPrice',
+          label: '均价',
+          options: this.newHousePriceLevels
+        }
+      ];
+    },
+    optionData() {
+      return [
+        { key: 1, name: '新房', value: this.newHousePrice, color: '#f7624e' },
+        // { key: 2, name: '二手房', value: [ 64237 , 63376, 62964, 65059, 69257, 68340 ], color: '#47b3e3' }
+      ];
+    },
     seriesData() {
       const result = [];
       this.optionData.forEach(item => {
@@ -31,19 +58,6 @@ export default {
         });
       });
       return result;
-    },
-    // X轴数据
-    xData() {
-      const result = [];
-      const date = new Date();
-      date.setMonth(date.getMonth() + 1, 1); // 获取到当前月份，设置月份
-      for (let i = 0; i < 6; i++) {
-        date.setMonth(date.getMonth() - 1); // 每循环一次，月份值减1
-        let m = date.getMonth() + 1;
-        m = m < 10 ? `0${m}` : m;
-        result.push(`${date.getFullYear()}-${m}`);
-      }
-      return result.reverse();
     },
     // echarts配置
     option() {
@@ -105,21 +119,51 @@ export default {
     }
   },
   methods: {
-    getCityPriceLevels() {
-      this.optionData.forEach((item, index) => {
-        SysDict.getCityPriceLevels(item.key).then(res => {
-          this.optionData[index].value = res.data ? res.data : [];
-        });
+    /**
+     * 区域
+     */
+    getChildRegion() {
+      Region.getChildRegion().then(res => {
+        this.childRegion = res.data.map(item => {
+          return {
+            name: item.code,
+            label: item.name
+          };
+        }); 
       });
     },
-    getCityAllRegion() {
-      SysDict.getCityAllRegion().then(res => {
-        this.prices[0].links = res.data ? res.data : [];
+    /**
+     * 价格区间
+     */
+    getPriceLevles() {
+      // 新房
+      Price.getLevels({ type: '1' }).then(res => {
+        this.newHousePriceLevels = res.data.map(item => {
+          return {
+            name: item.id,
+            label: item.name
+          };
+        }); 
+      })
+    },
+    /**
+     * 均价
+     */
+    getHistoryCurrentRegion() {
+      // 新房
+      Price.getHistoryCurrentRegion('1', { limit: 6 }).then(res => {
+        this.newHousePrice = res.data.map(item => {
+          return item.averagePrice;
+        });
+        this.xData = res.data.map(item => {
+          return item.date;
+        });
       });
     }
   },
   mounted() {
-    this.getCityPriceLevels();
-    this.getCityAllRegion();
+    this.getChildRegion();
+    this.getPriceLevles();
+    this.getHistoryCurrentRegion();
   }
 };

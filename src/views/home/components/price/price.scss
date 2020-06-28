@@ -21,6 +21,14 @@
       line-height: 36px;
       .price__content__label {
         color: #869099;
+        max-width: 50px;
+      }
+
+      a {
+        &:after {
+          content: '';
+          margin-right: 25px;
+        }
       }
     }
   }

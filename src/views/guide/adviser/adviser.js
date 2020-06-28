@@ -1,7 +1,7 @@
-import { data } from './sellwellnew.class';
+import { data } from './adviser.class';
 
 export default {
-  name: 'sellwellnew',
+  name: 'adviser',
   data() {
     return {
       data

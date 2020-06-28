@@ -1,5 +1,7 @@
 import { mapState } from 'vuex';
 
+import { Price } from '@/api/index';
+
 export default {
   name: 'checkPrice',
   data() {
@@ -18,5 +20,19 @@ export default {
     ...mapState({
       location: state => state.app.location // 当前城市
     })
+  },
+  methods: {
+    /**
+     * 均价
+     */
+    getHistoryCurrentRegion() {
+      // 新房
+      Price.getHistoryCurrentRegion('1', { limit: 1 }).then(res => {
+        this.newHousePrice = res.data[0] ? res.data[0] : {};
+      });
+    }
+  },
+  mounted() {
+    this.getHistoryCurrentRegion();
   }
 };

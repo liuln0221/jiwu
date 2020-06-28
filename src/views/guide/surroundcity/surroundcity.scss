@@ -1,0 +1,15 @@
+.surround-city {
+  margin-top: 50px;
+
+  /deep/.el-card {
+    .el-card__body {
+      padding-top: 25px !important;
+
+      .el-row {
+        .el-col {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+}

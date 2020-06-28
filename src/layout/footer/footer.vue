@@ -8,7 +8,7 @@
         target="_blank"
       >{{ item.label }}</router-link>
     </div>
-    <div class="footer__links">
+    <!-- <div class="footer__links">
       <el-row :gutter="20">
         <el-col :span="2" class="footer__links__title">{{ location.name }}导航</el-col>
         <el-col :span="22">你可以按区域查找{{ location.name }}新房、二手房，也可以按区域查询{{ location.name }}房价。同时，你买房过程中遇到的很多问题都可以在这里得到解答。</el-col>
@@ -27,7 +27,7 @@
           >{{ option.label }}</el-button>
         </el-col>
       </el-row>
-    </div>
+    </div> -->
     <div class="footer__conyfiv">
       <div>Copyright © 2020 <el-link :underline="false">jiwu.com</el-link> 深圳市吉屋网络技术有限公司 ALL Rights Reserved</div>
       <div>

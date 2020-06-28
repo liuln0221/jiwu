@@ -46,7 +46,7 @@ export default {
           store.find(item => item.name === val.value.name).active = false;
         }
       }
-      this.$route.push({ name: 'newHouse' });
+      this.$router.push({ name: 'newHouse' });
       this.getSelected();
     },
     clearBtn() {

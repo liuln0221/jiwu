@@ -1,0 +1,75 @@
+.adviser {
+  border: 1px solid #eee;
+
+  .el-image {
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin: 20px auto 0;
+    border-radius: 50%;
+  }
+
+  .adviser__name {
+    color: #0f0f0f;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .adviser__consult {
+    display: block;
+    width: 80px;
+    line-height: 20px;
+    padding: 0;
+    margin: 5px auto 0;
+    border: none;
+    border-radius: 3px;
+    background-color: #47b3e3;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  .adviser__info {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    margin-top: 20px;
+    text-align: center;
+
+    & > div {
+      color: #869099;
+      font-size: 12px;
+      line-height: 20px;
+
+      .number {
+        color: #000;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .adviser__familiar {
+    color: #869099;
+    font-size: 12px;
+    padding: 15px;
+    line-height: 20px;
+
+    & > div {
+      display: flex;
+      white-space: nowrap;
+
+      .label {
+        &::after {
+          content: '：';
+        }
+      }
+
+      & > div:not(.label) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

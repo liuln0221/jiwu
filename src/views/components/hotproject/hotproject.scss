@@ -1,0 +1,70 @@
+.hot-project {
+  /deep/.el-card {
+    padding: 0;
+
+    .el-card__header {
+      font-size: 20px !important;
+      font-weight: bold !important;
+      height: 30px;
+      line-height: 30px;
+
+      .el-button {
+        font-size: 12px;
+      }
+    }
+
+    .el-card__body {
+      padding-top: 0;
+      & > div {
+        margin-top: 20px;
+        
+        a {
+          display: flex;
+
+          .hot-project__img {
+            width: 100px;
+            height: 67px;
+            margin-right: 10px;
+          }
+
+          .hot-project__local {
+            margin: 7px auto 12px 0;
+            height: 19px;
+          }
+
+          &:hover {
+            background-color: #f6f6f6;
+          }
+        }
+
+        .hot-project__adviser {
+          position: relative;
+          top: -36px;
+          display: flex;
+          align-items: center;
+          margin-left: 110px;
+          width: max-content;
+
+          .adviser__img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+          }
+
+          .adviser__consult {
+            display: block;
+            width: 80px;
+            line-height: 20px;
+            padding: 0;
+            margin-left: 10px;;
+            border: none;
+            border-radius: 3px;
+            background-color: #47b3e3;
+            color: #fff;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,13 +5,14 @@ Vue.use(Router)
 
 import Layout from '@/layout/layout.vue';
 
-import homeRoutes from './home/router';
-import newHouseRoutes from './newhouse/router';
-import oldHouseRoutes from './oldhouse/router';
-import informationRoutes from './information/router';
-import adviserRoutes from './adviser/router';
-import guideRoutes from './guide/router';
-import aboutRoutes from './about/router';
+import homeRoutes from './home/router'; // 首页
+import newHouseRoutes from './newhouse/router'; // 新房
+import oldHouseRoutes from './oldhouse/router'; // 二手房
+import informationRoutes from './information/router'; // 资讯
+import guideRoutes from './guide/router'; // 指南
+import qaRoutes from './qa/router'; // 问答
+import adviserRoutes from './adviser/router'; // 置业顾问
+import aboutRoutes from './about/router'; // 关于
 
 const routes = [
   {
@@ -24,6 +25,7 @@ const routes = [
       ...oldHouseRoutes,
       ...informationRoutes,
       ...guideRoutes,
+      ...qaRoutes,
       ...adviserRoutes
     ]
   },

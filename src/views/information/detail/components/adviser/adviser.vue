@@ -14,7 +14,7 @@
                 <div class="num">已服务{{ adviser.servicePersonNum }}人</div>
               </div>
             </div>
-            <el-button icon="el-icon-plus">向TA咨询</el-button>
+            <el-button icon="icon-message2">向TA咨询</el-button>
           </div>
         </el-col>
       </el-row>
