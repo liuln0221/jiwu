@@ -5,14 +5,17 @@ Vue.use(Router)
 
 import Layout from '@/layout/layout.vue';
 
+import toolRoutes from './tool/router'; // 工具
 import homeRoutes from './home/router'; // 首页
 import newHouseRoutes from './newhouse/router'; // 新房
 import oldHouseRoutes from './oldhouse/router'; // 二手房
-import informationRoutes from './information/router'; // 资讯
+import newsRoutes from './news/router'; // 资讯
 import guideRoutes from './guide/router'; // 指南
 import qaRoutes from './qa/router'; // 问答
 import adviserRoutes from './adviser/router'; // 置业顾问
 import aboutRoutes from './about/router'; // 关于
+
+import HouseTypeDetail from './newhouse/detail/housetype/detail/detail.vue'; // 户型图详情
 
 const routes = [
   {
@@ -20,16 +23,22 @@ const routes = [
     component: Layout,
     redirect: { name: 'home' },
     children: [
+      ...toolRoutes,
       ...homeRoutes,
       ...newHouseRoutes,
       ...oldHouseRoutes,
-      ...informationRoutes,
+      ...newsRoutes,
       ...guideRoutes,
       ...qaRoutes,
       ...adviserRoutes
     ]
   },
-  ...aboutRoutes
+  ...aboutRoutes,
+  {
+    name: 'newHouseTypeDetail',
+    path: '/houseType/:id',
+    component: HouseTypeDetail
+  }
 ];
 
 export default new Router({

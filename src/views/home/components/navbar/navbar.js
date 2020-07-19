@@ -31,20 +31,20 @@ export default {
     // 新房
     newHouseLinks() {
       return [
-        { title: '区域', options: this.childRegion },
-        { title: '单价', options: this.newHousePriceLevels },
-        {
-          title: '特色',
-          options: [
-            { name: 'zhuanchekanfang', label: '专车看房' }
-          ]
-        }
+        { name: 'region', label: '区域', options: this.childRegion },
+        { name: 'priceInterval', label: '均价', options: this.newHousePriceLevels }
+        // {
+        //   title: '特色',
+        //   options: [
+        //     { name: 'zhuanchekanfang', label: '专车看房' }
+        //   ]
+        // }
       ];
     },
     // 查房价
     checkPrice() {
       return [
-        { title: '热门区域', options: this.childRegion}
+        { name: 'region', label: '热门区域', options: this.childRegion}
         // {
         //   title: '热门板块',
         //   options: [

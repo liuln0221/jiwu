@@ -6,13 +6,14 @@
       v-for="link in links"
       :key="link.name"
     >
-      <el-col :span="2" class="submenu-item__link__title">{{ link.title }}</el-col>
+      <el-col :span="2" class="submenu-item__link__title">{{ link.label }}</el-col>
       <el-col :span="22">
-        <el-button
-          type=text
+        <router-link
           v-for="option in link.options"
           :key="option.name"
-        >{{ option.label }}</el-button>
+          :to="{ name: 'newHouseListFilter', params: { filter: link.name === 'region'? `region${option.name}` : link.name === 'priceInterval' ? `priceInterval${option.name}` : undefined} }"
+          target="_blank"
+        >{{ option.label }}</router-link>
       </el-col>
     </el-row>
   </div>

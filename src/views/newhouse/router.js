@@ -1,27 +1,26 @@
 import NewHouse from './newhouse.vue';
 import List from './list/list.vue';
 import Detail from './detail/detail.vue';
+// import HouseTypeDetail from './detail/housetype/detail/detail.vue'; // 户型图详情
 
 import NewHouseDetailRoutes from './detail/router';
 
 const routes = [
   {
     name: 'newHouse',
-    path: 'newHouse',
+    path: 'lopan',
     component: NewHouse,
     redirect: { name: 'newHouseList' },
     children: [
       {
         name: 'newHouseList',
         path: '',
-        component: List,
-        children: [
-          {
-            name: 'newHouseListFilter',
-            path: ':filter',
-            component: List
-          }
-        ]
+        component: List
+      },
+      {
+        name: 'newHouseListFilter',
+        path: 'filter/:filter',
+        component: List
       },
       {
         name: 'newHouseDetail',
@@ -31,7 +30,12 @@ const routes = [
         children: NewHouseDetailRoutes
       }
     ]
-  }
+  },
+  // {
+  //   name: 'newHouseTypeDetail',
+  //   path: 'houseType/:id',
+  //   component: HouseTypeDetail
+  // }
 ];
 
 export default routes;

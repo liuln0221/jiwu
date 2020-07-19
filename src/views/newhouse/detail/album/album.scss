@@ -26,6 +26,17 @@
     }
   }
 
+  .group {
+    margin-top: 30px;
+    margin: 30px -10px 20px -10px;
+
+    .el-image {
+      width: calc(20% - 20px);
+      height: 170px;
+      margin: 0 10px 10px;
+    }
+  }
+
   .album__desc {
     color: #869099;
     line-height: 24px;

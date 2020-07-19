@@ -5,6 +5,7 @@ import Album from './album/album.vue'; // 相册
 import MapTraffic from './maptraffic/maptraffic.vue'; // 地图交通
 import PriceTrend from './pricetrend/pricetrend.vue'; // 价格走势
 import Dynamic from './dynamic/dynamic.vue'; // 楼盘动态
+import DynamicDetail from './dynamic/detail/detail.vue'; // 动态详情
 import QA from './qa/qa.vue'; // 有问必答
 
 const routes = [
@@ -42,6 +43,11 @@ const routes = [
     name: 'newHouseDetailDynamic',
     path: 'dynamic',
     component: Dynamic
+  },
+  {
+    name: 'newHouseDetailDynamicDetail',
+    path: 'dynamic/:informationId',
+    component: DynamicDetail
   },
   {
     name: 'newHouseDetailQA',

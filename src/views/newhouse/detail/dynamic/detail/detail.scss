@@ -1,0 +1,37 @@
+.dynamic-detail {
+  margin-top: 30px;
+  /deep/.el-card {
+    padding-top: 0;
+    .el-card__header {
+      .dynamic-detail__source {
+        font-size: 12px;
+        font-weight: normal;
+        color: #869099;
+        margin-top: 20px;
+
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .el-card__body {
+      padding-top: 16px !important;
+
+      .dynamic-detail__content {
+        font-size: 16px;
+        line-height: 28px;
+      }
+
+      .dynamic-detail__tel {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 50px;
+
+        span {
+          color: #ff6263;
+        }
+      }
+    }
+  }
+}

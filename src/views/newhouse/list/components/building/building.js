@@ -1,31 +1,34 @@
-import { regions, avgPrices, propertyTypes, propertyFeatures, salesStatus, openingTimes } from './building.class';
+import { propertyTypes, saleStatus, openStatus } from './building.class';
 
 export default {
   name: 'building',
+  props: [ 'regions', 'priceIntervals', 'labels' ],
   data() {
     return {
       data: {
         region: undefined, // 区域
-        avgPrice: undefined, // 均价
+        priceInterval: undefined, // 均价
         specialCar: false, // 专车看房
         propertyType: '', // 物业类型
-        propertyFeature: '', // 楼盘特色
-        salesStatus: '', // 销售状态
-        openingTime: '' // 开盘时间
-      },
-      regions,
-      avgPrices,
-      selectOptions: [
-        { name: 'propertyType', label: '物业类型', options: propertyTypes },
-        { name: 'propertyFeature', label: '楼盘特色', options: propertyFeatures },
-        { name: 'salesStatus', label: '销售状态', options: salesStatus },
-        { name: 'openingTime', label: '开盘时间', options: openingTimes }
-      ]
+        label: '', // 楼盘特色
+        saleStatus: '', // 销售状态
+        openStatus: '' // 开盘时间
+      }
     };
   },
+  computed: {
+    selectOptions() {
+      return [
+        { name: 'propertyType', label: '物业类型', options: propertyTypes },
+        { name: 'label', label: '楼盘特色', options: this.labels },
+        { name: 'saleStatus', label: '销售状态', options: saleStatus },
+        { name: 'openStatus', label: '开盘状态', options: openStatus }
+      ];
+    }
+  },
   methods: {
-    selectBtn(val, store, type, key = 'name') {
-      this.data[type] = val.name ? val : undefined;
+    selectBtn(val, store, type, key = 'id') {
+      this.data[type] = val && val[key] ? val : undefined;
       store.forEach((item, index) => {
         if (item[key] === val[key]) {
           store[index].active = true;
@@ -35,7 +38,7 @@ export default {
       });
       this.getSelected();
     },
-    resetBtn(val) {
+    resetBtn(val, key = 'id') {
       if (val.name === 'specialCar') {
         this.data[val.name] = false;
       } else {
@@ -43,10 +46,10 @@ export default {
         const store = this[`${val.name}s`];
         if (store) {
           store[0].active = true;
-          store.find(item => item.name === val.value.name).active = false;
+          store.find(item => item[key] === val.value[key]).active = false;
         }
       }
-      this.$router.push({ name: 'newHouse' });
+      // this.$router.push({ name: 'newHouse' });
       this.getSelected();
     },
     clearBtn() {
@@ -54,10 +57,10 @@ export default {
       this.regions[0].active = true;
       this.regions.find((item, index) => index !== 0).active = false;
       // 均价
-      this.avgPrices[0].active = true;
-      this.avgPrices.find((item, index) => index !== 0).active = false;
+      this.priceIntervals[0].active = true;
+      this.priceIntervals.find((item, index) => index !== 0).active = false;
 
-      this.$router.push({ name: 'newHouse' });
+      // this.$router.push({ name: 'newHouse' });
     },
     clear() {
       for(const key in this.data) {
@@ -87,11 +90,11 @@ export default {
   mounted() {
     console.log(this.$route);
     if (this.$route.query.region) {
-      const val = this.regions.find(item => item.name === this.$route.query.region);
+      const val = this.regions.find(item => item.id === this.$route.query.region);
       this.selectBtn(val, this.regions, 'region');
-    } else if (this.$route.query.avgPrice) {
-      const val = this.avgPrices.find(item => item.name === this.$route.query.avgPrice);
-      this.selectBtn(val, this.avgPrices, 'avgPrice');
+    } else if (this.$route.query.priceInterval) {
+      const val = this.priceIntervals.find(item => item.id === this.$route.query.priceInterval);
+      this.selectBtn(val, this.priceIntervals, 'priceInterval');
     }
   }
 };

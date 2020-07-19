@@ -28,7 +28,19 @@ const Price = {
     return request.get(`${BASE_URL}/history/currentRegion/${type}`, {
       params: param
     });
-  }
+  },
+  /**
+   * @description 查询楼盘历史房价记录
+   * @param id 项目id
+   * @param param 参数
+   * @return {}
+   * @author liulina
+   */
+  getHistoryProject: (id, param) => {
+    return request.get(`${BASE_URL}/history/project/${id}`, {
+      params: param
+    });
+  },
 };
 
 export default Price;

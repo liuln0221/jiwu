@@ -3,7 +3,7 @@ import request from '@/utils/request';
 const BASE_URL = '/api/sales';
 
 /**
- * 系统Banner服务API
+ * 销售人员API
  */
 const Sales = {
   /**
@@ -16,6 +16,15 @@ const Sales = {
     return request.get(BASE_URL, {
       params: param
     });
+  },
+  /**
+   * @description 销售顾问详情获取
+   * @param id 销售id
+   * @return {}
+   * @author liulina
+   */
+  getSalesDetail: (id) => {
+    return request.get(`${BASE_URL}/${id}`);
   }
 };
 

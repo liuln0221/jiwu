@@ -8,13 +8,24 @@
           :key="adviser.id"
         >
           <div class="adviser__item">
-            <el-image :src="adviser.img"></el-image>
+            <router-link :to="{ name: 'adviserDetail', params: { id: adviser.id } }">
+              <el-image :src="adviser.headImgUrl"></el-image>
+            </router-link>
             <div class="adviser__content">
-              <el-link class="adviser__name" :underline="false">{{ adviser.name }}</el-link>
+              <router-link class="adviser__name" :to="{ name: 'adviserDetail', params: { id: adviser.id } }">{{ adviser.name }}</router-link>
               <div class="adviser__consulte"><i class="icon-message2"></i>向TA咨询</div>
-              <div class="adviser__text">响应速度：{{ adviser.resSpeed }}分钟+</div>
-              <div class="adviser__text">回复速度：{{ (adviser.resRate * 100).toFixed(0) }}%</div>
-              <div class="adviser__text">服务人数：{{ adviser.servicePersonNum }}</div>
+              <div class="adviser__text">响应速度：
+                <span v-if="adviser.resSpeed">{{ adviser.resSpeed }}分钟+</span>
+                <span v-else>-</span>
+              </div>
+              <div class="adviser__text">回复速度：
+                <span v-if="adviser.resRate">{{ (adviser.resRate * 100).toFixed(0) }}%</span>
+                <span v-else>-</span>
+              </div>
+              <div class="adviser__text">服务人数：
+                <span v-if="adviser.servicePersonNum">{{ adviser.servicePersonNum }}</span>
+                <span v-else>-</span>
+              </div>
             </div>
           </div>
         </el-col>

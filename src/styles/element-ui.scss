@@ -80,14 +80,31 @@
 }
 
 .el-radio-group {
-  .el-radio {
+  .el-radio,
+  .el-radio-button {
     .el-radio__input {
       display: none;
     }
 
-    &.is-checked {
+    &.is-checked,
+    &.is-active {
       .el-radio__label {
         font-weight: bold;
+        color: #47b3e3;
+      }
+
+      .el-radio-button__inner {
+        background-color: #47b3e3;
+        border-color: #47b3e3;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
+    .el-radio-button__inner {
+      &:hover {
         color: #47b3e3;
       }
     }
@@ -181,6 +198,15 @@
   background-color: #47b3e3;
   border: none;
   border-radius: 0;
+  cursor: pointer;
+
+  a {
+    display: inline-block;
+    width: 100%;
+    &:hover {
+      color: #fff;
+    }
+  }
 
   .popper__arrow {
     border-left-color: #47b3e3 !important;

@@ -1,57 +1,55 @@
 // 区域
 const regions = [
-  { id: 100001, name: undefined, label: '全部', active: true },
-  { id: 100002, name: 'daxing', label: '大兴', num: 71, active: false },
-  { id: 100003, name: 'fengtai', label: '丰台', num: 44, active: false },
-  { id: 100004, name: 'shunyi', label: '顺义', num: 45, active: false }
+  { id: 100001, name: '全部', active: true },
+  { id: 100002, name: '大兴', num: 71, active: false },
+  { id: 100003, name: '丰台', num: 44, active: false },
+  { id: 100004, name: '顺义', num: 45, active: false }
 ];
 
 // 均价
-const avgPrices = [
+const priceIntervals = [
   { id: 100001, name: undefined, label: '全部', active: true },
   { id: 100002, name: '3', label: '3万以下', active: false }
 ];
 
 // 物业类型
 const propertyTypes = [
-  { id: 100001, name: 'residence', label: '住宅' },
-  { id: 100002, name: 'business', label: '商业' },
-  { id: 100003, name: 'synthesis', label: '综合体' },
-  { id: 100004, name: 'other', label: '其他' }
+  { id: 1, name: '住宅' },
+  { id: 2, name: '商业' },
+  { id: 3, name: '别墅' },
+  { id: 4, name: '综合' },
+  { id: 5, name: '其它' }
 ];
 
 // 楼盘特色
 const propertyFeatures = [
-  { id: 100001, name: 'residence', label: '大型社区' },
-  { id: 100002, name: 'business', label: '大型商超' }
+  { id: 100001, name: '大型社区' },
+  { id: 100002, name: '大型商超' }
 ];
 
 // 销售状态
-const salesStatus = [
-  { id: 100001, name: 'onSale', label: '在售' },
-  { id: 100002, name: 'firstOpening', label: '新盘首开' },
-  { id: 100003, name: 'oldBuildPush', label: '老盘加推' },
-  { id: 100004, name: 'tailPlate', label: '尾盘' },
-  { id: 100005, name: 'commissionSale', label: '代售' },
-  { id: 100006, name: 'soldOut', label: '售完' }
+const saleStatus = [
+  { id: 1, name: '在售' },
+  { id: 2, name: '待售' },
+  { id: 3, name: '售完' }
 ];
 
-// 开盘时间
-const openingTimes = [
-  { id: 100001, name: 'opened', label: '已开盘' },
-  { id: 100002, name: 'unopened', label: '未开盘' },
-  { id: 100003, name: 'openinmonth', label: '本月开盘' },
-  { id: 100004, name: 'opennextmonth', label: '下月开盘' },
-  { id: 100005, name: 'openwiththreemonth', label: '3个月内开盘' },
-  { id: 100006, name: 'openwithsixmonth', label: '6个月内开盘' },
-  { id: 100007, name: 'openwithinyear', label: '1年内开盘' }
+// 开盘状态
+const openStatus = [
+  { id: 1, name: '未开盘' },
+  { id: 2, name: '已开盘' },
+  { id: 3, name: '本月开盘' },
+  { id: 4, name: '下月开盘' },
+  { id: 5, name: '三月内开盘' },
+  { id: 6, name: '六月内开盘' },
+  { id: 7, name: '一年内开盘' }
 ];
 
 export {
   regions,
-  avgPrices,
+  priceIntervals,
   propertyTypes,
   propertyFeatures,
-  salesStatus,
-  openingTimes
+  saleStatus,
+  openStatus
 };

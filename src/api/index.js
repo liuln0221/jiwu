@@ -6,6 +6,11 @@ import Sales from './modules/sales';
 import News from './modules/news';
 import VerifyCode from './modules/verifycode';
 import User from './modules/user';
+import ProjectLabel from './modules/projectlabel';
+import ProjectEvaluate from './modules/projectevaluate';
+import ProjectInformation from './modules/projectinformation';
+import Faqs from './modules/faqs';
+import Activity from './modules/acticity';
 
 export {
   Region,
@@ -15,5 +20,10 @@ export {
   Sales,
   News,
   VerifyCode,
-  User
+  User,
+  ProjectLabel,
+  ProjectEvaluate,
+  ProjectInformation,
+  Faqs,
+  Activity
 };

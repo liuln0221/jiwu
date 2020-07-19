@@ -31,8 +31,8 @@ const Project = {
    * @return {}
    * @author liulina
    */
-  getListQuery4Page: (params) => {
-    return request.get(`${BASE_URL}/listQuery4Page`, {
+  getProject: (params) => {
+    return request.get(BASE_URL, {
       params
     });
   },
@@ -43,11 +43,55 @@ const Project = {
    * @author liulina
    */
   getProjectDetail: (id) => {
-    return request.get(`${BASE_URL}/detail`, {
-      params: {
-        projectId: id
-      }
+    return request.get(`${BASE_URL}/${id}`);
+  },
+  /**
+   * @description 户型
+   * @param id 楼盘id
+   * @return {}
+   * @author liulina
+   */
+  getProjectLayouts: (id) => {
+    return request.get(`${BASE_URL}/${id}/layouts`);
+  },
+  /**
+   * @description 规划信息
+   * @param id 楼盘id
+   * @return {}
+   * @author liulina
+   */
+  getProjectPlanInfo: (id) => {
+    return request.get(`${BASE_URL}/${id}/planInfo`);
+  },
+  /**
+   * @description 相册列表
+   * @param id 楼盘id
+   * @param param 参数
+   * @return {}
+   * @author liulina
+   */
+  getProjectImgGroups: (id, param) => {
+    return request.get(`${BASE_URL}/${id}/imgGroups`, {
+      params: param
     });
+  },
+  /**
+   * @description 楼盘描述信息
+   * @param id 楼盘id
+   * @return {}
+   * @author liulina
+   */
+  getProjectDescription: (id) => {
+    return request.get(`${BASE_URL}/${id}/description`);
+  },
+  /**
+   * @description 关注楼盘
+   * @param param 参数
+   * @return {}
+   * @author liulina
+   */
+  concernProject: (param) => {
+    return request.post(`${BASE_URL}/concernProject`, param);
   }
 };
 

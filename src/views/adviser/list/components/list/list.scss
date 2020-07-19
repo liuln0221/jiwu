@@ -33,13 +33,15 @@
           i {
             position: relative;
             top: 2px;
-            font-size: 18px;
+            font-size: 16px;
             color: #fff;
             background: #47b3e3;
+            padding: 2px;
+            margin: 0;
           }
 
           span {
-            padding: 0 1px;
+            padding: 1px;
             margin: 0;
             border: 1px solid #47b3e3;
             border-left: none;

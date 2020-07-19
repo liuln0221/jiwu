@@ -22,7 +22,7 @@ export default {
     }),
     prices() {
       return [
-        { name: 'newHouse', title: '新房', links: this.newHouse },
+        { name: 'newHouseListFilter', title: '新房', links: this.newHouse },
         // { name: 'oldHouse', title: '二手房', links: oldHouse }
       ];
     },
@@ -34,7 +34,7 @@ export default {
           options: this.childRegion
         },
         {
-          name: 'avgPrice',
+          name: 'priceInterval',
           label: '均价',
           options: this.newHousePriceLevels
         }

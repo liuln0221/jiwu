@@ -2,14 +2,17 @@
   <div class="image-info">
     <el-row :gutter="20">
       <el-col :span="10">
-        <el-image :src="data.img"></el-image>
+        <router-link v-if="data.routerTo" :to="data.routerTo" target="_blank">
+          <el-image :src="data.layoutImgUrl"></el-image>
+        </router-link>
+        <el-image v-else :src="data.layoutImgUrl"></el-image>
       </el-col>
       <el-col :span="14">
-        <el-link :underline="false">{{ data.houseType }}</el-link>
-        <p v-if="data.area">建筑面积：约{{ data.area }}平米</p>
-        <p v-if="data.downPayments">参考首付：{{ data.downPayments }}万</p>
-        <p v-if="data.monthlySupply">参考月供：约{{ data.monthlySupply }}元</p>
-        <p v-if="data.desc">户型描述：{{ data.desc }}</p>
+        <router-link v-if="data.routerTo" :to="data.routerTo" target="_blank">{{ data.type }}</router-link>
+        <span v-else class="name">{{ data.type }}</span>
+        <p v-if="data.grossArea">建筑面积：约{{ data.grossArea }}平米</p>
+        <p v-if="data.downPayment" class="downPayment">参考首付：<span>{{ data.downPayment }}万</span></p>
+        <p v-if="data.monthlyPayment">参考月供：约{{ data.monthlyPayment }}元</p>
       </el-col>
     </el-row>
   </div>
@@ -30,15 +33,23 @@ export default {
       height: 100%;
       .el-image {
         height: 100%;
+        width: 100%;
       }
 
-      .el-link {
+      a,
+      .name {
         font-size: 16px;
         font-weight: bold;
       }
 
       p {
         margin: 10px 0;
+
+        &.downPayment {
+          span {
+            color: #ff6263;
+          }
+        }
       }
     }
   }

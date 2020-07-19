@@ -4,11 +4,7 @@
     color: #869099;
     height: 19px;
 
-    .el-link {
-      top: -2px;
-    }
-
-    .el-link+.el-link {
+    a+a {
       &::before {
         content: '>';
         margin: 0 5px;
@@ -33,13 +29,13 @@
         color: #fff;
       }
 
-      .el-tag.specialCar {
+      .el-tag:nth-child(2) {
         border-color: #47b3e3;
         color: #47b3e3;
       }
     }
 
-    .newHouse-detail__title__alias,
+    .newHouse-detail__title__otherName,
     .newHouse-detail__title__update {
       margin-left: 15px;
       font-size: 12px;
@@ -97,7 +93,7 @@
       .el-card__header {
         font-size: 24px;
   
-        .el-link {
+        a {
           font-size: 24px;
           font-weight: bold;
           margin-right: 10px;
@@ -110,7 +106,7 @@
             display: flex;
             margin-bottom: 10px;
       
-            .el-link {
+            a {
               font-size: 16px;
               max-width: 770px;
               display: inline-block;
@@ -129,20 +125,25 @@
       
           .info {
             border-bottom: 1px #eee solid;
-            padding-bottom: 16px;
+            padding-top: 10px;
 
-            .el-link {
+            a {
               color: #869099;
               line-height: 24px;
-      
-              :hover {
-                color: #869099;
+
+              p {
+                margin: 0 0 10px 0;
+
+                &:last-child {
+                  display: inline-block;
+                }
               }
             }
       
             .el-button {
+              float: right;
               color: #47b3e3;
-              padding: 0;
+              padding: 10px 0;
             }
           }
         }
@@ -161,7 +162,7 @@
     border-bottom: #e5e5e5 1px dashed;
     padding: 13px 30px;
     line-height: 30px;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
 
     .label {
       padding-right: 20px;

@@ -16,9 +16,11 @@
             <template slot="title">
               <!-- 新房 -->
               <div v-if="menu.name === 'newHouse'" class="navbar__submenu__item__title">
-                <el-button icon="icon-house-map">地图找房</el-button>
-                <span>或</span>
-                <el-button icon="icon-message">找新房置业管家咨询</el-button>
+                <!-- <el-button icon="icon-house-map">地图找房</el-button>
+                <span>或</span> -->
+                <router-link :to="{ name: 'adviser' }">
+                  <i class="icon-message"></i>找新房置业管家咨询
+                </router-link>
               </div>
               <!-- 二手房 -->
               <div v-else-if="menu.name === 'oldHouse'" class="navbar__submenu__item__title">

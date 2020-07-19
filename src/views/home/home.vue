@@ -17,7 +17,7 @@
     <!-- 房产咨询 -->
     <information></information>
     <!-- 知识库 -->
-    <knowledge-base></knowledge-base>
+    <!-- <knowledge-base></knowledge-base> -->
   </div>
 </template>
 

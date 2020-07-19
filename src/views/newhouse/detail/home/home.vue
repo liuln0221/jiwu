@@ -2,6 +2,8 @@
   <div class="home">
     <!-- 基本信息 -->
     <base-info :data="data"></base-info>
+    <!-- 楼盘点评 -->
+    <comment :data="data"></comment>
     <!-- 最新动态 -->
     <dynamic :data="data"></dynamic>
     <!-- 户型图 -->
@@ -9,19 +11,19 @@
     <!-- 楼盘信息 -->
     <property-info :data="data"></property-info>
     <!-- 周边配套 -->
-    <periphery :data="data"></periphery>
+    <!-- <periphery :data="data"></periphery> -->
     <!-- 楼盘相册 -->
     <album :data="data"></album>
     <!-- 房价 -->
     <price :data="data"></price>
     <!-- 商家其他楼盘 -->
-    <other :data="data"></other>
+    <!-- <other :data="data"></other> -->
     <!-- 同价位新盘 -->
-    <same-price :data="data"></same-price>
+    <!-- <same-price :data="data"></same-price> -->
     <!-- 片区楼盘 -->
-    <district :data="data"></district>
+    <!-- <district :data="data"></district> -->
     <!-- 扩展 -->
-    <expand :data="data"></expand>
+    <!-- <expand :data="data"></expand> -->
   </div>
 </template>
 

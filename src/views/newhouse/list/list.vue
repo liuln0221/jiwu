@@ -1,14 +1,21 @@
 <template>
-  <div class="list">
-    <router-view />
+  <div class="new-house">
+    <!-- <router-view /> -->
     <el-tabs v-model="activeName">
       <el-tab-pane name="building" :label="`${this.$store.state.app.location.name}新盘`">
-        <building ref="filter" v-if="activeName === 'building'" @getSelected="getSelected"></building>
+        <building
+          ref="filter"
+          v-if="activeName === 'building'"
+          :regions="regions"
+          :priceIntervals="priceIntervals"
+          :labels="labels"
+          @getSelected="getSelected"
+        ></building>
       </el-tab-pane>
-      <el-tab-pane name="metro" label="地铁沿线">
+      <!-- <el-tab-pane name="metro" label="地铁沿线">
         <metro ref="filter" v-if="activeName === 'metro'" @getSelected="getSelected"></metro>
-      </el-tab-pane>
-      <el-tab-pane name="phone" label="手机找房"></el-tab-pane>
+      </el-tab-pane> -->
+      <el-tab-pane name="hot" label="热销楼盘"></el-tab-pane>
       <el-tab-pane name="help" label="帮我找房"></el-tab-pane>
     </el-tabs>
     <!-- 已选 -->
@@ -21,8 +28,8 @@
           :key="select.name"
           @click="selectClick(select)"
         >
-          <span>{{ select.value.label }}</span>
-          <span v-if="select.value.child"> - {{select.value.child.label}}</span>
+          <span>{{ select.value.name }}</span>
+          <span v-if="select.value.child"> - {{select.value.child.name}}</span>
           <i class="el-icon-close"></i>
         </el-button>
         <el-button type="text" icon="el-icon-delete" @click="clear">清空</el-button>
@@ -43,13 +50,13 @@
           <i class="el-icon-sort-down" v-else-if="sort.attention === 'asc'"></i>
           <i class="el-icon-sort" v-else></i>
         </el-button> -->
-        <div class="list__total">共<strong>{{ store.length }}</strong>个新盘</div>
+        <div class="list__total">共<strong>{{ page.total }}</strong>个新盘</div>
       </el-col>
     </el-row>
     <!-- 列表 -->
     <el-row :gutter="20" type="flex" class="list__content">
       <el-col :span="18">
-        <list :data="store"></list>
+        <list :data="store" :page="page" @getList="getProject"></list>
       </el-col>
       <el-col :span="6">
         <explain></explain>

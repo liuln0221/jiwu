@@ -1,4 +1,6 @@
-import { locals, data, menus } from './detail.class';
+import { mapState } from 'vuex';
+
+import { menus } from './detail.class';
 import { Project } from '@/api';
 
 export default {
@@ -6,10 +8,14 @@ export default {
   data() {
     return {
       activeIndex: menus[0].name,
-      locals,
-      data,
+      data: [],
       menus
     };
+  },
+  computed: {
+    ...mapState({
+      location: state => state.app.location // 当前城市
+    })
   },
   methods: {
     handleSelect(val) {
@@ -22,6 +28,6 @@ export default {
     }
   },
   mounted() {
-    // this.getProjectDetail();
+    this.getProjectDetail();
   }
 };

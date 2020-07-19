@@ -1,0 +1,24 @@
+.navbar {
+  background-color: #f5f5f5;
+
+  .el-menu {
+    height: 800px;
+    border: none;
+    background: none;
+
+    .el-menu-item {
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid #dddddd;
+
+      &:hover,
+      &:focus {
+        background-color: initial;
+      }
+
+      &.is-active {
+        color: #47b3e3;
+      }
+    }
+  }
+}

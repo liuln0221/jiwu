@@ -11,7 +11,7 @@
         <!-- 基本信息 -->
         <base-info :data="data"></base-info>
         <!-- 服务动态 -->
-        <service-dynamics></service-dynamics>
+        <!-- <service-dynamics></service-dynamics> -->
         <!-- 熟悉的楼盘 -->
         <familiar-properties></familiar-properties>
       </el-col>

@@ -1,7 +1,8 @@
 .dynamic {
-  margin-top: 20px;
+  margin-top: 30px;
   
   .el-card {
+    padding-top: 0;
     /deep/.el-card__header {
       .header {
         .dynamic__disclaimer {

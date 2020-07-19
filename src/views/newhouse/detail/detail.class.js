@@ -23,7 +23,7 @@ const data = {
     { name: 'metro', label: '地铁沿线' }
   ],
   // src: 'http://imgs2.jiwu.com/attachment/buildpic/2018/09/21/5564357_m.jpg',
-  src: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+  showImgPath: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
   images: [
     'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
     'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
@@ -37,7 +37,7 @@ const data = {
     // 'http://img8.jiwu.com/newbuildpic/10/2/17434/17434903_s.jpg',
     // 'http://img13.jiwu.com/newbuildpic/10/2/1851/18517415_s.jpg'
   ],
-  updateTime: 1589453003891,
+  openDate: 1589453003891,
   priceValidity: {
     startTime: 1589454003891,
     endTime: 1589455003891
@@ -71,7 +71,7 @@ const menus = [
   { name: 'newHouseDetailFloor', label: '楼盘信息' },
   { name: 'newHouseDetailHouseType', label: '户型图' },
   { name: 'newHouseDetailAlbum', label: '相册' },
-  { name: 'newHouseDetailMapTraffic', label: '地图交通' },
+  // { name: 'newHouseDetailMapTraffic', label: '地图交通' },
   { name: 'newHouseDetailPriceTrend', label: '价格走势' },
   { name: 'newHouseDetailDynamic', label: '楼盘动态' },
   { name: 'newHouseDetailQA', label: '有问必答' },

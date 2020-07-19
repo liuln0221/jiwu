@@ -7,7 +7,7 @@
           <span v-else>{{ item.label }}</span>
         </div>
         <div class="value">
-          <span v-if="store[item.value]"> {{ store[item.value] }}</span>
+          <span v-if="item.getValue || store[item.value]"> {{ item.getValue ? item.getValue(store[item.value]) : store[item.value] }}</span>
           <span v-else>暂无数据</span>
         </div>
       </el-col>

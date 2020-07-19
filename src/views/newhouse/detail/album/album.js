@@ -1,39 +1,59 @@
 import { mapState } from 'vuex';
 
-import { data } from '../detail.class';
-
 import ImageInfo from '@/components/imageInfo.vue'
 import Disclaimer from '@/views/newhouse/detail/components/disclaimer/disclaimer.vue';
 import Expand from '@/views/newhouse/detail/components/expand/expand.vue';
+import { Project } from '@/api';
 
 export default {
   name: 'album',
   components: { ImageInfo, Disclaimer, Expand },
   data() {
     return {
-      data,
+      data: {},
       filter: '',
-      filters: [
-        { name: '', label: '全部', num: 44, active: true },
-        { name: 'designSketch', label: '效果图', num: 3, active: false },
-        { name: 'liveView', label: '实景图', num: 5, active: false },
-        { name: 'matchingDrawing', label: '配套图', num: 31, active: false },
-        { name: 'propertyLicense', label: '楼盘证照', num: 2, active: false },
-        { name: ' map', label: '位置交通图', num: 3, active: false }
-      ],
-      store: [
-        'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-        'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-        'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-        'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-        'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-        'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
-      ]
+      filters: [],
+      store: []
     };
   },
   computed: {
     ...mapState({
       location: state => state.app.location // 当前城市
-    })
+    }),
+    projectId() {
+      return this.$route.params.id;
+    }
+  },
+  methods: {
+    getProjectDetail() {
+      Project.getProjectDetail(this.projectId).then(res => {
+        this.data = res.data;
+      });
+    },
+    getProjectImgGroups() {
+      const param = {
+        sizeLimit: 10
+      };
+      Project.getProjectImgGroups(this.projectId, param).then(res => {
+        this.store = res.data.concat();
+        this.filters = this.computed(res.data);
+        this.filter = this.filters[0];
+      });
+    },
+    computed(store) {
+      let result = [];
+      store.forEach(item => {
+        result = result.concat(item.imgList);
+      });
+      store.unshift({
+        name: '全部',
+        size: result.length
+      });
+      return store;
+    }
+  },
+  mounted() {
+    this.getProjectDetail();
+    this.getProjectImgGroups();
   }
 };

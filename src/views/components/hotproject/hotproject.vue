@@ -9,12 +9,14 @@
       </div>
       <div v-for="item in data" :key="item.id">
         <router-link :to="{ name: 'newHouseDetail', params: { id: item.id } }" target="_blank">
-          <!-- <el-image class="hot-project__img" :src="item.img" src="http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360"></el-image> -->
-          <el-image class="hot-project__img" src="http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360"></el-image>
-          <div class="hot-project__local">[{{ location.name }}]{{ item.site }}</div>
+          <el-image class="hot-project__img" :src="item.showImgPath"></el-image>
+          <div>
+            <div class="hot-project__name">{{ item.name }}</div>
+            <div class="hot-project__local">[{{ location.name }}]{{ item.site }}</div>
+          </div>
         </router-link>
-        <div class="hot-project__adviser">
-          <el-image class="adviser__img" :src="item.adviser && item.adviser.img"></el-image>
+        <div class="hot-project__adviser" v-if="item.salesList && item.salesList.length > 0">
+          <el-image class="adviser__img" :src="item.salesList[0].headImgUrl"></el-image>
           <el-button class="adviser__consult" icon="icon-message2">向TA咨询</el-button>
         </div>
       </div>

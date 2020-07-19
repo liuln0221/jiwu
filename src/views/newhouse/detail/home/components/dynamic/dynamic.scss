@@ -1,10 +1,12 @@
 .dynamic {
-  margin-top: 50px;
+  margin-top: 20px;
 
   /deep/.el-card__header {
     .header {
       .el-button {
-        line-height: 18px;
+        position: relative;
+        bottom: 4px;
+        height: 22px;
         padding: 0 5px;
         color: #47b3e3;
         border-color: #47b3e3;
@@ -29,9 +31,32 @@
   }
 
   .home__information {
-    i {
-      color: #47b3e3;
-      margin-right: 5px;
+    margin-top: 30px;
+    /deep/.el-tabs {
+      .el-tabs__header {
+        .el-tabs__nav-wrap::after {
+          display: none;
+        }
+        .el-tabs__active-bar {
+          height: 4px;
+        }
+        .el-tabs__item {
+          font-size: 24px;
+          font-weight: 700;
+          color: initial;
+        }
+      }
+
+      .el-tabs__content {
+        a {
+          line-height: 30px;
+
+          i {
+            color: #47b3e3;
+            margin-right: 5px;
+          }
+        }
+      }
     }
   }
 }

@@ -12,7 +12,7 @@ const News = {
    * @return {}
    * @author liulina
    */
-  getNewsLocal: (param) => {
+  getLocals: (param) => {
     return request.get(`${BASE_URL}/locals`, {
       params: param
     });
@@ -36,17 +36,6 @@ const News = {
    */
   getNewsMarkets: (param) => {
     return request.get(`${BASE_URL}/markets`, {
-      params: param
-    });
-  },
-  /**
-   * @description 查询市场新闻TOP
-   * @param 参数
-   * @return {}
-   * @author liulina
-   */
-  getNewsMarketsTop: (param) => {
-    return request.get(`${BASE_URL}/market/top`, {
       params: param
     });
   }

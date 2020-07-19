@@ -1,7 +1,8 @@
 .base-info {
   margin-top: 20px;
   .el-image {
-    height: 360px;
+    height: 384px;
+    width: 100%;
   }
 
   .base-info__image {
@@ -138,7 +139,7 @@
   .base-info__onePrice {
     line-height: 30px;
 
-    .el-link {
+    a {
       top: -1px;
       color: #47b3e3;
 
@@ -149,20 +150,24 @@
   }
 
   .base-info__primary {
-    .el-link {
-      top: -1px;
-    }
+    margin-top: 10px;
 
     .el-button {
       color: #47b3e3;
       margin-left: 30px;
-      height: 30px;
+      height: 24px;
     }
 
-    .el-link+.el-link,
+    a+a,
     .el-button+.el-button {
       margin-left: 10px;
     }
+  }
+
+  .base-info__more {
+    color: #869099;
+    font-size: 12px;
+    margin-top: 10px;
   }
 
   .base-info__tel {
@@ -192,11 +197,12 @@
   .base-info__adviser {
     font-size: 12px;
     padding: 0 10px;
-    height: 439px;
+    height: 384px;
     background: #f7f7f7;
 
     .image {
       display: flex;
+      justify-content: center;
       padding: 15px 0;
 
       .el-image {
@@ -208,6 +214,7 @@
 
     .name {
       display: flex;
+      justify-content: center;
       font-size: 16px;
       font-weight: bold;
     }

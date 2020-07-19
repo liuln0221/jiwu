@@ -1,6 +1,6 @@
 import { Common } from '@/utils/common';
 
-import { Region } from '@/api/index';
+import { Region, Project } from '@/api/index';
 
 export default {
   name: 'newHouse',
@@ -37,6 +37,11 @@ export default {
         this.regions = res.data.slice(0, 5);
         this.regions[0].active = true;
       });
+    },
+    getIndexCarousel() {
+      Project.getIndexCarousel().then(res => {
+        this.data = res.data;
+      });
     }
   },
   mounted() {
@@ -45,5 +50,6 @@ export default {
       this.getCarouselHeight(0);
     });
     this.getChildRegion();
+    this.getIndexCarousel();
   }
 };

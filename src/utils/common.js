@@ -22,19 +22,29 @@ export const Common = {
    */
   arrTwoDimensional: (store = [], num = 1) => {
     let arr = [];
-      const result = [];
-      store.forEach((item, index) => {
-        const i = index + 1;
-        if ((i % num !== 0 || i === 1) && i !== store.length) {
-          arr.push(item);
-        } else {
-          arr.push(item);
-          result.push(arr);
-          arr = [];
-        }
-      });
-      console.log(result);
-      return result;
+    const result = [];
+    store.forEach((item, index) => {
+      const i = index + 1;
+      if ((i % num !== 0 || i === 1) && i !== store.length) {
+        arr.push(item);
+      } else {
+        arr.push(item);
+        result.push(arr);
+        arr = [];
+      }
+    });
+    console.log(result);
+    return result;
+  },
+  /**
+   * @function mergeTwoDimensional 将二维数据合并为一维数组
+   */
+  mergeTwoDimensional: (store = []) => {
+    let result = [];
+    store.forEach((item) => {
+      result = result.concat(item);
+    });
+    return result;
   },
   /**
    * @function randomArray 随机取出一组不重复的数据

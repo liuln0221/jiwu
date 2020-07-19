@@ -27,7 +27,9 @@ export default {
   },
   methods: {
     routerChange() {
-      this.activeIndex = this.$route.matched[1].name;
+      this.activeIndex = this.$route.matched[1].name === 'tool'
+        ? this.activeIndex
+        : this.$route.matched[1].name;
     },
     getOpenedRegion() {
       Region.getOpenedRegion().then(res => {

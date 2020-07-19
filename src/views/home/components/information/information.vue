@@ -12,7 +12,7 @@
           <el-carousel height="500px">
             <el-carousel-item v-for="headline in headlines" :key="headline.name">
               <router-link target="_blank" :to="{ name: 'informationDetail', params: { id: headline.id } }">
-                <el-image :src="headline.src"></el-image>
+                <el-image :src="headline.coverImgUrl"></el-image>
               </router-link>
               <div class="information__headline__name">{{ headline.title }}</div>
               <div class="information__headline__detail" :title="headline.description">{{ headline.description }}</div>

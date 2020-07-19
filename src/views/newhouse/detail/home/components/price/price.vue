@@ -2,12 +2,12 @@
   <div class="price">
     <el-card shadow="never">
       <div slot="header">
-        <el-link :underline="false">{{ data.name }}房价</el-link>
+        <router-link :to="{ name: 'newHouseDetailPriceTrend' }">{{ data.name }}房价</router-link>
       </div>
       <div class="legend">
-        <el-link :underline="false" v-for="(option, index) in optionData" :key="index">
+        <router-link :to="{ name: 'newHouseDetailPriceTrend' }" v-for="(option, index) in optionData" :key="index">
           <i class="icon-line" :style="`color: ${option.color}`"></i>{{ option.name }}
-        </el-link>
+        </router-link>
       </div>
       <div class="chart">
         <line-chart :option="option"></line-chart>

@@ -14,13 +14,17 @@ export default {
     })
   },
   methods: {
-    getHotProject() {
-      Project.getHotProject().then(res => {
+    getHot() {
+      const param = {
+        pageIndex: 1,
+        pageSize: 5
+      };
+      Project.getHot(param).then(res => {
         this.data = res.data;
       });
     }
   },
   mounted() {
-    this.getHotProject();
+    this.getHot();
   }
 };

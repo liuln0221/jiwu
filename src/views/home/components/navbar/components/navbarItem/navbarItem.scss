@@ -6,16 +6,11 @@
       font-weight: bold;
     }
 
-    .el-button {
-      font-size: 14px;
+    a {
       &::after {
         content: '';
         margin-right: 25px;
       }
-    }
-
-    .el-button+.el-button {
-      margin-left: 0;
     }
   }
 }

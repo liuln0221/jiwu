@@ -6,50 +6,57 @@ import ImageInfo from '@/components/imageInfo.vue'
 import Disclaimer from '@/views/newhouse/detail/components/disclaimer/disclaimer.vue';
 import Expand from '@/views/newhouse/detail/components/expand/expand.vue';
 
+import { Project } from '@/api';
+
 export default {
   name: 'houseType',
   components: { ImageInfo, Disclaimer, Expand },
   data() {
     return {
       data,
-      filter: '',
-      houseType: [
-        { name: '', label: '全部', num: 5, active: true },
-        { name: 'one', label: '1室', num: 2, active: false },
-        { name: 'two', label: '2室', num: 3, active: false }
-      ],
-      store: [
-        {
-          houseType: '2房2厅1卫',
-          area: 188,
-          downPayments: 725,
-          monthlySupply: 65286,
-          // img: 'http://img8.jiwu.com/newbuildpic/10/3/2802/2802093_a.jpg',
-          img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
-        },
-        {
-          houseType: '2房2厅2卫',
-          area: 213,
-          downPayments: 851,
-          monthlySupply: 73902,
-          desc: '厨卫不对门',
-          // img: 'http://img8.jiwu.com/newbuildpic/10/3/2802/2802093_a.jpg',
-          img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
-        },
-        {
-          houseType: '2房2厅1卫',
-          area: 188,
-          downPayments: 725,
-          monthlySupply: 65286,
-          // img: 'http://img8.jiwu.com/newbuildpic/10/3/2802/2802093_a.jpg',
-          img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
-        }
-      ]
+      filter: {},
+      store: []
     };
   },
   computed: {
     ...mapState({
       location: state => state.app.location // 当前城市
     })
+  },
+  methods: {
+    getProjectLayouts() {
+      Project.getProjectLayouts(this.$route.params.id).then(res => {
+        this.store = this.computed(res.data);
+        this.filter = this.store[0];
+      });
+    },
+    computed(store) {
+      const result = [];
+      let allStore = [];
+
+      for (const key in store) {
+        result.push({
+          houseType: key,
+          num: store[key].length,
+          store: store[key].map(item => {
+            // item.routerTo = { name: 'newHouseTypeDetail', params: { id: item.layoutId } };
+            return item;
+          })
+        });
+        allStore = allStore.concat(store[key].map(item => {
+          // item.routerTo = { name: 'newHouseTypeDetail', params: { id: item.layoutId } };
+          return item;
+        }));
+      }
+      result.unshift({
+        houseType: '全部户型',
+        num: allStore.length,
+        store: allStore
+      });
+      return result;
+    }
+  },
+  mounted() {
+    this.getProjectLayouts();
   }
 };

@@ -13,7 +13,7 @@ const menus = [
       { name: 'findHouse', label: '帮我找房' }
     ]
   },
-  { name: 'oldHouse', label: '二手房' },
+  // { name: 'oldHouse', label: '二手房' },
   { name: 'information', label: '资讯' },
   {
     name: 'guide',

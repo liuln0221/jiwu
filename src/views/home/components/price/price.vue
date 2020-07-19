@@ -16,8 +16,7 @@
               v-for="option in link.options"
               :key="option.name"
               target="_blank"
-              :to="{ name: price.name, query: { region: link.name === 'region'? option.name : undefined,
-                avgPrice: link.name === 'avgPrice' ? option.name : undefined,
+              :to="{ name: price.name, params: { filter: link.name === 'region'? `region${option.name}` : link.name === 'priceInterval' ? `priceInterval${option.name}` : undefined,
                 price: link.name === 'price' ? option.name : undefined } }"
             >
               <el-button type="text">{{ option.label }}</el-button>

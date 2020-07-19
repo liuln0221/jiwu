@@ -9,11 +9,12 @@ export default {
     };
   },
   methods: {
-    getNewsMarketsTop() {
+    getNewsMarkets() {
       const param = {
-        size: 5
+        pageIndex: 1,
+        pageSize: 5
       };
-      News.getNewsMarketsTop(param).then(res => {
+      News.getNewsMarkets(param).then(res => {
         this.headlines = res.data;
       });
     },
@@ -27,7 +28,7 @@ export default {
     }
   },
   mounted() {
-    this.getNewsMarketsTop();
+    this.getNewsMarkets();
     this.getNewsLocalTop();
   }
 };

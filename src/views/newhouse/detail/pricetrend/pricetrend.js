@@ -1,40 +1,58 @@
-import { data } from '../detail.class';
+import { mapState } from 'vuex';
 
 import LineChart from '@/components/echarts/line.vue';
 import Disclaimer from '@/views/newhouse/detail/components/disclaimer/disclaimer.vue';
 import Expand from '@/views/newhouse/detail/components/expand/expand.vue';
+
+import { Project, Price, ProjectInformation } from '@/api';
+
+import { Common } from '@/utils/common';
 
 export default {
   name: 'priceTrend',
   components: { LineChart, Disclaimer, Expand },
   data() {
     return {
-      data,
+      data: {},
       buttons: [
         { icon: 'icon-customer', text: '新消息通知', color: '#47b3e3' },
         { icon: 'icon-line-chart', text: '降价通知我', color: '#47b3e3' }
         // { icon: 'el-icon-plus', text: '房贷计算器', color: '#869099' },
         // { icon: 'el-icon-plus', text: '公积金查询', color: '#869099' }
       ],
-      optionData: [
-        {
-          name: `${data.name}价格`,
-          value: [ 150000, 150000, 150000, 150000, 150000, 150000, 150000, 100000, 100000, 100000 ],
-          color: '#47b3e3'
-        },
-        {
-          name: '朝阳房价走势',
-          value: [ 90106, 88760, 83212, 83709, 82346, 82304, 82190, 80608, 81778, 81332, 81030, 79100 ],
-          color: '#f7624e'
-        }
-      ],
-      tableData: [
-        { recordTime: 1585180800000, ceilingPrice: '', avgPrice: '100000元/平米', floorPrice: '', description: ''  },
-        { recordTime: 1581120000000, ceilingPrice: '', avgPrice: '0万/套', floorPrice: '100000元/平米', description: '单价100000元/平米起，一次性付款，银行按揭。'  }
+      xData: [],
+      projectValue: [],
+      cityValue: [],
+      tableData: [],
+      information: [],
+      time: 12,
+      timeSelect: [
+        { name: 12, label: '近1年' },
+        { name: 36, label: '近3年' }
       ]
     }
   },
   computed: {
+    ...mapState({
+      location: state => state.app.location // 当前城市
+    }),
+    projectId() {
+      return this.$route.params.id;
+    },
+    optionData() {
+      return [
+        {
+          name: `${this.data.name}价格`,
+          value: this.projectValue,
+          color: '#47b3e3'
+        },
+        {
+          name: `${this.location.name}房价走势`,
+          value: this.cityValue,
+          color: '#f7624e'
+        }
+      ];
+    },
     seriesData() {
       const result = [];
       this.optionData.forEach(item => {
@@ -49,18 +67,18 @@ export default {
       return result;
     },
     // X轴数据
-    xData() {
-      const result = [];
-      const date = new Date();
-      date.setMonth(date.getMonth() + 1, 1); // 获取到当前月份，设置月份
-      for (let i = 0; i < 12; i++) {
-        date.setMonth(date.getMonth() - 1); // 每循环一次，月份值减1
-        let m = date.getMonth() + 1;
-        m = m < 10 ? `0${m}` : m;
-        result.push(`${date.getFullYear()}-${m}月`);
-      }
-      return result.reverse();
-    },
+    // xData() {
+    //   const result = [];
+    //   const date = new Date();
+    //   date.setMonth(date.getMonth() + 1, 1); // 获取到当前月份，设置月份
+    //   for (let i = 0; i < 12; i++) {
+    //     date.setMonth(date.getMonth() - 1); // 每循环一次，月份值减1
+    //     let m = date.getMonth() + 1;
+    //     m = m < 10 ? `0${m}` : m;
+    //     result.push(`${date.getFullYear()}-${m}月`);
+    //   }
+    //   return result.reverse();
+    // },
     // echarts配置
     option() {
       return {
@@ -74,6 +92,18 @@ export default {
           show: false
         },
         color: [ '#47b3e3', '#f7624e' ],
+        tooltip: {
+          textStyle: {
+            fontSize: 12
+          },
+          formatter(params) {
+            let result = `${params[0].name.substring(0, 7)}月</br>`;
+            params.forEach(item => {
+              result += `${item.marker} ${item.seriesName} : ${item.value ? item.value : '-'}元/平米</br>`;
+            });
+            return result;
+          }
+        },
         xAxis: {
           boundaryGap: true,
           axisTick: {
@@ -90,7 +120,10 @@ export default {
             }
           },
           axisLabel: {
-            color: '#3b4144'
+            color: '#3b4144',
+            formatter: (params) => {
+              return `${params.substring(0, 7)}月`;
+            }
           },
           data: this.xData
         },
@@ -111,5 +144,80 @@ export default {
         series: this.seriesData
       }
     }
+  },
+  methods: {
+    /**
+     * 获取楼盘详情
+     */
+    getProjectDetail() {
+      Project.getProjectDetail(this.projectId).then(res => {
+        this.data = res.data;
+      });
+    },
+    /**
+     * 获取历史价格
+     */
+    getHistory() {
+      const param = {
+        limit: this.time
+      };
+      Promise.all([this.getHistoryProject(param), this.getHistoryCurrentRegion(param)]).then(res => {
+        this.xData = Common.mergeTwoDimensional(res).map(item => item.date).sort();
+        this.projectValue = this.computed(res[0]).map(item => item.averagePrice);
+        this.cityValue = this.computed(res[1]).map(item => item.averagePrice);
+      });
+    },
+    /**
+     * 获取楼盘历史价格
+     * @param {} param 参数
+     */
+    getHistoryProject(param) {
+      return new Promise((resolve) => {
+        Price.getHistoryProject(this.projectId, param).then(res => {
+          resolve(res.data);
+        });
+      });
+    },
+    /**
+     * 获取当前城市历史价格
+     * @param {} param 参数 
+     */
+    getHistoryCurrentRegion(param) {
+      return new Promise((resolve) => {
+        Price.getHistoryCurrentRegion(1, param).then(res => {
+          resolve(res.data);
+          this.tableData = res.data;
+        });
+      });
+    },
+    /**
+     * 处理数据
+     * @param {} store 价格数据 
+     */
+    computed(store) {
+      const result = this.xData.map(item => {
+        const data = store.find(ver => ver.date.substring(0, 7) === item.substring(0, 7))
+        return data ? data : {};
+      });
+      return result;
+    },
+    /**
+     * 获取楼盘动态
+     */
+    getProjectInformation() {
+      const param = {
+        pageIndex: 1,
+        pageSize: 2,
+        projectId: this.projectId
+      };
+      ProjectInformation.getProjectInformation(param).then(res => {
+        this.information = res.data;
+      });
+    }
+  },
+  mounted() {
+    this.getProjectDetail();
+    this.getHistory();
+    this.getProjectInformation();
   }
 };

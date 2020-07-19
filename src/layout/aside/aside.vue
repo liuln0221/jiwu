@@ -8,9 +8,17 @@
         width="127"
         trigger="hover"
         popper-class="aside__popper"
-        :close-delay="0"
-        :content="aside.content">
-        <div slot="reference"><i :class="aside.icon"></i></div>
+        :close-delay="0">
+        <div slot>
+          <router-link v-if="aside.routerTo" :to="aside.routerTo">{{ aside.content }}</router-link>
+          <span v-else>{{ aside.content }}</span>
+        </div>
+        <div slot="reference">
+          <router-link v-if="aside.routerTo" :to="aside.routerTo">
+            <i :class="aside.icon"></i>
+          </router-link>
+          <i v-else :class="aside.icon"></i>
+        </div>
       </el-popover>
     </div>
     <div class="aside__top">

@@ -1,0 +1,213 @@
+.house-type-detail {
+  /deep/.el-container {
+    .el-header {
+      display: flex;
+      justify-content: center;
+      padding-right: 60px;
+      height: 80px !important;
+      padding-top: 15px;
+      border-bottom: 1px solid #ddd;
+
+      & > div {
+        width: 1200px;
+        min-width: 1200px;
+      }
+    }
+
+    .el-main {
+      display: flex;
+      padding-top: 0;
+      padding-right: 0;
+
+      .house-type-detail__local {
+        margin: 20px 0;
+        color: #869099;
+        height: 19px;
+      
+        .el-link {
+          top: -2px;
+        }
+      
+        .el-link+.el-link {
+          &::before {
+            content: '>';
+            margin: 0 5px;
+          }
+        }
+      }
+      .house-type-detail__img {
+        // width: 100%;
+        border-right: 1px solid #e5e5e5;
+
+        .el-radio-group {
+          .el-radio-button {
+            .el-radio-button__inner {
+              height: 32px;
+              line-height: 32px;
+              padding: 0 13px;
+              border-radius: 0;
+              color: #869099;
+            }
+
+            &.is-active {
+              .el-radio-button__inner {
+                background: #e5e5e5;
+                border-color: #e5e5e5;
+                box-shadow: -1px 0 0 0 #e5e5e5;
+                color: initial;
+              }
+            }
+          }
+        }
+
+        .house-type-detail__img.el-carousel {
+          margin-right: 20px;
+          
+          .el-carousel__item {
+            height: 100%;
+
+            .el-image {
+              height: 100%;
+
+              img {
+                height: 100%;
+              }
+            }
+          }
+        }
+
+        .house-type-detail__type.el-carousel {
+          height: 75px;
+          background: #4c4948;
+          padding: 0 80px;
+
+          .el-carousel__arrow {
+            width: 80px;
+            height: 75px;
+            background: none;
+            font-size: 56px;
+          }
+
+          .el-carousel__arrow--left {
+            left: -80px;
+          }
+
+          .el-carousel__arrow--right {
+            right: -80px;
+          }
+          
+          .el-carousel__item {
+
+            .el-image {
+              width: 80px;
+              height: 55px;
+              margin: 10px 0;
+              border: 2px solid #4c4948;
+
+              img {
+                height: 100%;
+              }
+
+              &:hover,
+              &.active {
+                border: 2px solid #11a43c;
+                cursor: pointer;
+              }
+            }
+
+            .el-image+.el-image {
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+    
+      .house-type-detail__info {
+        width: 300px;
+        min-width: 300px;
+    
+        .house {
+          background: #f8f8f8;
+          border-bottom: 1px solid #e5e5e5;
+          padding: 20px;
+    
+          .name {
+            font-size: 24px;
+            font-weight: bold;
+          }
+    
+          .price {
+            line-height: 24px;
+    
+            & > span {
+              color: #FF6263;
+              font-size: 16px;
+            }
+    
+            .el-button {
+              margin-left: 10px;
+              color: #47b3e3;
+            }
+          }
+    
+          .tel {
+            display: flex;
+            justify-content: center;
+            border: 1px solid #FF6263;
+            line-height: 38px;
+            color: #FF6263;
+            margin-top: 20px;
+            background: #fff;
+
+            i {
+              font-size: 20px;
+              line-height: 38px;
+              margin-right: 5px;
+            }
+          }
+        }
+
+        .el-card {
+          padding: 20px 20px 0;
+
+          .el-card__header {
+            font-size: 16px;
+          }
+
+          .el-card__body {
+            padding: 0;
+
+            & > div {
+              margin-top: 10px;
+              line-height: 24px;
+
+              .label {
+                &::after {
+                  content: '：'
+                }
+              }
+            }
+            
+            .innerArea,
+            .sharedArea,
+            .monthlyPayment,
+            .allPayment,
+            .disclaimer {
+              color: #869099;
+            }
+
+            .downPayment {
+              span:not(.label) {
+                color: #ff6263;
+              }
+            }
+            
+            .disclaimer {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

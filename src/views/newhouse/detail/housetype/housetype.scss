@@ -1,9 +1,21 @@
 .house-type {
+  margin-bottom: 20px;
   /deep/.image-info {
     height: 130px;
   }
 
-  .el-card {
-    margin-top: 50px;
+  /deep/.el-card {
+    margin-top: 20px;
+
+    .el-card__body {
+      padding-top: 0;
+    }
+  }
+
+  .el-row {
+    margin-bottom: 60px;
+    .el-col {
+      margin-top: 30px;
+    }
   }
 }
