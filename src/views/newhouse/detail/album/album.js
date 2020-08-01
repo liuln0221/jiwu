@@ -1,4 +1,4 @@
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 
 import ImageInfo from '@/components/imageInfo.vue'
 import Disclaimer from '@/views/newhouse/detail/components/disclaimer/disclaimer.vue';
@@ -17,9 +17,9 @@ export default {
     };
   },
   computed: {
-    ...mapState({
-      location: state => state.app.location // 当前城市
-    }),
+    ...mapGetters([
+      'location' // 当前城市
+    ]),
     projectId() {
       return this.$route.params.id;
     }

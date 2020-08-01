@@ -25,7 +25,7 @@ export default {
         { name: 'newHouse', label: '新房', icon: 'icon-floor', links: this.newHouseLinks },
         // { name: 'oldHouse', label: '二手房', icon: 'icon-house2', links: oldHouseLinks },
         { name: 'checkPrice', label: '查房价', icon: 'icon-price', links: this.checkPrice },
-        { name: 'findHouse', label: '帮我找房', icon: 'icon-find-house' },
+        { name: 'findHouse', label: '帮我找房', icon: 'icon-find-house', routerTo: { name: 'help' } },
       ];
     },
     // 新房

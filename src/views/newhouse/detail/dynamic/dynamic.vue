@@ -13,19 +13,19 @@
           </div>
           <div
             class="newHouse-detail__dynamic"
-            v-for="item in informations"
+            v-for="item in news"
             :key="item.id"
           >
             <div class="title">
               <router-link
-                :to="{ name: 'newHouseDetailDynamicDetail', params: { informationId: item.id } }"
+                :to="{ name: 'newHouseDetailDynamicDetail', params: { newsId: item.id } }"
                 target="_blank"
               >{{ item.title }}</router-link>
               <div>{{ item.issueTime | dateStrToFormat('YYYY-MM-DD') }}</div>
             </div>
             <div class="info">
               <router-link
-                :to="{ name: 'newHouseDetailDynamicDetail', params: { informationId: item.id } }" 
+                :to="{ name: 'newHouseDetailDynamicDetail', params: { newsId: item.id } }" 
                 target="_blank"
                 v-html="item.content"
               ></router-link>

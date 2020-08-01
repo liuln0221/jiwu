@@ -1,4 +1,4 @@
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'district',
@@ -60,8 +60,8 @@ export default {
     };
   },
   computed: {
-    ...mapState({
-      location: state => state.app.location // 当前城市
-    })
+    ...mapGetters([
+      'location' // 当前城市
+    ])
   }
 };

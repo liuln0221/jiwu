@@ -48,8 +48,8 @@
     }
 
     .el-tabs__content {
-      padding: 15px 30px;
       border: 1px solid #eee;
+      border-bottom: none;
     }
   }
 
@@ -82,12 +82,11 @@
 
   .list__selected,
   .list__sort {
+    border-bottom: 1px solid #eee;
     height: 49px;
     line-height: 49px;
     margin: 0 !important;
     padding: 0 25px;
-    border: 1px solid #eee;
-    border-top: 0;
     background: #f8f8f8;
   }
 

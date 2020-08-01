@@ -8,7 +8,7 @@
       <custom-table :infos="infos" :store="store"></custom-table>
     </el-card> -->
     <el-card shadow="never" header="项目参数">
-      <custom-table :infos="infos" :store="store"></custom-table>
+      <custom-table :info="info" :split="3" :store="store"></custom-table>
     </el-card>
   </div>
 </template>

@@ -1,0 +1,60 @@
+.avg-price {
+  .avg-price__info {
+    padding: 30px 30px;
+    border: 1px solid #f5f5f5;
+    box-shadow: 0 0 6px #f5f5f5;
+
+    .avg-price__title {
+      color: #869099;
+    }
+  
+    .avg-price__price {
+      color: #869099;
+  
+      .price {
+        color: #f74a27;
+        font-size: 30px;
+        font-weight: 700;
+      }
+  
+      .unit {
+        margin-left: 5px;
+        margin-right: 20px;
+      }
+  
+      .mom {
+        margin-left: 5px;
+        .upper {
+          color: #ea3c54;
+        }
+  
+        .lower {
+          color: #11a43c;
+        }
+      }
+    }
+  
+    .avg-price__project {
+      margin-top: 10px;
+  
+      a+a {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .avg-price__notify {
+    height: 38px;
+    line-height: 38px;
+    background: #f8f8f8;
+    text-align: center;
+
+    .el-button {
+      color: #47b3e3;
+
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+}

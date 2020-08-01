@@ -1,0 +1,66 @@
+.region-price-rank {
+  .common {
+    font-size: 14px;
+    margin-left: 20px;
+  }
+
+  /deep/.el-table {
+    border-left: 1px solid #ebeef5;
+    border-right: 1px solid #ebeef5;;
+    th {
+      background: #ececec;
+    }
+
+    th,
+    td {
+      &:first-child {
+        .cell {
+          padding-left: 30px;;
+        }
+      }
+    }
+
+    .rank {
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      color: #fff;
+      font-size: 12px;
+      background: #869099;
+
+      &.bk-red {
+        background: #f74a27;
+      }
+    }
+
+    .mom {
+      .upper {
+        color: #ea3c54;
+      }
+
+      .lower {
+        color: #11a43c;
+      }
+    }
+  }
+
+  .el-button {
+    display: block;
+    margin: 40px auto 0;
+    width: 300px;
+    height: 46px;
+    background: #eefaff;
+    color: #47b3e3;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 46px;
+    padding: 0;
+    border: none;
+
+    i {
+      margin-left: 5px;
+    }
+  }
+}

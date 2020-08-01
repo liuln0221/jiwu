@@ -4,7 +4,10 @@ const routes = [
   {
     name: 'guide',
     path: 'guide',
-    component: Guide
+    component: Guide,
+    meta: {
+      label: '购房指南'
+    }
   }
 ];
 

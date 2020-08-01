@@ -6,7 +6,7 @@
         :key="item.id"
         :to="{}"
         class="hot-qa__content"
-      ><i class="el-icon-caret-right"></i>{{ item.q }}</router-link>
+      ><i class="el-icon-caret-right"></i>{{ item.question }}</router-link>
     </el-card>
   </div>
 </template>

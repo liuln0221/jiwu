@@ -1,4 +1,4 @@
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 
 import LineChart from '@/components/echarts/line.vue';
 
@@ -18,9 +18,9 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      location: state => state.app.location // 当前城市
-    }),
+    ...mapGetters([
+      'location' // 当前城市
+    ]),
     projectId() {
       return this.$route.params.id;
     },

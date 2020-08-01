@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    <div class="list__local">
+    <div class="current-local">
       <span>您的位置：</span>
       <router-link :to="{ name: 'home' }">吉屋</router-link>
       <router-link :to="{ name: 'oldHouse' }">{{ location.name }}二手房</router-link>

@@ -1,0 +1,42 @@
+.price {
+  .price__region {
+    margin: 35px 0 62px;
+    font-size: 12px;
+
+    .label {
+      display: inline-block;
+      width: 60px;
+      font-weight: bold;
+    }
+
+    a {
+      padding: 0 5px;
+
+      &.active {
+        color: #47b3e3;
+      }
+    }
+
+    a+a {
+      margin-left: 20px;
+    }
+  }
+
+  /deep/.el-card {
+    .el-card__header {
+      font-size: 24px;
+
+      .el-radio {
+        .el-radio__input {
+          display: none;
+        }
+
+        &.is-checked {
+          .el-radio__label {
+            color: #47b3e3;
+          }
+        }
+      }
+    }
+  }
+}

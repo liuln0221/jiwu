@@ -22,7 +22,7 @@
       //   min-width: 1200px;
       // }
   
-      & > div:not(.home) {
+      & > div:not(.home):not(.help) {
         width: 100%;
         max-width: 1200px;
       }
@@ -31,6 +31,17 @@
         width: 100%;
 
         & > div:not(.carousel) {
+          width: 100%;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      & > .help {
+        width: 100%;
+
+        & > .help__expand {
           width: 100%;
           max-width: 1200px;
           margin-left: auto;

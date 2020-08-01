@@ -1,0 +1,66 @@
+.adviser {
+  .adviser__consult {
+    font-size: 14px;
+    margin-left: 20px;
+  }
+
+  .el-row {
+    .el-col {
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 20px 25px 20px;
+        border: 1px solid #e5e5e5;
+        box-shadow: 0 0 6px #e5e5e5;
+        border-radius: 2px;
+
+        .adviser__item {
+          display: flex;
+          font-size: 12px;
+
+          .el-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+
+          .name {
+            display: inline-block;
+            line-height: 24px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+          }
+
+          .label {
+            border: 1px solid #f5f5f5;
+            border-radius: 2px;
+            color: #869099;
+            margin-left: 5px;
+            padding: 0 5px;
+          }
+
+          .service-num {
+            line-height: 24px;
+            color: #869099;
+          }
+        }
+
+        .el-button {
+          padding: 0 10px;
+          height: 40px;
+          border-radius: 4px;
+          color: #fff;
+          line-height: 40px;
+          background: #47b3e3;
+          margin-top: 10px;
+
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

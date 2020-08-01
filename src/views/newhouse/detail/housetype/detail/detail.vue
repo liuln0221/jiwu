@@ -6,9 +6,9 @@
       </el-header>
       <el-main v-if="location.name">
         <div class="house-type-detail__img">
-          <div class="house-type-detail__local">
+          <div class="current-local">
             <span>您的位置：</span>
-            <el-link :underline="false" v-for="local in locals" :key="local.id">{{ local.label }}</el-link>
+            <router-link :to="{}" v-for="local in locals" :key="local.id">{{ local.label }}</router-link>
           </div>
           <el-radio-group v-model="tabActive" style="margin-bottom: 30px;">
             <el-radio-button

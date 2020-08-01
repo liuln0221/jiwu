@@ -14,7 +14,7 @@
           </div>
           <div
             class="newHouse-detail__dynamic"
-            v-for="item in informations"
+            v-for="item in news"
             :key="item.id"
           >
             <div class="title">
@@ -27,11 +27,11 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :span="6" class="home__information">
+      <el-col :span="6" class="home__news">
         <el-tabs v-model="activeName">
-          <el-tab-pane label="咨迅" name="information">
+          <el-tab-pane label="咨迅" name="news">
             <div v-for="(local, index) in localNews" :key="index">
-              <router-link :to="{ name: 'informationDetail', param: { id: local.id } }"><i class="el-icon-caret-right"></i>{{ local.title }}</router-link>
+              <router-link :to="{ name: 'newsDetail', param: { id: local.id } }"><i class="el-icon-caret-right"></i>{{ local.title }}</router-link>
             </div>
           </el-tab-pane>
           <el-tab-pane label="问答" name="qa">

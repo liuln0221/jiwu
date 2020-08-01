@@ -92,6 +92,28 @@ const Project = {
    */
   concernProject: (param) => {
     return request.post(`${BASE_URL}/concernProject`, param);
+  },
+  /**
+   * @description 楼盘名称模糊查询
+   * @param param 参数
+   * @return {}
+   * @author liulina
+   */
+  search: (param) => {
+    return request.get(`${BASE_URL}/search`, {
+      params: param
+    });
+  },
+  /**
+   * @description 查询置业顾问熟悉的楼盘
+   * @param param 参数
+   * @return {}
+   * @author liulina
+   */
+  getSalesChargeProjectList: (param) => {
+    return request.get(`${BASE_URL}/salesChargeProjectList`, {
+      params: param
+    });
   }
 };
 

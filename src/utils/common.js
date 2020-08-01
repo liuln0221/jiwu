@@ -1,3 +1,5 @@
+import store from '@/store/index';
+
 export const Common = {
   /**
    * @function merge 深度合并(且去重)
@@ -25,7 +27,7 @@ export const Common = {
     const result = [];
     store.forEach((item, index) => {
       const i = index + 1;
-      if ((i % num !== 0 || i === 1) && i !== store.length) {
+      if (i % num !== 0 && i !== store.length) {
         arr.push(item);
       } else {
         arr.push(item);
@@ -61,5 +63,18 @@ export const Common = {
       }
     }
     return result;
+  },
+  /**
+   * 设置浏览器title
+   */
+  setTitle: (self) => {
+    const location = store.getters.location;
+    const labels = [];
+    self.$route.matched.forEach(item => {
+      if (item.meta.label) {
+        labels.push(item.meta.label);
+      }
+    });
+    document.title = `${location.name}${labels.join(' - ')}`;
   }
 }

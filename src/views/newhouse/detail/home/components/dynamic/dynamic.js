@@ -1,4 +1,4 @@
-// import { informations } from './dynamic.class';
+// import { news } from './dynamic.class';
 
 import { ProjectInformation, News, Faqs } from '@/api';
 
@@ -7,10 +7,10 @@ export default {
   props: [ 'data' ],
   data() {
     return {
-      informations: [],
+      news: [],
       localNews: [],
       qas: [],
-      activeName: 'information'
+      activeName: 'news'
     };
   },
   computed: {
@@ -29,19 +29,18 @@ export default {
         projectId: this.projectId
       };
       ProjectInformation.getProjectInformation(param).then(res => {
-        this.informations = res.data;
+        this.news = res.data;
       });
     },
     /**
-     * 获取本地资讯
+     * 获取项目相关的资讯
      */
-    getLocals() {
+    getProjectNews() {
       const param = {
-        pageIndex: 1,
-        pageSize: 5
+        projectId: this.projectId
       };
-      News.getLocals(param).then(res => {
-        this.localNews = res.data;
+      News.getProjectNews(param).then(res => {
+        this.localNews = res.data || [];
       });
     },
     /**
@@ -60,7 +59,7 @@ export default {
   },
   mounted() {
     this.getProjectInformation();
-    this.getLocals();
+    this.getProjectNews();
     this.getFaqs();
   }
 }

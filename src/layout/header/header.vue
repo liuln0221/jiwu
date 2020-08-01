@@ -33,8 +33,10 @@
             :style="menu.children && menu.children.length > 0 ? 'padding: 0' : ''"
           >
             <el-submenu v-if="menu.children && menu.children.length > 0" :index="menu.name" popper-class="header__popper">
-              <template slot="title"><router-link :to="{ name: menu.name }">{{ menu.label }}</router-link></template>
-              <el-menu-item v-for="submenu in menu.children" :key="submenu.name" :index="submenu.name">
+              <template slot="title">
+                <router-link :to="{ name: menu.name }">{{ menu.label }}</router-link>
+              </template>
+              <el-menu-item v-for="submenu in menu.children" :key="submenu.name" :class="$route.name === submenu.name ? 'is-active' : ''">
                 <router-link :to="{ name: submenu.name }">{{ submenu.label }}</router-link>
               </el-menu-item>
             </el-submenu>
@@ -44,10 +46,14 @@
       </el-col>
       <el-col :span="6">
         <!-- 搜索 -->
-        <el-input
+        <el-autocomplete
           suffix-icon="el-icon-search"
           v-model="search.value"
+          :fetch-suggestions="querySearch"
           :placeholder="search.select.placeholder"
+          :trigger-on-focus="false"
+          value-key="name"
+          @select="handleSelect"
         >
           <el-select v-model="search.select" value-key="name" slot="prepend">
             <el-option
@@ -56,9 +62,23 @@
               :label="option.label"
               :value="option"></el-option>
           </el-select>
-        </el-input>
+        </el-autocomplete>
+        <!-- <el-input
+          suffix-icon="el-icon-search"
+          v-model="search.value"
+          :placeholder="search.select.placeholder"
+          @input="search"
+        >
+          <el-select v-model="search.select" value-key="name" slot="prepend">
+            <el-option
+              v-for="option in search.options"
+              :key="option.name"
+              :label="option.label"
+              :value="option"></el-option>
+          </el-select>
+        </el-input> -->
         <!-- 登录 -->
-        <el-button type="text" class="header__login" @click="login">登录</el-button>
+        <el-button type="text" class="header__login" @click="loginFun">登录</el-button>
       </el-col>
     </el-row>
     <!-- 登录弹窗 -->

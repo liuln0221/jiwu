@@ -30,7 +30,7 @@
         </el-row>
       </el-col>
       <el-col :span="5">
-        <el-button class="checkPrice__detail" type="text">详情<i class="el-icon-arrow-right"></i></el-button>
+        <router-link class="checkPrice__detail" :to="{ name: 'price' }">详情<i class="el-icon-arrow-right"></i></router-link>
       </el-col>
     </el-row>
   </div>

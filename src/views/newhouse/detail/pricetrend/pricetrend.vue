@@ -40,15 +40,15 @@
     <el-card header="最新动态" shadow="never">
       <div
         class="newHouse-detail__dynamic"
-        v-for="item in information"
+        v-for="item in news"
         :key="item.id"
       >
         <div class="title">
-          <router-link :to="{ name: 'newHouseDetailDynamicDetail', params: { informationId: item.id } }">{{ item.title }}</router-link>
+          <router-link :to="{ name: 'newHouseDetailDynamicDetail', params: { newsId: item.id } }">{{ item.title }}</router-link>
           <div>{{ item.issueTime | dateStrToFormat('YYYY-MM-DD') }}</div>
         </div>
         <div class="info">
-          <router-link :to="{ name: 'newHouseDetailDynamicDetail', params: { informationId: item.id } }" v-html="item.content"></router-link>
+          <router-link :to="{ name: 'newHouseDetailDynamicDetail', params: { newsId: item.id } }" v-html="item.content"></router-link>
         </div>
       </div>
     </el-card>

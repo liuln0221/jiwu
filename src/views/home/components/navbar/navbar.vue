@@ -10,7 +10,13 @@
         <el-submenu v-if="menu.links && menu.links.length > 0" :index="menu.name" popper-class="navbar__popper">
           <template slot="title">
             <i class="navbar__icon" :class="menu.icon"></i>
-            <div class="navbar__title">{{ menu.label }}</div>
+            <router-link
+              v-if="menu.routerTo"
+              class="navbar__title"
+              :to="menu.routerTo"
+              target="_blank"
+            >{{ menu.label }}</router-link>
+            <div v-else class="navbar__title">{{ menu.label }}</div>
           </template>
           <navbar-item :links="menu.links">
             <template slot="title">
@@ -33,7 +39,13 @@
         </el-submenu>
         <div v-else class="navbar__menu__item">
           <i class="navbar__icon" :class="menu.icon"></i>
-          <div class="navbar__title">{{ menu.label }}</div>
+          <router-link
+            v-if="menu.routerTo"
+            class="navbar__title"
+            :to="menu.routerTo"
+            target="_blank"
+          >{{ menu.label }}</router-link>
+          <div v-else class="navbar__title">{{ menu.label }}</div>
         </div>
       </el-menu-item>
     </el-menu>

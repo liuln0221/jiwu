@@ -8,19 +8,36 @@ import NewHouseDetailRoutes from './detail/router';
 const routes = [
   {
     name: 'newHouse',
-    path: 'lopan',
+    path: 'loupan',
     component: NewHouse,
+    meta: {
+      label: '新房'
+    },
     redirect: { name: 'newHouseList' },
     children: [
       {
         name: 'newHouseList',
         path: '',
-        component: List
+        component: List,
+        meta: {
+          label: '新盘'
+        }
+      },
+      {
+        name: 'hotHouse',
+        path: 'hot',
+        component: List,
+        meta: {
+          label: '热销'
+        }
       },
       {
         name: 'newHouseListFilter',
         path: 'filter/:filter',
-        component: List
+        component: List,
+        meta: {
+          label: '新盘'
+        }
       },
       {
         name: 'newHouseDetail',

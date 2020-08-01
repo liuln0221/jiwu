@@ -1,55 +1,49 @@
 import { Common } from '@/utils/common';
 
-import { Region, Project } from '@/api/index';
+import { Project } from '@/api/index';
 
 export default {
   name: 'newHouse',
   data() {
     return {
-      regions: [],
-      activeRegion: {},
+      data: [],
+      houses: [],
       carouselHeight: ''
     };
   },
-  computed: {
-    houses() {
-      return Common.arrTwoDimensional(this.activeRegion.tradingAreaList, 9);
-    }
-  },
   methods: {
-    mouseover(region) {
-      this.regions.forEach((item, index) => {
-        this.regions[index].active = region.name === item.name;
+    mouseover(val) {
+      this.data.forEach((item, index) => {
+        this.data[index].active = val.name === item.name;
       });
-      this.activeRegion = region ? region : {};
+      this.houses = Common.arrTwoDimensional(val.list, 9);
       this.$nextTick(() => {
         this.getCarouselHeight(0);
       });
     },
     getCarouselHeight(index) {
-      this.carouselHeight = `${this.$refs.newhouse__content[index] ? this.$refs.newhouse__content[index].offsetHeight : 0}px`;
-    },
-    /**
-     * 区域
-     */
-    getChildRegion() {
-      Region.getChildRegion().then(res => {
-        this.regions = res.data.slice(0, 5);
-        this.regions[0].active = true;
-      });
+      this.carouselHeight = `${this.$refs.newhouse__content
+        ? this.$refs.newhouse__content[index] ? this.$refs.newhouse__content[index].offsetHeight : 0
+        : 0}px`;
     },
     getIndexCarousel() {
       Project.getIndexCarousel().then(res => {
-        this.data = res.data;
+        if (res.data) {
+          if (res.data.groupList && res.data.groupList.length > 0) {
+            this.data = res.data.groupList;
+            this.data[0].active = true;
+            this.houses = Common.arrTwoDimensional(this.data[0].list, 9);
+          } else {
+            this.houses = res.data.noGroupList;
+          }
+          this.$nextTick(() => {
+            this.getCarouselHeight(0);
+          });
+        }
       });
     }
   },
   mounted() {
-    this.activeRegion = this.regions[0] ? this.regions[0] : {};
-    this.$nextTick(() => {
-      this.getCarouselHeight(0);
-    });
-    this.getChildRegion();
     this.getIndexCarousel();
   }
 };

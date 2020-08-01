@@ -26,4 +26,18 @@ body {
     line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+
+  // 您的位置
+  .current-local {
+    margin: 20px 0;
+    color: #869099;
+    height: 19px;
+
+    a+a {
+      &::before {
+        content: '>';
+        margin: 0 5px;
+      }
+    }
+  }
 }

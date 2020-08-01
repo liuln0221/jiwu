@@ -13,9 +13,7 @@ const VerifyCode = {
    * @author liulina
    */
   login: (param) => {
-    return request.get(`${BASE_URL}/loginByVerifyCode`, {
-      params: param
-    });
+    return request.post(`${BASE_URL}/loginByVerifyCode`, param);
   }
 };
 

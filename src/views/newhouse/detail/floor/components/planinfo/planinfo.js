@@ -19,11 +19,10 @@ const info = [
 
   {
     label: '主力户型',
-    value: 'mainRoomLayout',
     getValue: (val) => {
-      return val
-        ? val.join('，')
-          ? val.join('，')
+      return val.mainRoomLayout
+        ? val.mainRoomLayout.join('，')
+          ? val.mainRoomLayout.join('，')
           : '暂无数据'
         : '暂无数据';
     }
@@ -42,11 +41,10 @@ const info = [
   { label: '物业公司', value: 'propertyCompany' },
   {
     label: '物业类型', 
-    value: 'propertyType',
     getValue: (val) => {
-      return val
-        ? val.join('，')
-          ? val.join('，')
+      return val.propertyType
+        ? val.propertyType.join('，')
+          ? val.propertyType.join('，')
           : '暂无数据'
         : '暂无数据';
     }
@@ -71,15 +69,13 @@ export default {
   components: { CustomTable },
   data() {
     return {
+      info: info,
       store: {}
     };
   },
   computed: {
     projectId() {
       return this.$route.params.id;
-    },
-    infos() {
-      return Common.arrTwoDimensional(info, 3);
     }
   },
   methods: {

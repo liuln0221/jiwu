@@ -64,7 +64,11 @@ export default {
         projectId: this.projectId,
         question: this.question
       };
-      Faqs.askQuestion(param).then();
+      Faqs.askQuestion(param).then(res => {
+        if (res.code === 10021) {
+          this.$store.dispatch('app/setLogin', true);
+        }
+      });
     }
   },
   mounted() {

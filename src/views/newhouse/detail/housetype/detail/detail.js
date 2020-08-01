@@ -1,4 +1,4 @@
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 import { locals, data } from './detail.class';
 
 import Header from '@/layout/header/header.vue';
@@ -17,9 +17,9 @@ export default {
     };
   },
   computed: {
-    ...mapState({
-      location: state => state.app.location // 当前城市
-    }),
+    ...mapGetters([
+      'location' // 当前城市
+    ]),
     height() {
       return 600;
     }

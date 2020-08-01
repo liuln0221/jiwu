@@ -12,6 +12,11 @@
       color: #fff;
       font-size: 16px;
 
+      &:focus {
+        color: #fff;
+        background: none;
+      }
+
       &:hover {
         color: #47b3e3;
         background: #252525;

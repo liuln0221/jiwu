@@ -1,4 +1,4 @@
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 import { filters, store } from './list.class';
 
 import List from './components/list/list.vue';
@@ -31,9 +31,9 @@ export default {
     };
   },
   computed: {
-    ...mapState({
-      location: state => state.app.location // 当前城市
-    })
+    ...mapGetters([
+      'location' // 当前城市
+    ])
   },
   methods: {
     selectBtn(val, store, type, key = 'name') {

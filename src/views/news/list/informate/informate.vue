@@ -1,6 +1,6 @@
 <template>
   <div class="informate">
-    <tab-content :data="headLine" :image="true"></tab-content>
+    <!-- <tab-content :data="headLine" :image="true"></tab-content> -->
     <!-- <el-card shadow="never">
       <div slot="header">
         <span>今日大咖说</span>
@@ -20,8 +20,11 @@
     </div>
     <el-pagination
       background
+      @current-change="handleCurrentChange"
+      :current-page.sync="page.current"
+      :page-size="page.size"
       layout="prev, pager, next"
-      :total="data.length">
+      :total="page.total">
     </el-pagination>
   </div>
 </template>

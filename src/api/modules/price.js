@@ -41,6 +41,30 @@ const Price = {
       params: param
     });
   },
+  /**
+   * @description 查询区域历史房价记录
+   * @param code region code
+   * @param type 类型
+   * @param param 参数
+   * @return {}
+   * @author liulina
+   */
+  getHistoryRegion: (code, type, param) => {
+    return request.get(`${BASE_URL}/history/region/${code}/${type}`, {
+      params: param
+    });
+  },
+  /**
+   * @description 查询区域历史房价记录
+   * @param param 参数
+   * @return {}
+   * @author liulina
+   */
+  getChildRegionPricesRank: (param) => {
+    return request.get(`${BASE_URL}/childRegionPricesRank`, {
+      params: param
+    });
+  }
 };
 
 export default Price;

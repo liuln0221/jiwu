@@ -1,0 +1,14 @@
+.trend {
+  /deep/.el-card {
+    .el-card__header {
+      .trend__consult {
+        font-size: 14px;
+        margin-left: 20px;
+      }
+    }
+
+    .el-card__body {
+      height: 300px;
+    }
+  }
+}

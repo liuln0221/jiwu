@@ -7,6 +7,9 @@ const routes = [
     name: 'adviser',
     path: 'adviser',
     component: Adviser,
+    meta: {
+      label: '置业顾问'
+    },
     redirect: { name: 'adviserList' },
     children: [
       {

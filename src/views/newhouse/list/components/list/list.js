@@ -12,7 +12,11 @@ export default {
       const param = {
         projectId: row.id
       };
-      Project.concernProject(param).then();
+      Project.concernProject(param).then(res => {
+        if (res.code === 10021) {
+          this.$store.dispatch('app/setLogin', true);
+        }
+      });
     }
   }
 };

@@ -1,5 +1,7 @@
 import { VerifyCode, User } from '@/api';
 
+import { setAuthToken } from '@/utils/cookies';
+
 export default {
   name: 'login',
   data() {
@@ -59,6 +61,7 @@ export default {
       this.$refs.form.resetFields();
       this.$refs.form.clearValidate();
       this.errorMsg = '';
+      this.$store.dispatch('app/setLogin', false);
     },
     /**
      * 获取图形验证码
@@ -102,7 +105,8 @@ export default {
         phone: this.form.tel,
         smsVerifyCode: this.form.smsVerifyCode
       };
-      User.login(param).then(() => {
+      User.login(param).then(res => {
+        setAuthToken(res.msg);
         this.hide();
       });
     }

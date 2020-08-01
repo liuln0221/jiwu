@@ -11,7 +11,7 @@ export default {
   data() {
     return {
       data: {},
-      informations: []
+      news: []
     };
   },
   computed: {
@@ -32,7 +32,7 @@ export default {
         projectId: this.projectId
       };
       ProjectInformation.getProjectInformation(param).then(res => {
-        this.informations = res.data;
+        this.news = res.data;
       });
     }
   },

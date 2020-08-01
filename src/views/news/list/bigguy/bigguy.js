@@ -1,6 +1,6 @@
 import { data } from './bigguy.class';
 
-import TabContent from '../components/tabcontent/tabcontent.vue';
+import TabContent from '../components/tabcontent.vue';
 
 export default {
   name: 'bigguy',

@@ -5,24 +5,33 @@ import Informate from './informate/informate.vue';
 
 const routes = [
   {
-    name: 'informationLocal',
+    name: 'newsLocal',
     path: 'local',
     component: Local,
+    meta: {
+      label: '本地咨讯'
+    }
   },
   {
-    name: 'informationDynamic',
+    name: 'newsDynamic',
     path: 'dynamic',
     component: Dynamic,
+    meta: {
+      label: '动态'
+    }
   },
   {
-    name: 'informationBigGuy',
+    name: 'newsBigGuy',
     path: 'bigGuy',
     component: BigGuy,
   },
   {
-    name: 'informationInformate',
+    name: 'newsInformate',
     path: 'new',
     component: Informate,
+    meta: {
+      label: '咨讯'
+    }
   }
 ];
 

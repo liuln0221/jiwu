@@ -1,4 +1,4 @@
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 
 import LineChart from '@/components/echarts/line.vue';
 
@@ -15,7 +15,7 @@ export default {
           color: '#47b3e3'
         },
         {
-          name: `${this.$store.state.app.location.name}房价`,
+          name: `${this.location.name}房价`,
           value: [ 90106, 88760, 83212, 83709, 82346, 82304, 82190, 80608, 81778, 81332, 81030, 79100 ],
           color: '#f7624e'
         }
@@ -23,9 +23,9 @@ export default {
     };
   },
   computed: {
-    ...mapState({
-      location: state => state.app.location // 当前城市
-    }),
+    ...mapGetters([
+      'location' // 当前城市
+    ]),
     seriesData() {
       const result = [];
       this.optionData.forEach(item => {

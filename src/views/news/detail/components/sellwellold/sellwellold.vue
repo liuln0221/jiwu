@@ -2,7 +2,7 @@
   <div class="sell-well-old">
     <el-card shadow="never">
       <div slot="header">
-        <span>热销二手房</span>
+        <span>热门二手房</span>
         <el-button type="text">
           <router-link target="_blank" :to="{ name: 'oldHouse' }">更多<i class="el-icon-arrow-right"></i></router-link>
         </el-button>

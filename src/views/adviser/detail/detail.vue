@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <div class="detail__local">
+    <div class="current-local">
       <span>您的位置：</span>
       <router-link :to="{ name: 'home' }">吉屋</router-link>
       <router-link :to="{ name: 'adviser' }">置业顾问</router-link>
@@ -13,7 +13,7 @@
         <!-- 服务动态 -->
         <!-- <service-dynamics></service-dynamics> -->
         <!-- 熟悉的楼盘 -->
-        <familiar-properties></familiar-properties>
+        <familiar-project></familiar-project>
       </el-col>
       <el-col :span="6">
         <explain></explain>

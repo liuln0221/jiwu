@@ -12,7 +12,7 @@
       <div class="info">
         <div>
           <span class="label">熟悉区域</span>
-          <span class="content">{{ data.familiarRegionsName.join('，') }}</span>
+          <span class="content" v-if="data.familiarRegionsName">{{ data.familiarRegionsName.join('，') }}</span>
         </div>
         <div>
           <span class="label">服务专长</span>

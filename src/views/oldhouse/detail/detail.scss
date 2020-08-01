@@ -1,14 +1,1 @@
-.detail {
-  .detail__local {
-    margin: 10px 0;
-    color: #869099;
-    height: 19px;
 
-    a+a {
-      &::before {
-        content: '>';
-        margin: 0 5px;
-      }
-    }
-  }
-}

@@ -24,7 +24,7 @@
             <el-image
               slot="suffix"
               :src="graphVerifyCode.imgBase64"
-              @click="getGraphVerifyCode"
+              @click.native="getGraphVerifyCode"
             ></el-image>
           </el-input>
         </el-form-item>

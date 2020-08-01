@@ -1,17 +1,4 @@
 .newHouse-detail {
-  .newHouse-detail__local {
-    margin: 20px 0;
-    color: #869099;
-    height: 19px;
-
-    a+a {
-      &::before {
-        content: '>';
-        margin: 0 5px;
-      }
-    }
-  }
-
   .newHouse-detail__title {
     display: flex;
     justify-content: space-between;

@@ -1,0 +1,28 @@
+.prepayment {
+  .el-form {
+    .el-date-editor  {
+      width: 100%;
+    }
+
+    /deep/.prepayment__mode {
+      .el-form-item__label {
+        margin: 18px 0;
+      }
+
+      .el-form-item__content {
+        .el-radio {
+          .el-radio__label {
+            .el-input {
+              width: 100px;
+              margin: 0 5px;
+
+              .el-input__inner {
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

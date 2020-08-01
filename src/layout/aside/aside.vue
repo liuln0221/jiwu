@@ -10,11 +10,11 @@
         popper-class="aside__popper"
         :close-delay="0">
         <div slot>
-          <router-link v-if="aside.routerTo" :to="aside.routerTo">{{ aside.content }}</router-link>
+          <router-link v-if="aside.routerTo" :to="aside.routerTo" target="_blank">{{ aside.content }}</router-link>
           <span v-else>{{ aside.content }}</span>
         </div>
         <div slot="reference">
-          <router-link v-if="aside.routerTo" :to="aside.routerTo">
+          <router-link v-if="aside.routerTo" :to="aside.routerTo" target="_blank">
             <i :class="aside.icon"></i>
           </router-link>
           <i v-else :class="aside.icon"></i>

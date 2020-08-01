@@ -5,7 +5,7 @@ import SellWell from './components/sellwell/sellwell.vue'; // 热销新盘
 import NewHouse from './components/newhouse/newhouse.vue'; // 新房
 import Adviser from './components/adviser/adviser.vue'; // 置业顾问
 import OldHouse from './components/oldhouse/oldhouse.vue'; // 精选二手房
-import Information from './components/information/information.vue'; // 房产资讯
+import News from './components/news/news.vue'; // 房产资讯
 import KnowledgeBase from './components/knowledgebase/knowledgebase.vue'; // 知识库
 
 export default {
@@ -18,7 +18,7 @@ export default {
     NewHouse,
     Adviser,
     OldHouse,
-    Information,
+    News,
     KnowledgeBase
   }
 };

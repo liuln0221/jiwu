@@ -1,5 +1,3 @@
-import { Common } from '@/utils/common';
-
 import CustomTable from '@/components/customTable.vue';
 
 import { Project } from '@/api';
@@ -9,9 +7,8 @@ const info = [
   { label: '装修状况', value: 'decoration' },
   {
     label: '物业类型',
-    value: 'propertyType',
     getValue: (val) => {
-      return val ? val.join('，') : '暂无数据';
+      return val.propertyType ? val.propertyType.join('，') : '暂无数据';
     }
   },
 
@@ -42,15 +39,13 @@ export default {
   components: { CustomTable },
   data() {
     return {
+      info: info,
       store: {}
     };
   },
   computed: {
     projectId() {
       return this.$route.params.id;
-    },
-    infos() {
-      return Common.arrTwoDimensional(info, 3);
     }
   },
   methods: {

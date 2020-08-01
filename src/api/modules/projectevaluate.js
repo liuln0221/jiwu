@@ -14,7 +14,18 @@ const ProjectEvaluate = {
    */
   getProjectEvaluate: (id) => {
     return request.get(`${BASE_URL}/${id}`);
-  }
+  },
+  /**
+   * @description 楼盘点评列表
+   * @param param 参数
+   * @return {}
+   * @author liulina
+   */
+  getProjectEvaluateList: (param) => {
+    return request.get(BASE_URL, {
+      params: param
+    });
+  },
 };
 
 export default ProjectEvaluate;

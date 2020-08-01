@@ -8,11 +8,11 @@
           <div class="newhouse__tab">
             <el-link
               :underline="false"
-              v-for="region in regions"
-              :key="region.code"
-              :class="region.active ? 'active' : ''"
-              @mouseover.native="mouseover(region)"
-            >{{ region.name }}<i></i></el-link>
+              v-for="(item, index) in data"
+              :key="index"
+              :class="item.active ? 'active' : ''"
+              @mouseover.native="mouseover(item)"
+            >{{ item.name }}<i></i></el-link>
           </div>
         </div>
         <router-link :to="{ name: 'newHouse' }">
@@ -21,26 +21,26 @@
       </div>
       <!-- body -->
       <el-carousel :height="carouselHeight" @change="getCarouselHeight">
-        <el-carousel-item v-for="house in houses" :key="house.name">
+        <el-carousel-item v-for="house in houses" :key="house.id">
           <div ref="newhouse__content">
             <el-row :gutter="20">
               <el-col :span="12" class="img__first" v-if="house[0]">
                 <router-link target="_blank" :to="{ name: 'newHouseDetail', params: { id: house[0].id } }">
-                  <el-image :src="house[0].src"></el-image>
+                  <el-image :src="house[0].showImgPath"></el-image>
                 </router-link>
-                <div class="img__first__name">{{ house[0].label }}</div>
+                <div class="img__first__name">{{ house[0].name }}</div>
                 <div class="img__first__detail">
-                  <div class="img__first__detail__text">{{ house[0].local }}</div>
+                  <div class="img__first__detail__text">{{ house[0].site }}</div>
                   <div class="img__first__detail__price">{{ house[0].price }}元/平米</div>
                 </div>
               </el-col>
               <el-col :span="12" class="img__more">
-                <el-col :span="12" v-for="item in house.slice(1, 5)" :key="item.name">
+                <el-col :span="12" v-for="item in house.slice(1, 5)" :key="item.id">
                   <router-link target="_blank" :to="{ name: 'newHouseDetail', params: { id: item.id } }">
-                    <el-image :src="item.src"></el-image>
+                    <el-image :src="item.showImgPath"></el-image>
                   </router-link>
                   <div class="img__more__detail">
-                    <div class="img__more__detail__name">{{ item.label }}</div>
+                    <div class="img__more__detail__name">{{ item.name }}</div>
                     <div class="img__more__detail__price">{{ item.price }}元/平米</div>
                   </div>
                 </el-col>

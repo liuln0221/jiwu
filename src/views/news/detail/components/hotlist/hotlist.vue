@@ -6,7 +6,7 @@
         :key="item.id"
         :to="{}"
         class="hot-list__content line-clamp"
-      >{{ item.content }}</router-link>
+      >{{ item.title }}</router-link>
     </el-card>
   </div>
 </template>

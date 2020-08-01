@@ -13,7 +13,7 @@ import { Common } from '@/utils/common';
  * @author liulina 2020-05-04
  */
 export default {
-  name: 'LineEChart',
+  name: 'lineEChart',
   props: [ 'option' ],
   methods: {
     initEcharts() {

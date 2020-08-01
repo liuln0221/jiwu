@@ -6,20 +6,23 @@ import ListRoutes from './list/router';
 
 const routes = [
   {
-    name: 'information',
+    name: 'news',
     path: 'news',
     component: News,
-    redirect: { name: 'informationList' },
+    meta: {
+      label: '咨讯'
+    },
+    redirect: { name: 'newsList' },
     children: [
       {
-        name: 'informationList',
+        name: 'newsList',
         path: '',
         component: List,
-        redirect: { name: 'informationLocal' },
+        redirect: { name: 'newsLocal' },
         children: ListRoutes
       },
       {
-        name: 'informationDetail',
+        name: 'newsDetail',
         path: ':id',
         component: Detail
       }

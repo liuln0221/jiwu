@@ -40,7 +40,11 @@ export default {
       const param = {
         activityId: val.id
       };
-      Activity.acticityRegister(param).then();
+      Activity.acticityRegister(param).then(res => {
+        if (res.code === 10021) {
+          this.$store.dispatch('app/setLogin', true);
+        }
+      });
     }
   },
   mounted() {

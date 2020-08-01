@@ -5,27 +5,27 @@
         <el-card shadow="never">
           <div slot="header">
             <div>
-              <div>{{ information.title }}</div>
+              <div>{{ news.title }}</div>
               <div class="dynamic-detail__source">
-                来源：<span>{{ information.author }}</span>
-                <span>{{ information.issueTime | dateStrToFormat('YYYY-MM-DD') }}</span>
+                来源：<span>{{ news.author }}</span>
+                <span>{{ news.issueTime | dateStrToFormat('YYYY-MM-DD') }}</span>
               </div>
             </div>
           </div>
-          <div class="dynamic-detail__content" v-html="information.content"></div>
+          <div class="dynamic-detail__content" v-html="news.content"></div>
           <div class="dynamic-detail__tel">咨询楼盘优惠：<span>{{ data.sellPhone }}</span></div>
           <!-- 最新动态 -->
           <div class="newHouse-detail__dynamic" v-if="newInformation">
             <div class="title">
               <router-link
-                :to="{ name: 'newHouseDetailDynamicDetail', params: { informationId: newInformation.id } }"
+                :to="{ name: 'newHouseDetailDynamicDetail', params: { newsId: newInformation.id } }"
                 target="_blank"
               >[最新动态]{{ newInformation.title }}</router-link>
               <div>{{ newInformation.issueTime | dateStrToFormat('YYYY-MM-DD') }}</div>
             </div>
             <div class="info">
               <router-link
-                :to="{ name: 'newHouseDetailDynamicDetail', params: { informationId: newInformation.id } }" 
+                :to="{ name: 'newHouseDetailDynamicDetail', params: { newsId: newInformation.id } }" 
                 target="_blank"
                 v-html="newInformation.content"
               ></router-link>
@@ -35,14 +35,14 @@
           <div class="newHouse-detail__dynamic" v-if="prevInformation">
             <div class="title">
               <router-link
-                :to="{ name: 'newHouseDetailDynamicDetail', params: { informationId: prevInformation.id } }"
+                :to="{ name: 'newHouseDetailDynamicDetail', params: { newsId: prevInformation.id } }"
                 target="_blank"
               >[上一篇动态]{{ prevInformation.title }}</router-link>
               <div>{{ prevInformation.issueTime | dateStrToFormat('YYYY-MM-DD') }}</div>
             </div>
             <div class="info">
               <router-link
-                :to="{ name: 'newHouseDetailDynamicDetail', params: { informationId: prevInformation.id } }" 
+                :to="{ name: 'newHouseDetailDynamicDetail', params: { newsId: prevInformation.id } }" 
                 target="_blank"
                 v-html="prevInformation.content"
               ></router-link>
@@ -52,14 +52,14 @@
           <div class="newHouse-detail__dynamic" v-if="nextInformation">
             <div class="title">
               <router-link
-                :to="{ name: 'newHouseDetailDynamicDetail', params: { informationId: nextInformation.id } }"
+                :to="{ name: 'newHouseDetailDynamicDetail', params: { newsId: nextInformation.id } }"
                 target="_blank"
               >[下一篇动态]{{ nextInformation.title }}</router-link>
               <div>{{ nextInformation.issueTime | dateStrToFormat('YYYY-MM-DD') }}</div>
             </div>
             <div class="info">
               <router-link
-                :to="{ name: 'newHouseDetailDynamicDetail', params: { informationId: nextInformation.id } }" 
+                :to="{ name: 'newHouseDetailDynamicDetail', params: { newsId: nextInformation.id } }" 
                 target="_blank"
                 v-html="nextInformation.content"
               ></router-link>

@@ -1,0 +1,56 @@
+.result {
+  .el-divider {
+    border-top: 1px dashed #ddd;
+    background: none;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  /deep/.el-card {
+    .el-card__header {
+      font-size: 24px;
+    }
+
+    .el-card__body {
+      padding-top: 10px;
+
+      .el-col:not(:last-child) {
+        .custom-table {
+          .el-row {
+            border-right: none;
+          }
+        }
+      }
+
+      .title {
+        line-height: 34px;
+        font-weight: bold;
+      }
+
+      .custom-table {
+        .value {
+          text-align: right;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+
+  .result__operate {
+    .el-button {
+      color: #47b3e3;
+    }
+  }
+
+  .result__desc {
+    margin-top: 20px;
+    line-height: 30px;
+    background-color: #f5f5f5;
+    padding-left: 30px;
+
+    i {
+      margin-right: 10px;
+      color: #ccc;
+    }
+  }
+}

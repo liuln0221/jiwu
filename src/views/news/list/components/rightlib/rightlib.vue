@@ -19,9 +19,9 @@
     </el-card> -->
     <!-- 热文榜 -->
     <el-card header="7×24小时热文榜"  shadow="never">
-      <el-link :underline="false" class="rightlib__hot" v-for="item in hotList" :key="item.id">
-        <el-image :src="item.img"></el-image>
-        <div class="content line-clamp">{{ item.content }}</div>
+      <el-link :underline="false" class="rightlib__hot" v-for="item in data" :key="item.id">
+        <el-image :src="item.coverImgUrl"></el-image>
+        <div class="content line-clamp">{{ item.title }}</div>
       </el-link>
     </el-card>
   </div>

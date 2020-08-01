@@ -1,9 +1,9 @@
 <template>
   <div class="detail">
-    <div class="detail__local">
+    <div class="current-local">
       <span>您的位置：</span>
-      <el-link :underline="false">楼市资讯</el-link>
-      <el-link :underline="false">{{ data.description }}</el-link>
+      <router-link :to="{ name: 'newsList' }">楼市资讯</router-link>
+      <router-link :to="{}">{{ data.title }}</router-link>
     </div>
     <el-row :gutter="20">
       <el-col :span="18">
@@ -18,9 +18,9 @@
         <!-- 热销新盘 -->
         <hot-project></hot-project>
         <!-- 热门二手房 -->
-        <sell-well-old></sell-well-old>
+        <!-- <sell-well-old></sell-well-old> -->
         <!-- 二手小区推荐 -->
-        <recommend-old></recommend-old>
+        <!-- <recommend-old></recommend-old> -->
         <!-- 7×24小时热文榜 -->
         <hot-list></hot-list>
         <!-- 热门问答 -->

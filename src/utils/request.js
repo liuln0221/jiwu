@@ -7,8 +7,6 @@ import store from '@/store/index';
 
 import { Message, Notification } from 'element-ui';
 
-const Token = getAuthToken();
-
 const getParam = () => {
   return {
     'App-Key': 'app_pc',
@@ -34,25 +32,29 @@ service.interceptors.request.use(
       config.data = true;
     }
 
+    const param = Common.merge(getParam(), config.method === 'post' ? config.data : {});
+
+    const Token = getAuthToken();
     if (Token) {
-      getParam().Token = Token;
+      param.Token = Token;
     }
 
     config.headers = Common.merge({
       'Content-Type': 'application/json;charset=UTF-8',
       'Cache-Control': 'no-cache'
-    }, getParam());
+    }, param);
 
     config.headers['Driver-Type'] = 'pc';
-    if (store.state.app.location.domain) {
-      config.headers['City-Domain'] = store.state.app.location.domain;
+    if (store.getters.location.domain) {
+      config.headers['City-Domain'] = store.getters.location.domain;
     }
     
-    const arr = Object.keys(getParam()).sort();
+    const arr = Object.keys(param).sort();
     let str = '';
     arr.forEach(item => {
-      str += config.headers[item] ? `${item}${config.headers[item]}` : '';
+      str += param[item] ? `${item}${param[item]}` : '';
     });
+    console.log(`${app_secret}${str}${app_secret}`);
     config.headers.Sign = md5(`${app_secret}${str}${app_secret}`);
     return config;
   },
@@ -103,11 +105,14 @@ service.interceptors.response.use(
           }
           break;
         case 500:
-          Notification({
-            title: (window).vm && (window).vm.$t('messages.title'),
-            message: (window).vm && (window).vm.$t('responseErrorMsg.500'),
-            position: 'bottom-right'
-          });
+          if (error.response.config.url !== '/auth/api/v2/login') {
+            Notification({
+              title: '消息',
+              message: '500 Internal Server Error 服务器内部错误，无法完成请求',
+              position: 'bottom-right'
+            });
+          }
+          
           break;
       }
       return Promise.reject(error);

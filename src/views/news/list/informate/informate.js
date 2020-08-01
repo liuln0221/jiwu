@@ -1,8 +1,9 @@
-import { headLine, bigGuySays, data } from './informate.class';
+import { headLine, bigGuySays } from './informate.class';
 
 import { Common } from '@/utils/common';
 
-import TabContent from '../components/tabcontent/tabcontent.vue';
+import TabContent from '../components/tabcontent.vue';
+import { News } from '@/api';
 
 export default {
   name: 'informate',
@@ -11,13 +12,35 @@ export default {
     return {
       headLine,
       says: bigGuySays.slice(0, 4),
-      data
+      data: [],
+      page: {
+        current: 1,
+        size: 20,
+        total: 0
+      }
     };
   },
   methods: {
     refresh() {
       this.says = Common.randomArray(bigGuySays, 4);
-      console.log(this.says.map(item => item.id));
+    },
+    getNewsMarkets() {
+      const param = {
+        pageIndex: this.page.current,
+        pageSize: this.page.size,
+        searchCount: true
+      };
+      News.getNewsMarkets(param).then(res => {
+        this.data = res.data;
+        this.page.total = res.totalRow;
+      });
+    },
+    handleCurrentChange(val) {
+      this.page.current = val;
+      this.getNewsMarkets();
     }
+  },
+  mounted() {
+    this.getNewsMarkets();
   }
 };

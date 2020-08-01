@@ -14,11 +14,11 @@
           <div class="qa__info" v-for="(qa, index) in qas.slice(0, 3)" :key="index">
             <div class="q">
               <div class="label">问</div>
-              <div class="info">{{ qa.q }}</div>
+              <div class="info">{{ qa.question }}</div>
             </div>
             <div class="a">
               <div class="label">答</div>
-              <div class="info">{{ qa.a }}</div>
+              <div class="info">{{ qa.answer }}</div>
             </div>
           </div>
         </el-card>
@@ -51,18 +51,18 @@
         <div class="qa__info" v-for="(qa, index) in qas.slice(3)" :key="index">
           <div class="q">
             <div class="label">问</div>
-            <div class="info">{{ qa.q }}</div>
+            <div class="info">{{ qa.question }}</div>
           </div>
           <div class="a">
             <div class="label">答</div>
-            <div class="info">{{ qa.a }}</div>
+            <div class="info">{{ qa.answer }}</div>
           </div>
         </div>
       </el-col>
       <el-col :span="6">
         <el-card shadow="never" header="提问"  class="qa__q">
           <el-input v-model="question" type="textarea" :rows="5" placeholder="详细描述您的问题，有利于获得更好的回答。"></el-input>
-          <el-button @click="askQuestion" :disabled="question">提交问题</el-button>
+          <el-button @click="askQuestion" :disabled="!question">提交问题</el-button>
         </el-card>
         <hot-project></hot-project>
       </el-col>

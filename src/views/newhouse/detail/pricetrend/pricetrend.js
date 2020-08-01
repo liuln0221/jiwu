@@ -1,4 +1,4 @@
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 
 import LineChart from '@/components/echarts/line.vue';
 import Disclaimer from '@/views/newhouse/detail/components/disclaimer/disclaimer.vue';
@@ -24,7 +24,7 @@ export default {
       projectValue: [],
       cityValue: [],
       tableData: [],
-      information: [],
+      news: [],
       time: 12,
       timeSelect: [
         { name: 12, label: '近1年' },
@@ -33,9 +33,9 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      location: state => state.app.location // 当前城市
-    }),
+    ...mapGetters([
+      'location' // 当前城市
+    ]),
     projectId() {
       return this.$route.params.id;
     },
@@ -211,7 +211,7 @@ export default {
         projectId: this.projectId
       };
       ProjectInformation.getProjectInformation(param).then(res => {
-        this.information = res.data;
+        this.news = res.data;
       });
     }
   },

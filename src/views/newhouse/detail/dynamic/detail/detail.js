@@ -1,5 +1,7 @@
 import { Project, ProjectInformation } from "@/api";
 
+import { Common } from '@/utils/common';
+
 import HotProject from '@/views/components/hotproject/hotproject.vue';
 
 export default {
@@ -8,7 +10,7 @@ export default {
   data() {
     return {
       data: {},
-      information: {},
+      news: {},
       newInformation: {}, // 最新动态
       prevInformation: {}, // 上一篇动态
       nextInformation: {} // 下一篇动态
@@ -18,8 +20,8 @@ export default {
     projectId() {
       return this.$route.params.id;
     },
-    informationId() {
-      return this.$route.params.informationId;
+    newsId() {
+      return this.$route.params.newsId;
     }
   },
   methods: {
@@ -29,12 +31,14 @@ export default {
       });
     },
     getProjectInformationDetail() {
-      ProjectInformation.getProjectInformationDetail(this.informationId).then(res => {
-        this.information = res.data;
+      ProjectInformation.getProjectInformationDetail(this.newsId).then(res => {
+        this.news = res.data;
+        this.$route.matched.find(item => item.name === 'newHouseDetailDynamicDetail').meta.label = this.news.title;
+        Common.setTitle(this);
       });
     },
     getProjectInformation() {
-      const informationId = this.informationId;
+      const newsId = this.newsId;
       const param = {
         pageIndex: 1,
         pageSize: 20,
@@ -42,7 +46,7 @@ export default {
       };
       ProjectInformation.getProjectInformation(param).then(res => {
         const itemIndex = res.data.findIndex(item => {
-          return item.id === parseInt(informationId, 10);
+          return item.id === parseInt(newsId, 10);
         });
         this.newInformation = itemIndex > 1 ? res.data[0] : undefined;
         this.prevInformation = itemIndex < res.data.length - 1 ? res.data[itemIndex + 1] : undefined;

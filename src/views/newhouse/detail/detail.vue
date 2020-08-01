@@ -1,6 +1,6 @@
 <template>
   <div class="newHouse-detail">
-    <div class="newHouse-detail__local">
+    <div class="current-local">
       <span>您的位置：</span>
       <router-link :to="{ name: 'home' }" target="_blank">{{ location.name }}房产网</router-link>
       <router-link :to="{ name: 'newHouse' }" target="_blank">{{ location.name }}楼盘</router-link>

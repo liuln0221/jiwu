@@ -1,26 +1,35 @@
-import { locals, images, tabs } from './list.class';
+import { mapGetters } from 'vuex';
 
 import RightLib from './components/rightlib/rightlib.vue';
+import { Banner } from '@/api';
 
 export default {
-  name: 'informationList',
+  name: 'newsList',
   components: { RightLib },
   data() {
     return {
-      locals,
-      images,
-      tabs,
+      data: [],
       activeName: 'local'
     };
+  },
+  computed: {
+    ...mapGetters([
+      'location' // 当前城市
+    ])
   },
   methods: {
     handleClick(tab) {
       this.$router.push({ name: tab.name });
+    },
+    getNews() {
+      Banner.getNews().then(res => {
+        this.data = res.data;
+      });
     }
   },
   mounted() {
     console.log(this.$route.matched);
-    const arr = this.$route.matched[this.$route.matched.length - 1].path.split('/');
-    this.activeName = arr[arr.length - 1];
+    this.activeName = this.$route.matched[this.$route.matched.length - 1].name;
+    this.getNews();
   }
 };

@@ -17,42 +17,63 @@ const routes = [
   {
     name: 'newHouseDetailFloor',
     path: 'floor',
-    component: Floor
+    component: Floor,
+    meta: {
+      label: '楼盘信息'
+    }
   },
   {
     name: 'newHouseDetailHouseType',
     path: 'houseType',
-    component: HouseType
+    component: HouseType,
+    meta: {
+      label: '户型图'
+    }
   },
   {
     name: 'newHouseDetailAlbum',
     path: 'album',
-    component: Album
+    component: Album,
+    meta: {
+      label: '相册'
+    }
   },
   {
     name: 'newHouseDetailMapTraffic',
     path: 'mapTraffic',
-    component: MapTraffic
+    component: MapTraffic,
+    meta: {
+      label: '地图交通'
+    }
   },
   {
     name: 'newHouseDetailPriceTrend',
     path: 'priceTrend',
-    component: PriceTrend
+    component: PriceTrend,
+    meta: {
+      label: '价格走势'
+    }
   },
   {
     name: 'newHouseDetailDynamic',
     path: 'dynamic',
-    component: Dynamic
+    component: Dynamic,
+    meta: {
+      label: '楼盘动态'
+    }
   },
   {
     name: 'newHouseDetailDynamicDetail',
-    path: 'dynamic/:informationId',
+    path: 'dynamic/:newsId',
     component: DynamicDetail
   },
   {
     name: 'newHouseDetailQA',
     path: 'qa',
-    component: QA
+    component: QA,
+    meta: {
+      label: '有问必答'
+    }
   }
 ];
 

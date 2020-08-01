@@ -4,7 +4,10 @@ const routes = [
   {
     name: 'qa',
     path: 'qa',
-    component: QA
+    component: QA,
+    meta: {
+      label: '房产问答'
+    }
   }
 ];
 

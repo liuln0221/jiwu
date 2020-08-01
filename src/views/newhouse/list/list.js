@@ -1,6 +1,7 @@
+import { mapGetters } from 'vuex';
 import { store } from './list.class';
 
-import Building from './components/building/building.vue'; // 新盘
+import Houses from './components/houses/houses.vue'; // 新盘
 import Metro from './components/metro/metro.vue'; // 地铁
 import List from './components/list/list.vue'; // 列表
 import Explain from '@/views/components/explain/explain.vue'; // 说明
@@ -8,10 +9,10 @@ import { Project, Region, Price, ProjectLabel } from '@/api';
 
 export default {
   name: 'newHouse',
-  components: { Building, Metro, List, Explain },
+  components: { Houses, Metro, List, Explain },
   data() {
     return {
-      activeName: 'building',
+      activeName: 'houses',
       selected: [],
       sort: {
         price: '',
@@ -29,7 +30,25 @@ export default {
       labels: []
     };
   },
+  computed: {
+    ...mapGetters([
+      'location' // 当前城市
+    ])
+  },
   methods: {
+    tabClick(tab) {
+      switch(tab.name) {
+        case 'houses':
+          this.$router.push({ name: 'newHouseList' });
+          break;
+        case 'hot':
+          this.$router.push({ name: 'hotHouse' });
+          break;
+        case 'help':
+          this.$router.push({ name: 'help' });
+          break;
+      }
+    },
     getSelected(val) {
       this.selected = val;
       this.getProject();
@@ -63,23 +82,6 @@ export default {
     //   this.sort.attention = this.sort.attention === '' || this.sort.attention === 'desc' ? 'asc' : 'desc';
     //   this.sort.price = '';
     // },
-    getFilter() {
-      if (this.$route.params.filter) {
-        const params = this.$route.params.filter.split('-');
-        const filter = {};
-        params.forEach(item => {
-          filter[item.replace(/[^a-zA-Z]/g, '')] = item.replace(/[^\d]/g, '');
-        });
-
-        for (const key in filter) {
-          const store = this[`${key}s`];
-          const val = store.find(item => item.id == filter[key]);
-          this.$refs.filter.selectBtn(val, store, key);
-        }
-      } else {
-        this.getProject();
-      }
-    },
     getProject() {
       const label = this.selected.find(item => item.name === 'label');
       const openStatus = this.selected.find(item => item.name === 'openStatus');
@@ -103,6 +105,17 @@ export default {
       };
 
       Project.getProject(param).then(res => {
+        this.page.total = res.totalRow;
+        this.store = res.data ? res.data : store;
+      });
+    },
+    getHot() {
+      const param = {
+        searchCount: true, // 是否查询总页数
+        pageIndex: this.page.current,
+        pageSize: this.page.size
+      };
+      Project.getHot(param).then(res => {
         this.page.total = res.totalRow;
         this.store = res.data ? res.data : store;
       });
@@ -154,12 +167,30 @@ export default {
       ProjectLabel.getProjectLabel().then(res => {
         this.labels = res.data;
 
-        this.getFilter();
+        this.$refs.filter.getFilter();
       });
+    },
+    init() {
+      switch(this.$route.name) {
+        case 'newHouseList':
+        case 'newHouseListFilter':
+          this.activeName = 'houses';
+          this.getProject();
+          this.getChildRegion();
+          break;
+        case 'hotHouse':
+          this.activeName = 'hot';
+          this.getHot();
+          break;
+      }
     }
   },
   mounted() {
-    // this.getProject();
-    this.getChildRegion();
+    this.init();
+  },
+  watch: {
+    $route() {
+      this.init();
+    }
   }
 };

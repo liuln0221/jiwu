@@ -18,7 +18,7 @@
             <router-link
               v-for="link in content.links"
               :key="link.id"
-              :to="{ name: 'informationDetail', params: { id: link.id } }"
+              :to="{ name: 'newsDetail', params: { id: link.id } }"
             >{{ link.label }}</router-link>
           </div>
         </el-col>
