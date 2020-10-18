@@ -1,6 +1,6 @@
 <template>
   <div class="disclaimer">
-    <span>吉屋网免责声明：</span>{{ disclaimer }}
+    <span>严选好房网免责声明：</span>{{ disclaimer }}
   </div>
 </template>
 

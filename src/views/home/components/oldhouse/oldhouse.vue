@@ -1,5 +1,5 @@
 <template>
-  <div class="oldhouse">
+  <div class="oldhouse" v-if="data.length > 0">
     <el-card shadow="never">
       <div slot="header">
         <span>精选二手房</span>

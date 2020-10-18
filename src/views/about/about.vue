@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <el-container>
+    <el-container v-if="$route.name !== 'privacy'">
       <el-header>
         <e-header></e-header>
       </el-header>
@@ -12,6 +12,7 @@
         <e-footer></e-footer>
       </el-footer>
     </el-container>
+    <router-view v-else />
   </div>
 </template>
 

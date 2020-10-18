@@ -34,11 +34,13 @@ export default {
             this.data[0].active = true;
             this.houses = Common.arrTwoDimensional(this.data[0].list, 9);
           } else {
-            this.houses = res.data.noGroupList;
+            this.houses = [res.data.noGroupList];
+            console.log(this.houses);
           }
           this.$nextTick(() => {
             this.getCarouselHeight(0);
           });
+          this.$forceUpdate();
         }
       });
     }

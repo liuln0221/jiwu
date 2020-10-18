@@ -21,6 +21,7 @@
             >
               <el-button type="text">{{ option.label }}</el-button>
             </router-link>
+            <span class="price__content__nodata" v-if="link.options.length === 0">暂无</span>
           </el-col>
         </el-row>
       </el-col>

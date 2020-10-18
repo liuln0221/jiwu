@@ -273,8 +273,12 @@
 
 // 新房下拉框弹出框样式
 .houses__popper {
-  .el-select-dropdown__item {
-    font-size: 12px;
+  .el-select-dropdown__wrap {
+    max-height: none;
+
+    .el-select-dropdown__item {
+      font-size: 12px;
+    }
   }
 }
 

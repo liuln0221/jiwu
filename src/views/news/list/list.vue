@@ -2,7 +2,7 @@
   <div class="list">
     <div class="current-local">
       <span>您的位置：</span>
-      <router-link :to="{ name: 'home' }">吉屋</router-link>
+      <router-link :to="{ name: 'home' }">严选好房</router-link>
       <router-link :to="{ name: 'newsList' }">{{ location.name }}资讯</router-link>
     </div>
     <el-row :gutter="60">

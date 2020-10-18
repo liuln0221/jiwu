@@ -1,6 +1,6 @@
 <template>
   <div class="adviser">
-    <div class="title">找置业管家，房贷测算更省事</div>
+    <div class="title">找置业顾问，房贷测算更省事</div>
     <div
       class="item"
       v-for="item in advisers"

@@ -11,9 +11,32 @@ export default {
     eHeader: Header,
     eFooter: Footer
   },
+  provide (){
+    return {
+      reload: this.reload
+    };
+  },
+  data() {
+    return {
+      isRouterAlive: true
+    };
+  },
   computed: {
     ...mapGetters([
       'location' // 当前城市
     ])
   },
+  watch: {
+    location() {
+      this.reload();
+    }
+  },
+  methods: {
+    reload() {
+      this.isRouterAlive = false;
+      this.$nextTick(() => {
+        this.isRouterAlive = true;
+      });
+    }
+  }
 };

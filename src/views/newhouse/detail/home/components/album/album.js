@@ -17,12 +17,12 @@ export default {
       // ],
       filters: [],
       // store: [
-      //   'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-      //   'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-      //   'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-      //   'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-      //   'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-      //   'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+      //   'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+      //   'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+      //   'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+      //   'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+      //   'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+      //   'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
       // ]
       store: []
     };
@@ -45,8 +45,9 @@ export default {
       });
     },
     computed(store) {
-      store.forEach(item => {
+      store.forEach((item, index) => {
         this.store = this.store.concat(item.imgList);
+        store[index].size = item.imgList.length;
       });
       store.unshift({
         name: '全部图片',

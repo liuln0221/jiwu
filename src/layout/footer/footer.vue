@@ -29,7 +29,7 @@
       </el-row>
     </div> -->
     <div class="footer__conyfiv">
-      <div>Copyright © 2020 <el-link :underline="false">jiwu.com</el-link> 深圳市吉屋网络技术有限公司 ALL Rights Reserved</div>
+      <div>Copyright © 2020 <el-link :underline="false">yanxuanhaofang.com</el-link> 深圳市严选好房网络技术有限公司 ALL Rights Reserved</div>
       <div>
         <el-link :underline="false">ICP备案(粤ICP备11045667号)</el-link>
         <el-link :underline="false">增值电信业务经营许可证</el-link>

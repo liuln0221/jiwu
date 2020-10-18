@@ -42,8 +42,9 @@ export default {
     },
     computed(store) {
       let result = [];
-      store.forEach(item => {
+      store.forEach((item, index) => {
         result = result.concat(item.imgList);
+        store[index].size = item.imgList.length;
       });
       store.unshift({
         name: '全部',

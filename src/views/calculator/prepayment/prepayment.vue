@@ -2,7 +2,7 @@
   <div class="prepayment">
     <calculator name="提前还款计算器" :custom="true">
       <template slot="custom">
-        <el-form :model="data" label-width="140px">
+        <el-form ref="form" :model="data" :rules="rules" label-width="140px">
           <el-form-item label="还款类型" prop="type">
             <el-select v-model="data.type">
               <el-option
@@ -73,15 +73,15 @@
             >减少月还款额，还款期限不变</el-radio>
           </el-form-item>
           <el-form-item>
-            <el-button class="submit">开始计算</el-button>
-            <el-button class="reset">重置</el-button>
+            <el-button class="submit" @click="submit">开始计算</el-button>
+            <el-button class="reset" @click="reset">重置</el-button>
           </el-form-item>
         </el-form>
       </template>
     </calculator>
-    <result :custom="true">
+    <result ref="result" :custom="true">
       <template slot="custom">
-        <custom-table :info="info" :store="store" :split="2"></custom-table>
+        <custom-table :info="info" :store="store[data.type]" :split="2"></custom-table>
       </template>
     </result>
   </div>

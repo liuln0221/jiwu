@@ -9,13 +9,14 @@
         <el-row :gutter="100" class="checkPrice__price">
           <el-col :span="24">
             <div class="checkPrice__price__title">新房房价</div>
-            <div>
+            <div v-if="newHousePrice.averagePrice">
               <span class="checkPrice__price__number">{{ newHousePrice.averagePrice }}</span>
               <span class="checkPrice__price__unit">元/平米</span>
               <span class="checkPrice__price__trend">
                 <i :class="newHousePrice.mom > 0 ? 'el-icon-top upper' : 'el-icon-bottom lower'">{{ (Math.abs(newHousePrice.mom) * 100).toFixed(2) }}%</i>
               </span>
             </div>
+            <div v-else>暂无</div>
           </el-col>
           <!-- <el-col :span="12">
             <div class="checkPrice__price__title">二手房房价</div>

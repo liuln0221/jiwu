@@ -3,14 +3,14 @@
     <el-aside width="auto">
       <e-aside></e-aside>
     </el-aside>
-    <el-container>
+    <el-container class="layout__container">
       <el-header>
         <e-header></e-header>
       </el-header>
       <el-main v-if="location.name">
-        <router-view />
+        <router-view v-if="isRouterAlive" />
       </el-main>
-      <el-footer>
+      <el-footer class="layout__footer">
         <e-footer></e-footer>
       </el-footer>
     </el-container>

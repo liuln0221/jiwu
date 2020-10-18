@@ -39,12 +39,12 @@ export default {
           houseType: key,
           num: store[key].length,
           store: store[key].map(item => {
-            // item.routerTo = { name: 'newHouseTypeDetail', params: { id: item.layoutId } };
+            item.routerTo = { name: 'newHouseTypeDetail', params: { id: item.layoutId }, query: { projectId: item.projectId } };
             return item;
           })
         });
         allStore = allStore.concat(store[key].map(item => {
-          // item.routerTo = { name: 'newHouseTypeDetail', params: { id: item.layoutId } };
+          item.routerTo = { name: 'newHouseTypeDetail', params: { id: item.layoutId }, query: { projectId: item.projectId } };
           return item;
         }));
       }

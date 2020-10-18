@@ -8,7 +8,7 @@
         <div class="name">
           <router-link :to="{ name: 'adviserDetail', params: { id: item.id } }">{{ item.name }}</router-link>
           <!-- <i class="el-icon-plus"></i> -->
-          <el-button icon="icon-talk">在线咨询</el-button>
+          <el-button icon="icon-talk" @click="consultRegister(item.id)">在线咨询</el-button>
         </div>
         <div>
           <div class="label">熟悉区域</div>

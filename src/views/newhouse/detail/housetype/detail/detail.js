@@ -1,19 +1,25 @@
 import { mapGetters } from 'vuex';
-import { locals, data } from './detail.class';
+import { locals } from './detail.class';
 
 import Header from '@/layout/header/header.vue';
 
-import { Project } from '@/api';
+import { Project, UserNotify } from '@/api';
 
 export default {
   name: 'houseTypeDetail',
   components: { eHeader: Header },
+  provide (){
+    return {
+      reload: this.reload
+    };
+  },
   data() {
     return {
       locals,
-      data,
-      tabActive: {},
+      data: {},
       store: [],
+      tabActive: {},
+      houseTypeActive: {}
     };
   },
   computed: {
@@ -22,82 +28,36 @@ export default {
     ]),
     height() {
       return 600;
+    },
+    projectId() {
+      return this.$route.query.projectId;
+    },
+    layoutId() {
+      return this.$route.params.id;
     }
   },
   methods: {
+    /**
+     * 获取楼盘详情
+     */
+    getProjectDetail() {
+      Project.getProjectDetail(this.projectId).then(res => {
+        this.data = res.data;
+      });
+    },
+    /**
+     * 获取户型详情
+     */
     getProjectLayouts() {
-      Project.getProjectLayouts(data.projectId).then(res => {
-        this.store = res.data;
-
-        // TODO
-        const response = {
-          additionalProp1: [
-            {
-              id: 100001,
-              houseType: '1房1厅1卫',
-              area: 188,
-              downPayments: 725,
-              monthlySupply: 65286,
-              // img: 'http://img8.jiwu.com/newbuildpic/10/3/2802/2802093_a.jpg',
-              img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-              routerTo: { name: 'newHouseTypeDetail', params: { id: 100001 } }
-            },
-            {
-              houseType: '1房1厅1卫',
-              area: 213,
-              downPayments: 851,
-              monthlySupply: 73902,
-              desc: '厨卫不对门',
-              // img: 'http://img8.jiwu.com/newbuildpic/10/3/2802/2802093_a.jpg',
-              img: 'http://img-other.jiwu.com/apic/2019/12/25/182916245378.jpg/pc1920x360',
-              routerTo: {}
-            },
-            {
-              houseType: '1房2厅1卫',
-              area: 188,
-              downPayments: 725,
-              monthlySupply: 65286,
-              // img: 'http://img8.jiwu.com/newbuildpic/10/3/2802/2802093_a.jpg',
-              img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-              routerTo: {}
-            }
-          ],
-          additionalProp2: [
-            {
-              id: 100001,
-              houseType: '2房2厅1卫',
-              area: 188,
-              downPayments: 725,
-              monthlySupply: 65286,
-              // img: 'http://img8.jiwu.com/newbuildpic/10/3/2802/2802093_a.jpg',
-              img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-              routerTo: { name: 'newHouseTypeDetail', params: { id: 100001 } }
-            },
-            {
-              houseType: '2房2厅2卫',
-              area: 213,
-              downPayments: 851,
-              monthlySupply: 73902,
-              desc: '厨卫不对门',
-              // img: 'http://img8.jiwu.com/newbuildpic/10/3/2802/2802093_a.jpg',
-              img: 'http://img-other.jiwu.com/apic/2019/12/25/182916245378.jpg/pc1920x360',
-              routerTo: {}
-            },
-            {
-              houseType: '2房2厅1卫',
-              area: 188,
-              downPayments: 725,
-              monthlySupply: 65286,
-              // img: 'http://img8.jiwu.com/newbuildpic/10/3/2802/2802093_a.jpg',
-              img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-              routerTo: {}
-            }
-          ]
-        };
-        this.store = this.computed(response);
+      Project.getProjectLayouts(this.layoutId).then(res => {
+        this.store = this.computed(res.data);
         this.tabActive = this.store.slice(1).find(item => {
-          return item.store.find(i => i.id === data.layoutId);
-        });
+          return item.store.find(i => i.layoutId == this.layoutId);
+        }) || {};
+        if (this.tabActive.store && this.tabActive.store.length > 0) {
+          this.tabActive.store[0].active = true;
+          this.houseTypeActive = this.tabActive.store[0];
+        }
       });
     },
     computed(store) {
@@ -105,9 +65,8 @@ export default {
       let allStore = [];
 
       for (const key in store) {
-        store[key][0].active = true;
         result.push({
-          houseType: `${key.replace(/[a-zA-Z]/g, '')}室户型`,
+          houseType: key,
           num: store[key].length,
           store: store[key]
         });
@@ -121,16 +80,46 @@ export default {
 
       return result;
     },
-    clickImg(ver, store) {
-      ver.active = true;
-      store.forEach((item, index) => {
-        if (item.id !== ver.id) {
-          store[index].active = false;
+    clickImg(index, store) {
+      store[index].active = true;
+      store.forEach((item, i) => {
+        if (item.layoutId !== store[index].layoutId) {
+          store[i].active = false;
         }
+      });
+      this.$refs.carousel.setActiveItem(index);
+      this.$forceUpdate();
+    },
+    getHouseTypeAvtive(val) {
+      this.tabActive.store.forEach((item, index) => {
+        if (index === val) {
+          this.tabActive.store[index].active = true;
+          this.houseTypeActive = item;
+        } else {
+          this.tabActive.store[index].active = false;
+        }
+      });
+    },
+    priceNotify() {
+      const param = {
+        projectId: this.projectId,
+        type: 1
+      };
+      UserNotify.userNotifyAdd(param).then(res => {
+        if (res && res.code === 10021) { // 非法请求，缺少Token
+          this.$store.dispatch('app/setLogin', true);
+        }
+      });
+    },
+    reload() {
+      this.isRouterAlive = false;
+      this.$nextTick(() => {
+        this.isRouterAlive = true;
       });
     }
   },
   mounted() {
+    this.getProjectDetail();
     this.getProjectLayouts();
   }
 };

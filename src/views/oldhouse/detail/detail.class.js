@@ -23,8 +23,8 @@ const data = {
     { name: 'suishikanfang', label: '随时看房' }
   ],
   updateTime: 1590717605480,
-  // src: 'http://fximgs8.jiwu.com/newhouse/2017/05/16/148/149491799085977_s.jpg'
-  src: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+  // src: 'http://fximgs8.yanxuanhaofang.com/newhouse/2017/05/16/148/149491799085977_s.jpg'
+  src: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
   adviser: {
     id: 100002,
     name: '霍亚龙',
@@ -43,7 +43,7 @@ const data = {
     ],
     serviceExpertise: [ '学区房', '中高档小区', '豪宅项目', '地铁房' ],
     familiarArea: [ '亦庄经济技术开发区', '通州', '石景山', '朝阳', '门头沟', '丰台',' 大兴', '昌平', '房山' ],
-    img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+    img: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
   }
 };
 

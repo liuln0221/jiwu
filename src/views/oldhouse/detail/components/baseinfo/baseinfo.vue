@@ -55,7 +55,7 @@
               <div class="adviser__info">
                 <div class="adviser__name">
                   <router-link class="name" :to="{}">{{ data.adviser.name }}</router-link>
-                  <span class="desc">联系我请说在吉屋看到的房源信息</span>
+                  <span class="desc">联系我请说在严选好房看到的房源信息</span>
                 </div>
                 <div class="adviser__operate">
                   <el-button class="tel">{{ data.adviser.tel.number }}转{{ data.adviser.tel.relay }}</el-button>

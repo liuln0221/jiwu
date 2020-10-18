@@ -19,7 +19,7 @@
         <avg-price></avg-price>
         <!-- 房价走势 -->
         <trend></trend>
-        <!-- 置业管家 -->
+        <!-- 置业顾问 -->
         <adviser></adviser>
         <!-- 区域房价排行 -->
         <region-price-rank></region-price-rank>

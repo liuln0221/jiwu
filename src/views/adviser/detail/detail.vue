@@ -2,7 +2,7 @@
   <div class="detail">
     <div class="current-local">
       <span>您的位置：</span>
-      <router-link :to="{ name: 'home' }">吉屋</router-link>
+      <router-link :to="{ name: 'home' }">严选好房</router-link>
       <router-link :to="{ name: 'adviser' }">置业顾问</router-link>
       <router-link :to="{ name: '' }">顾问详情</router-link>
     </div>

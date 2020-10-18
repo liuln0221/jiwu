@@ -11,7 +11,7 @@
         <find-room></find-room>
         <!-- 内容 -->
         <my-article :data="data"></my-article>
-        <!-- 置业管家 -->
+        <!-- 置业顾问 -->
         <adviser></adviser>
       </el-col>
       <el-col :span="6">

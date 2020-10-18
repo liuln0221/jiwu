@@ -10,7 +10,7 @@ export default {
             '让房产交易更畅快',
             '创造美好社区生活'
           ],
-          img: 'http://images.jiwu.com/images/v5.0/ico.png'
+          img: 'http://images.yanxuanhaofang.com/images/v5.0/ico.png'
         },
         {
           id: 100002,
@@ -18,16 +18,16 @@ export default {
           description: [
             '一家伟大的小公司'
           ],
-          img: 'http://images.jiwu.com/images/v5.0/ico.png'
+          img: 'http://images.yanxuanhaofang.com/images/v5.0/ico.png'
         },
         {
           id: 100003,
           name: '价值观',
           description: [
             '诚信、活力、合作、创新',
-            '有爱有家有吉屋'
+            '有爱有家有严选好房'
           ],
-          img: 'http://images.jiwu.com/images/v5.0/ico.png)'
+          img: 'http://images.yanxuanhaofang.com/images/v5.0/ico.png)'
         }
       ]
     };

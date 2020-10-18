@@ -55,6 +55,16 @@ const Project = {
     return request.get(`${BASE_URL}/${id}/layouts`);
   },
   /**
+   * @description 户型详情
+   * @param id 楼盘id
+   * @param lauoutId 户型id
+   * @return {}
+   * @author liulina
+   */
+  getProjectLayoutsDetail: (id, layoutId) => {
+    return request.get(`${BASE_URL}/${id}/layouts/${layoutId}`);
+  },
+  /**
    * @description 规划信息
    * @param id 楼盘id
    * @return {}

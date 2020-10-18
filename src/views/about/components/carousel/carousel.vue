@@ -11,3 +11,5 @@
 </template>
 
 <script src="./carousel"></script>
+
+<style lang="scss" scoped src="./carousel.scss"></style>

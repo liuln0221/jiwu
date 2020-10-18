@@ -12,7 +12,7 @@
           <el-dropdown-menu slot="dropdown" class="header__location">
             <div v-for="region in regions" :key="region.label">
               <div class="label">{{ region.label }}</div>
-              <el-radio-group v-model="location">
+              <el-radio-group v-model="locationNow" @change="changeLocation">
                 <el-radio
                   v-for="city in region.values"
                   :key="city.domain"

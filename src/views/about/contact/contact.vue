@@ -2,21 +2,21 @@
   <div class="contact">
     <el-card shadow="never" header="联系我们">
       <div class="contact__info">
-        <div class="contact__info__title">深圳市吉屋网络技术有限公司（总部）</div>
-          <div class="contact__info__contacts">
-            <span class="label"><span>联系人</span></span>
-            <span>{{ data.contacts }}</span>
-          </div>
+        <div class="contact__info__title">严选好房网（总部）</div>
           <div class="contact__info__tel">
             <span class="label"><span>电话</span></span>
             <span>{{ data.tel }}</span>
+          </div>
+          <div class="contact__info__net">
+            <span class="label"><span>网址</span></span>
+            <span>{{ data.net }}</span>
           </div>
           <div class="contact__info__local">
             <span class="label"><span>地址</span></span>
             <span>{{ data.local }}</span>
           </div>
       </div>
-      <el-row :gutter="20">
+      <!-- <el-row :gutter="20">
         <el-col :span="8" v-for="item in data.info" :key="item.id">
           <i :class="item.icon"></i>
           <div>
@@ -39,7 +39,7 @@
             </div>
           </div>
         </el-col>
-      </el-row>
+      </el-row> -->
     </el-card>
   </div>
 </template>

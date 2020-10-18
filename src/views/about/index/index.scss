@@ -29,24 +29,21 @@
     }
   }
 
-  // .index__main {
-    // width: 100%;
-    /deep/.el-card {
-      .el-card__header {
-        font-size: 36px;
-        line-height: 36px;
-      }
-  
-      .el-card__body {
-        padding-top: 50px;
-        width: 100%;
+  /deep/.el-card {
+    .el-card__header {
+      font-size: 36px;
+      line-height: 36px;
+    }
 
-        p {
-          margin: 0 0 10px 0;
-          font-size: 16px;
-          line-height: 32px;
-        }
+    .el-card__body {
+      padding-top: 50px;
+      width: 100%;
+
+      p {
+        margin: 0 0 30px 0;
+        font-size: 16px;
+        line-height: 32px;
       }
     }
-  // }
+  }
 }

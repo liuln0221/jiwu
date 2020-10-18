@@ -17,8 +17,10 @@
       .comment__agree {
         color: #869099;
 
-        i {
-          margin-right: 5px;
+        .el-button {
+          i {
+            top: 0;
+          }
         }
 
         .date {

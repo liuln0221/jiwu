@@ -5,11 +5,11 @@ export default {
       data: [
         {
           id: 100001,
-          imgUrl: 'http://images.jiwu.com/images/v3.0/banner_03.jpg'
+          imgUrl: 'http://images.yanxuanhaofang.com/images/v3.0/banner_03.jpg'
         },
         {
           id: 100002,
-          imgUrl: 'http://images.jiwu.com/images/v3.0/banner_01.jpg'
+          imgUrl: 'http://images.yanxuanhaofang.com/images/v3.0/banner_01.jpg'
         }
       ]
     };

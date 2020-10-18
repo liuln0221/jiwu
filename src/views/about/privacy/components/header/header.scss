@@ -1,0 +1,16 @@
+.header {
+  /deep/.el-image {
+    width: 150px;
+    height: 55px;
+    margin-top: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .el-image__inner {
+      width: auto;
+      height: auto;
+    }
+  }
+}

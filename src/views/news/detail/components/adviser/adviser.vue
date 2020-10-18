@@ -2,7 +2,7 @@
   <div class="adviser">
     <el-card shadow="never">
       <div slot="header">
-        <div>置业管家<span>向TA咨询：政策解读、房价行情、楼盘推荐…</span></div>
+        <div>置业顾问<span>向TA咨询：政策解读、房价行情、楼盘推荐…</span></div>
       </div>
       <el-row :gutter="20">
         <el-col :span="12" v-for="item in data" :key="item.id">
@@ -14,7 +14,7 @@
                 <div class="num">已服务{{ item.serviceNum }}人</div>
               </div>
             </div>
-            <el-button icon="icon-message2">向TA咨询</el-button>
+            <el-button icon="icon-message2" @click="consultRegister(item.id)">向TA咨询</el-button>
           </div>
         </el-col>
       </el-row>

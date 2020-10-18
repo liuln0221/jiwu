@@ -1,5 +1,5 @@
 import { mapGetters } from 'vuex';
-import { store } from './list.class';
+// import { store } from './list.class';
 
 import Houses from './components/houses/houses.vue'; // 新盘
 import Metro from './components/metro/metro.vue'; // 地铁
@@ -106,7 +106,7 @@ export default {
 
       Project.getProject(param).then(res => {
         this.page.total = res.totalRow;
-        this.store = res.data ? res.data : store;
+        this.store = res.data;
       });
     },
     getHot() {
@@ -117,7 +117,7 @@ export default {
       };
       Project.getHot(param).then(res => {
         this.page.total = res.totalRow;
-        this.store = res.data ? res.data : store;
+        this.store = res.data;
       });
     },
     /**

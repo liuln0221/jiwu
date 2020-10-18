@@ -114,8 +114,8 @@ const store = [
       { name: 'suishikanfang', label: '随时看房' }
     ],
     updateTime: 1590717605480,
-    // src: 'http://fximgs8.jiwu.com/newhouse/2017/05/16/148/149491799085977_s.jpg'
-    src: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+    // src: 'http://fximgs8.yanxuanhaofang.com/newhouse/2017/05/16/148/149491799085977_s.jpg'
+    src: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
   },
   {
     id: 10002,
@@ -128,8 +128,8 @@ const store = [
     unitPrice: 29405,
     tags: [],
     updateTime: 1590717605480,
-    // src: 'http://fximgs8.jiwu.com/newhouse/2017/05/16/148/149491799085977_s.jpg'
-    src: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+    // src: 'http://fximgs8.yanxuanhaofang.com/newhouse/2017/05/16/148/149491799085977_s.jpg'
+    src: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
   }
 ];
 

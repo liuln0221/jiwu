@@ -61,8 +61,19 @@
     }
   
     .el-footer {
-      height: 100% !important;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: auto !important;
       background: #3b4144;
     }
+  }
+
+  .layout__container {
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    padding-bottom: 140px;
   }
 }

@@ -26,6 +26,18 @@ const ProjectEvaluate = {
       params: param
     });
   },
+
+  /**
+   * @description 点赞该点评
+   * @param id 参数
+   * @return {}
+   * @author liulina
+   */
+  agreeProjectEvaluate: (id) => {
+    return request.post(`${BASE_URL}/agree`, {
+      evaluateId: id
+    });
+  }
 };
 
 export default ProjectEvaluate;

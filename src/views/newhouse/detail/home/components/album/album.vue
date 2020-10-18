@@ -11,11 +11,15 @@
             :key="filter.groupId"
           >{{ filter.name }}({{ filter.size }})</router-link>
         </div>
-        <el-button type="text">{{ data.name }}相册<i class="el-icon-arrow-right"></i></el-button>
+        <router-link class="title" :to="{ name: 'newHouseDetailAlbum' }">
+          <el-button type="text">{{ data.name }}相册<i class="el-icon-arrow-right"></i></el-button>
+        </router-link>
       </div>
       <el-carousel height="160px" indicator-position="outside">
         <el-carousel-item v-for="(image, imageIndex) in images" :key="imageIndex">
-          <el-image :src="item.imgUrl" v-for="(item, index) in image" :key="index"></el-image>
+          <router-link :to="{ name: 'newHouseDetailAlbum' }">
+            <el-image :src="item.imgUrl" v-for="(item, index) in image" :key="index"></el-image>
+          </router-link>
         </el-carousel-item>
       </el-carousel>
     </el-card>

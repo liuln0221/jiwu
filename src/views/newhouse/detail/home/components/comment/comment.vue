@@ -5,7 +5,7 @@
         <el-col :span="18">
           <span v-html="item.content"></span>
           <div class="comment__agree">
-            <i class="el-icon-plus"></i>
+            <el-button type="text" icon="el-icon-plus" @click="agreeProjectEvaluate(item.evaluateId)"></el-button>
             <span>{{ item.agreeNum }}</span>
             <span class="date">{{ item.createDate }}</span>
           </div>
@@ -15,7 +15,7 @@
           <div class="sale-man__info">
             <div class="name">
               <router-link :to="{ name: 'adviserDetail', params: { id: item.saleMan.id } }">{{ item.saleMan.name }}</router-link>
-              <el-button icon="icon-message2">向TA咨询</el-button>
+              <el-button icon="icon-message2" @click="consultRegister(item.saleMan.id)">向TA咨询</el-button>
             </div>
             <div>
               <span class="label">自我介绍：</span>

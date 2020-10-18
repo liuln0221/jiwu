@@ -11,6 +11,8 @@ import ProjectEvaluate from './modules/projectevaluate';
 import ProjectInformation from './modules/projectinformation';
 import Faqs from './modules/faqs';
 import Activity from './modules/acticity';
+import UserNotify from './modules/usernotify';
+import Consult from './modules/consult';
 
 export {
   Region,
@@ -25,5 +27,7 @@ export {
   ProjectEvaluate,
   ProjectInformation,
   Faqs,
-  Activity
+  Activity,
+  UserNotify,
+  Consult
 };

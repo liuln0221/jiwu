@@ -1,7 +1,7 @@
 <template>
   <div class="rightlib">
     <el-link :underline="false" class="rightlib__advertisement">
-      <el-image src="http://images.jiwu.com/images/v4.0/newsright4.jpg"></el-image>
+      <el-image src="http://images.yanxuanhaofang.com/images/v4.0/newsright4.jpg"></el-image>
     </el-link>
     <!-- 大咖专栏 -->
     <!-- <el-card class="rightlib__bigGuyColumn" shadow="never">

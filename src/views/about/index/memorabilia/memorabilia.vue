@@ -1,6 +1,6 @@
 <template>
   <div class="memorabilia">
-    <el-card shadow="never" header="吉屋大事记">
+    <el-card shadow="never" header="严选好房大事记">
       <el-timeline>
         <el-timeline-item
           placement="top"

@@ -26,7 +26,7 @@
         <el-card shadow="never" class="qa__adviser">
           <div slot="header">
             <div>
-              <span>置业管家</span>
+              <span>置业顾问</span>
               <span class="desc">向TA咨询：政策解读、房价行情、楼盘推荐…</span>
             </div>
           </div>

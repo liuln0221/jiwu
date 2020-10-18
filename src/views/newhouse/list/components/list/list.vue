@@ -8,7 +8,7 @@
               target="_blank"
               :to="{ name: 'newHouseDetail', params: {id: item.id} }"
             >
-            <el-image :src="item.imgUrl"></el-image>
+            <el-image :src="item.showImgPath"></el-image>
           </router-link>
         </div>
         <div class="list__item__info">
@@ -52,6 +52,7 @@
         <div class="content">{{ item.recommendedReason }}</div>
       </div>
     </div>
+    <div class="list__nodata" v-if="data.length === 0">暂无数据</div>
     <el-pagination
       background
       @current-change="handleCurrentChange"

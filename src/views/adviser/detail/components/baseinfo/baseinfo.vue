@@ -4,7 +4,7 @@
     <div class="base-info__content">
       <div class="name">
         <span>{{ data.name }}</span>
-        <el-button icon="icon-message2">向TA咨询</el-button>
+        <el-button icon="icon-message2" @click="consultRegister">向TA咨询</el-button>
       </div>
       <div class="tags">
         <el-tag size="mini" v-for="(tag, index) in data.tags" :key="index">{{ tag.label }}</el-tag>

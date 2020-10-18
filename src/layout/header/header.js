@@ -9,6 +9,7 @@ import { Region, Project } from '@/api/index';
 export default {
   name: 'header',
   components: { Login },
+  inject: [ 'reload' ],
   data() {
     return {
       activeIndex: 'home',
@@ -18,7 +19,8 @@ export default {
         select: searchOptions[0],
         options: searchOptions
       },
-      regions: []
+      regions: [],
+      locationNow: {}
     };
   },
   computed: {
@@ -44,17 +46,40 @@ export default {
       });
     },
     routerChange() {
-      this.activeIndex = this.$route.matched[1].name === 'calculator' || this.$route.matched[1].name === 'help'
-        ? this.activeIndex
-        : this.$route.matched[1].name;
+      this.activeIndex = this.$route.matched[1]
+        ? this.$route.matched[1].name === 'calculator' || this.$route.matched[1].name === 'help'
+          ? this.activeIndex
+          : this.$route.matched[1].name
+        : this.activeIndex;
       Common.setTitle(this);
     },
     getOpenedRegion() {
       Region.getOpenedRegion().then(res => {
         this.regions = res.data.allCities;
-        this.$store.dispatch('app/setLocation', this.regions[0].values[0]);
+
+        let city;
+        let cities = [];
+        if (window.location.hostname.indexOf('nthpower.net') !== -1) {
+          const cityDomain = window.location.hostname.split('.')[0];
+          this.regions.forEach(item => {
+            cities = cities.concat(item.values);
+          });
+          city = cities.find(item => item.domain === cityDomain);
+        }
+        this.locationNow = city ? city : this.regions[0].values[0];
+        this.$store.dispatch('app/setLocation', this.locationNow);
+        if (process.env.NODE_ENV === 'production') {
+          window.location.hostname = `${this.location.domain}.nthpower.net`;
+        }
         Common.setTitle(this);
       });
+    },
+    changeLocation() {
+      this.$store.dispatch('app/setLocation', this.locationNow);
+      if (process.env.NODE_ENV === 'production') {
+        window.location.hostname = `${this.location.domain}.nthpower.net`;
+      }
+      this.reload();
     },
     loginFun() {
       this.$refs.login.show();
@@ -71,7 +96,9 @@ export default {
       this.routerChange();
     },
     login() {
-      this.$refs.login.show();
+      if (this.login) {
+        this.$refs.login.show();
+      }
     }
   }
 }

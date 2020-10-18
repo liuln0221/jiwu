@@ -1,6 +1,6 @@
 // import { news } from './dynamic.class';
 
-import { ProjectInformation, News, Faqs } from '@/api';
+import { ProjectInformation, News, Faqs, UserNotify } from '@/api';
 
 export default {
   name: 'dynamic',
@@ -54,6 +54,17 @@ export default {
       };
       Faqs.getFaqs(param).then(res => {
         this.qas = res.data || [];
+      });
+    },
+    priceNotify() {
+      const param = {
+        projectId: this.projectId,
+        type: 3
+      };
+      UserNotify.userNotifyAdd(param).then(res => {
+        if (res && res.code === 10021) { // 非法请求，缺少Token
+          this.$store.dispatch('app/setLogin', true);
+        }
       });
     }
   },

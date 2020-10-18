@@ -1,5 +1,5 @@
 <template>
-  <div class="newhouse">
+  <div class="newhouse" v-if="data.length > 0 || houses.length > 0">
     <el-card shadow="never">
       <div slot="header">
         <div class="newhouse__header">

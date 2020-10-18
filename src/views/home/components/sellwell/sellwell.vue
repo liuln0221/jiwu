@@ -1,10 +1,10 @@
 <template>
-  <div class="sellwell">
+  <div class="sellwell" v-if="data.length > 0">
     <el-card shadow="never" header="热销新盘">
       <el-row :gutter="20">
         <el-col :span="12" class="img__first">
           <router-link target="_blank" :to="{ name: 'newHouseDetail', params: { id: data[0].id } }">
-            <el-image :src="data[0].imgUrl"></el-image>
+            <el-image :src="data[0].showImgPath"></el-image>
           </router-link>
           <div class="img__first__name">{{ data[0].name }}</div>
           <div class="img__first__detail">
@@ -15,7 +15,7 @@
         <el-col :span="12" class="img__more">
           <el-col :span="12" v-for="item in data.slice(1)" :key="item.name">
             <router-link target="_blank" :to="{ name: 'newHouseDetail', id: item.id }">
-              <el-image :src="item.imgUrl"></el-image>
+              <el-image :src="item.showImgPath"></el-image>
             </router-link>
             <div class="img__more__name">{{ item.name }}</div>
             <div class="img__more__detail">

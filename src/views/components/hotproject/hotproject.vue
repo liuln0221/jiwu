@@ -17,7 +17,7 @@
         </router-link>
         <div class="hot-project__adviser" v-if="item.salesList && item.salesList.length > 0">
           <el-image class="adviser__img" :src="item.salesList[0].headImgUrl"></el-image>
-          <el-button class="adviser__consult" icon="icon-message2">向TA咨询</el-button>
+          <el-button class="adviser__consult" icon="icon-message2" @click="consultRegister(item.id, item.salesList[0].id)">向TA咨询</el-button>
         </div>
       </div>
     </el-card>

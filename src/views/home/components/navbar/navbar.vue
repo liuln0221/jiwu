@@ -1,11 +1,12 @@
 <template>
   <div class="navbar">
-    <el-menu default-active="1-4-1" :collapse="true">
+    <el-menu :collapse="true" ref="menu">
       <el-menu-item
         v-for="menu in menus"
         :key="menu.name"
         :index="menu.name"
         default-active="newHouse"
+        @click="open(menu)"
       >
         <el-submenu v-if="menu.links && menu.links.length > 0" :index="menu.name" popper-class="navbar__popper">
           <template slot="title">
@@ -25,7 +26,7 @@
                 <!-- <el-button icon="icon-house-map">地图找房</el-button>
                 <span>或</span> -->
                 <router-link :to="{ name: 'adviser' }">
-                  <i class="icon-message"></i>找新房置业管家咨询
+                  <i class="icon-message"></i>找新房置业顾问咨询
                 </router-link>
               </div>
               <!-- 二手房 -->

@@ -1,6 +1,6 @@
 <template>
   <div class="profile">
-    <el-card shadow="never" header="吉屋简介">
+    <el-card shadow="never" header="严选好房简介">
       <p v-for="(item, index) in data" :key="index">{{ item }}</p>
     </el-card>
   </div>

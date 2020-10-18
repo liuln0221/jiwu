@@ -14,7 +14,7 @@ export default {
             { name: 'shop', label: '大型商超' },
             { name: 'kindergarten', label: '幼儿园' }
           ],
-          img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+          img: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
         },
         {
           name: '玺萌壹号院',
@@ -24,7 +24,7 @@ export default {
             { name: 'shop', label: '大型商超' },
             { name: 'kindergarten', label: '幼儿园' }
           ],
-          img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+          img: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
         },
         {
           name: '玺萌壹号院',
@@ -34,7 +34,7 @@ export default {
             { name: 'shop', label: '大型商超' },
             { name: 'kindergarten', label: '幼儿园' }
           ],
-          img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+          img: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
         },
         {
           name: '玺萌壹号院',
@@ -44,7 +44,7 @@ export default {
             { name: 'shop', label: '大型商超' },
             { name: 'kindergarten', label: '幼儿园' }
           ],
-          img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+          img: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
         },
         {
           name: '玺萌壹号院',
@@ -54,7 +54,7 @@ export default {
             { name: 'shop', label: '大型商超' },
             { name: 'kindergarten', label: '幼儿园' }
           ],
-          img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+          img: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
         }
       ]
     };

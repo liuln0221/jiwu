@@ -22,20 +22,20 @@ const data = {
     { name: 'shop', label: '大型商超' },
     { name: 'metro', label: '地铁沿线' }
   ],
-  // src: 'http://imgs2.jiwu.com/attachment/buildpic/2018/09/21/5564357_m.jpg',
-  showImgPath: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+  // src: 'http://imgs2.yanxuanhaofang.com/attachment/buildpic/2018/09/21/5564357_m.jpg',
+  showImgPath: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
   images: [
-    'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-    'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-    'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-    'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-    'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
-    'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
-    // 'http://img8.jiwu.com/newbuildpic/10/2/17712/17712706_s.jpg',
-    // 'http://img8.jiwu.com/newbuildpic/10/2/16902/16902895_s.jpg',
-    // 'http://img8.jiwu.com/newbuildpic/10/2/16921/16921858_s.jpg',
-    // 'http://img8.jiwu.com/newbuildpic/10/2/17434/17434903_s.jpg',
-    // 'http://img13.jiwu.com/newbuildpic/10/2/1851/18517415_s.jpg'
+    'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+    'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+    'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+    'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+    'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360',
+    'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+    // 'http://img8.yanxuanhaofang.com/newbuildpic/10/2/17712/17712706_s.jpg',
+    // 'http://img8.yanxuanhaofang.com/newbuildpic/10/2/16902/16902895_s.jpg',
+    // 'http://img8.yanxuanhaofang.com/newbuildpic/10/2/16921/16921858_s.jpg',
+    // 'http://img8.yanxuanhaofang.com/newbuildpic/10/2/17434/17434903_s.jpg',
+    // 'http://img13.yanxuanhaofang.com/newbuildpic/10/2/1851/18517415_s.jpg'
   ],
   openDate: 1589453003891,
   priceValidity: {
@@ -62,7 +62,7 @@ const data = {
     ],
     serviceExpertise: [ '学区房', '中高档小区', '豪宅项目', '地铁房' ],
     familiarArea: [ '亦庄经济技术开发区', '通州', '石景山', '朝阳', '门头沟', '丰台',' 大兴', '昌平', '房山' ],
-    img: 'http://img-other.jiwu.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
+    img: 'http://img-other.yanxuanhaofang.com/apic/2020/03/10/115505312127.jpg/pc1920x360'
   }
 };
 

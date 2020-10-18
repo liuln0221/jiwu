@@ -46,7 +46,7 @@
           </el-input>
         </el-form-item>
         <!-- 协议 -->
-        <el-checkbox v-model="checked">我已阅读并同意<router-link :to="{ name: 'serviceStatement' }" target="_blank">《吉屋用户服务协议》</router-link></el-checkbox>
+        <el-checkbox v-model="checked">我已阅读并同意<router-link :to="{ name: 'serviceStatement' }" target="_blank">《严选好房用户服务协议》</router-link></el-checkbox>
         <!-- 校验信息 -->
         <div class="login__error">{{ errorMsg }}</div>
       </el-form>

@@ -52,6 +52,7 @@
 
             .el-image {
               height: 100%;
+              width: 100%;
 
               img {
                 height: 100%;
@@ -60,48 +61,41 @@
           }
         }
 
-        .house-type-detail__type.el-carousel {
-          height: 75px;
+        .disclaimer {
+          padding: 10px 0;
+          line-height: 18px;
+          font-size: 12px;
+          color: #869099;
+        }
+
+        .house-type-detail__type {
+          height: 79px;
           background: #4c4948;
-          padding: 0 80px;
+          padding: 0 40px;
 
-          .el-carousel__arrow {
+          div {
+            display: inline-block;
+          }
+
+          .el-image {
             width: 80px;
-            height: 75px;
-            background: none;
-            font-size: 56px;
-          }
+            height: 55px;
+            margin: 10px 0;
+            border: 2px solid #4c4948;
 
-          .el-carousel__arrow--left {
-            left: -80px;
-          }
-
-          .el-carousel__arrow--right {
-            right: -80px;
-          }
-          
-          .el-carousel__item {
-
-            .el-image {
-              width: 80px;
-              height: 55px;
-              margin: 10px 0;
-              border: 2px solid #4c4948;
-
-              img {
-                height: 100%;
-              }
-
-              &:hover,
-              &.active {
-                border: 2px solid #11a43c;
-                cursor: pointer;
-              }
+            img {
+              height: 100%;
             }
 
-            .el-image+.el-image {
-              margin-left: 15px;
+            &:hover,
+            &.active {
+              border: 2px solid #11a43c;
+              cursor: pointer;
             }
+          }
+
+          div+div {
+            margin-left: 15px;
           }
         }
       }

@@ -76,7 +76,7 @@ export default {
           formatter: (params) => {
             const data = this.optionData.find(item => item.name === params);
             const avg = parseInt(data.value.reduce((num, next) => num + next, 0) / data.value.length);
-            return `${params}${avg}元/㎡`;
+            return avg ? `${params}${avg}元/㎡` : `${params}暂无`;
           }
         },
         color: [ '#f7624e', '#47b3e3' ],

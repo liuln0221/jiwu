@@ -18,6 +18,7 @@ import helpRoutes from './help/router'; // 帮我找房
 import aboutRoutes from './about/router'; // 关于
 
 import HouseTypeDetail from './newhouse/detail/housetype/detail/detail.vue'; // 户型图详情
+import AlbumDetail from './newhouse/detail/album/detail/detail.vue'; // 相册详情
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     name: 'newHouseTypeDetail',
     path: '/houseType/:id',
     component: HouseTypeDetail
+  },
+  {
+    name: 'newHouseAlbumDetail',
+    path: '/album/:id',
+    component: AlbumDetail
   }
 ];
 

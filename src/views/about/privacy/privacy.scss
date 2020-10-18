@@ -1,0 +1,23 @@
+.privacy {
+  /deep/.el-container {
+    .el-header,
+    .el-main {
+      display: flex;
+      justify-content: center;
+      padding-right: 60px;
+
+      & > div {
+        width: 1000px;
+        min-width: 1000px;
+      }
+    }
+  
+    .el-header {
+      height: 80px !important;
+    }
+
+    .el-main {
+      padding-top: 0;
+    }
+  }
+}

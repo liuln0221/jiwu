@@ -32,7 +32,7 @@
         <div class="base-info__price">
           <span>参考价格：</span>
           <span class="price">{{ data.price }}元/平米</span>
-          <el-button size="mini" class="icon-line-chart">降价通知我</el-button>
+          <el-button size="mini" class="icon-line-chart" @click="priceNotify(1)">降价通知我</el-button>
         </div>
         <!-- <div class="base-info__price-desc">
           <span>价格说明：</span>
@@ -51,11 +51,11 @@
         <!-- <div class="base-info__onePrice">一房一价：<el-link :underline="false">详情请至住建委网站查询</el-link></div> -->
         <div class="base-info__primary">
           <span>开盘：{{ data.openDate | dateStrToFormat('YYYY-MM-DD') }}</span>
-          <el-button type="text">[开盘通知我]</el-button>
+          <el-button type="text" @click="priceNotify(2)">[开盘通知我]</el-button>
         </div>
         <div class="base-info__primary">
           <span>地址：{{ data.site }}</span>
-          <el-button type="text">[开盘通知我]</el-button>
+          <el-button type="text" @click="priceNotify(2)">[开盘通知我]</el-button>
         </div>
         <div class="base-info__primary">
           <span>户型：</span>
@@ -65,8 +65,8 @@
             :key="index"
             :to="{ name: 'newHouseDetailHouseType' }"
           >{{ type.label }}({{ type.count }})</router-link>
-          <el-button type="text">[余房查询]</el-button>
-          <el-button type="text">[成交价查询]</el-button>
+          <!-- <el-button type="text">[余房查询]</el-button>
+          <el-button type="text">[成交价查询]</el-button> -->
         </div>
         <div class="base-info__more">
           <router-link :to="{ name: 'newHouseDetailFloor' }">查看更多信息<i class="el-icon-arrow-right"></i></router-link>
@@ -82,7 +82,7 @@
             <el-image :src="adviser.headImgUrl"></el-image>
           </router-link>
           <router-link :to="{ name: 'adviserDetail', params: { id: adviser.id } }" class="name">{{ adviser.name }}</router-link>
-          <el-button class="consult" icon="icon-message2">向TA咨询</el-button>
+          <el-button class="consult" icon="icon-message2" @click="consultRegister(adviser.id)">向TA咨询</el-button>
           <div>
             <el-tag
               v-for="(tag, index) in adviser.tags"
@@ -108,7 +108,7 @@
           </p>
           <p class="info">
             <span class="label"><span>熟悉区域</span></span>
-            <span class="content gray">{{ adviser.familiarRegionsName ? adviser.familiarRegionsName.join(',') : '-' }}分钟+</span>
+            <span class="content gray">{{ adviser.familiarRegionsName ? adviser.familiarRegionsName.join(',') : '-' }}</span>
           </p>
         </div>
       </el-col>

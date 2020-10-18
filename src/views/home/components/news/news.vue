@@ -1,5 +1,5 @@
 <template>
-  <div class="news">
+  <div class="news" v-if="headlines.length > 0 || news.length > 0">
     <el-card shadow="never">
       <div slot="header">
         <span>房产资讯</span>
@@ -8,7 +8,7 @@
         </router-link>
       </div>
       <el-row :gutter="20">
-        <el-col :span="12" class="news__headline">
+        <el-col :span="12" class="news__headline" v-if="headlines.length > 0">
           <el-carousel height="500px">
             <el-carousel-item v-for="headline in headlines" :key="headline.name">
               <router-link target="_blank" :to="{ name: 'newsDetail', params: { id: headline.id } }">

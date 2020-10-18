@@ -8,5 +8,5 @@ export default {
     eHeader: Header,
     Carousel,
     eFooter: Footer
-   }
+  }
 };

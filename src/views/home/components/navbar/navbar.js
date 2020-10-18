@@ -81,6 +81,9 @@ export default {
           };
         }); 
       })
+    },
+    open(item) {
+      this.$refs.menu.open(item.name);
     }
   },
   mounted() {

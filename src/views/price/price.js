@@ -2,7 +2,7 @@ import { mapGetters } from 'vuex';
 
 import AvgPrice from './components/avgprice/avgprice.vue'; // 均价
 import Trend from './components/trend/trend.vue'; // 房价走势
-import Adviser from './components/adviser/adviser.vue'; // 置业管家
+import Adviser from './components/adviser/adviser.vue'; // 置业顾问
 import RegionPriceRank from './components/regionpricerank/regionpricerank.vue'; // 区域房价排行
 import Distribution from './components/distribution/distribution.vue'; // 价格分布
 

@@ -1,6 +1,7 @@
 import About from './about.vue';
 import Index from './index/index.vue';
 import Contact from './contact/contact.vue';
+import Privacy from './privacy/privacy.vue'; // 隐私保护
 
 import serviceStatementRoutes from './serviceStatement/router';
 
@@ -21,7 +22,12 @@ const routes = [
         name: 'contact',
         component: Contact
       },
-      ...serviceStatementRoutes
+      ...serviceStatementRoutes,
+      {
+        path: 'privacy',
+        name: 'privacy',
+        component: Privacy,
+      }
     ]
   }
 ];

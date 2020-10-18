@@ -6,7 +6,7 @@
           <div slot="header" class="clearfix">
             <span class="header">
               <router-link :to="{ name: 'newHouseDetailDynamic' }">最新动态</router-link>
-              <el-button size="mini" class="icon-notice">新动态通知我</el-button>
+              <el-button size="mini" class="icon-notice" @click="priceNotify">新动态通知我</el-button>
             </span>
             <router-link :to="{ name: 'newHouseDetailDynamic' }">
               <el-button type="text">{{ data.name }}动态<i class="el-icon-arrow-right"></i></el-button>

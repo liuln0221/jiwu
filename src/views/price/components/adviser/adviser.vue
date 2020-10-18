@@ -22,7 +22,7 @@
                 <div>服务人数：<span class="service-num">{{ item.serviceNum }}人</span></div>
               </div>
             </div>
-            <el-button>向TA咨询</el-button>
+            <el-button @click="consultRegister(item.id)">向TA咨询</el-button>
           </div>
         </el-col>
       </el-row>

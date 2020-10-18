@@ -3,7 +3,7 @@
     <el-card shadow="never">
       <div slot="header" class="clearfix">
         <span class="header">
-          <el-link :underline="false">户型图</el-link>
+          <router-link :to="{ name: 'newHouseDetailHouseType' }">户型图</router-link>
           <span>以首付三成，供30年计算，详情请咨询置业顾问。</span>
         </span>
         <router-link :to="{ name: 'newHouseDetailHouseType' }">
@@ -17,7 +17,7 @@
               <el-image :src="type.layoutImgUrl"></el-image>
             </el-col>
             <el-col :span="14">
-              <el-link :underline="false">{{ type.houseType }}</el-link>
+              <router-link :to="{ name: 'newHouseTypeDetail', params: { id: type.layoutId }, query: { projectId: type.projectId }}">{{ type.layoutName }}</router-link>
               <p>建筑面积：约{{ type.grossArea }}平米</p>
               <p>参考首付：{{ type.downPayment }}万</p>
               <p>参考月供：约{{ type.monthlyPayment }}元</p>
